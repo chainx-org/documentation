@@ -29,7 +29,6 @@ jobs:
         run: |
           npm install
           hugo --minify --destination public
-          touch public/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3

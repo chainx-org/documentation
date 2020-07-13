@@ -5,3 +5,7 @@ Add styles or override variables from the theme here.
 */
 
 $primary: #3f3f3f;
+
+.td-cover-block {
+    background: linear-gradient(to left bottom, hsl(147, 100%, 85%) 0%,hsl(30, 100%, 85%) 100%);
+}
