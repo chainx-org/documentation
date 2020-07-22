@@ -14,6 +14,40 @@ description: >
 
 Parameters: `[]`
 
+Request:
+
+```json
+{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method":"xstaking_getValidators",
+    "params":[]
+}
+```
+
+Response:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "account": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+            "isChilled": false,
+            "isValidating": true,
+            "lastChilled": null,
+            "lastTotalVoteWeight": "0",
+            "lastTotalVoteWeightUpdate": 0,
+            "registeredAt": 0,
+            "rewardPotAccount": "5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7",
+            "rewardPotBalance": "28512000000",
+            "selfBonded": "10000000000000",
+            "total": "10000000000000"
+        }
+    ],
+    "id": 1
+}
+```
 
 ### `xstaking_getValidatorByAccount`
 
