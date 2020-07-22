@@ -1,11 +1,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – 开发者</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/</link><description>Recent content in 开发者 on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://liuchengxu.github.io/documentation/zh/docs/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: RPC</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/rpc/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
-&lt;/div>
-&lt;h2 id="chainx">ChainX&lt;/h2>
-&lt;h3 id="assets">Assets&lt;/h3>
-&lt;h3 id="staking">Staking&lt;/h3>
-&lt;h3 id="dex">DEX&lt;/h3></description></item><item><title>Docs: JS-SDK</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
+&lt;h2 id="assets">Assets&lt;/h2>
+&lt;h2 id="staking">Staking&lt;/h2>
+&lt;h3 id="xstaking_getvalidators">&lt;code>xstaking_getValidators&lt;/code>&lt;/h3>
+&lt;p>Parameters: &lt;code>[]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getValidators&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;account&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">false&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isValidating&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">null&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;registeredAt&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotAccount&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;28512000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;selfBonded&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;total&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span>
+}
+],
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xstaking_getvalidatorbyaccount">&lt;code>xstaking_getValidatorByAccount&lt;/code>&lt;/h3>
+&lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getValidatorByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;account&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点账户地址&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">false&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">是否退选，false&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示已退选&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isValidating&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">是否正在参与出块&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">null&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点上一次退选高度。如果为&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">null,&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示节点从未退选过。&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点上一次总票龄&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点总票龄上一次更新高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;registeredAt&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点注册高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotAccount&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">奖池地址&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;17107200000&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">奖池金额&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;selfBonded&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">自抵押数&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;total&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">总得票数&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: JS-SDK</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
