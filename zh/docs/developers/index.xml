@@ -62,11 +62,74 @@
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
 &lt;h2 id="安装">安装&lt;/h2>
+&lt;p>npm install @chainx-v2/api&lt;/p>
 &lt;h2 id="快速开始">快速开始&lt;/h2>
-&lt;h2 id="chainxjs">chainx.js&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ChainX } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chainx-v2/api&amp;#39;&lt;/span>);
+async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main () {
+&lt;span style="color:#888">// Initialise the chainx to connect to the local node
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> chainx = &lt;span style="color:#080;font-weight:bold">new&lt;/span> ChainX(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;ws://47.114.131.193:9000&amp;#39;&lt;/span>);
+&lt;span style="color:#888">// Create the API and wait until ready
+&lt;/span>&lt;span style="color:#888">&lt;/span> await chainx.ready();
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = chainx.getApi();
+&lt;span style="color:#888">//get assets
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> assets = await api.rpc.xassets.getAssets();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;balance:&amp;#34;&lt;/span> + assets);
+&lt;span style="color:#888">// Retrieve the chain &amp;amp; node information information via rpc calls
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> [chain, nodeName, nodeVersion] = await &lt;span style="color:#038">Promise&lt;/span>.all([
+api.rpc.system.chain(),
+api.rpc.system.name(),
+api.rpc.system.version()
+]);
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">`You are connected to chain &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>chain&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> using &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>nodeName&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> v&lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>nodeVersion&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="chainxjs">chainx.js&lt;/h2>
 &lt;h2 id="账户模块">账户模块&lt;/h2>
-&lt;h2 id="交易接口">交易接口&lt;/h2>
-&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: 节点运维</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/devops/</guid><description>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { Account } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chainx-v2/account&amp;#39;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> account1 = Account.generate();
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey1 = account1.publicKey(); &lt;span style="color:#888">// 公钥
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey1: &amp;#39;&lt;/span>, publicKey1);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> privateKey1 = account1.privateKey(); &lt;span style="color:#888">// 私钥
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;privateKey1: &amp;#39;&lt;/span>, privateKey1);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> address1 = account1.address(); &lt;span style="color:#888">// 地址
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address1: &amp;#39;&lt;/span>, address1);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> mnemonic = Account.newMnemonic(); &lt;span style="color:#888">// 随机助记词
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mnemonic: &amp;#39;&lt;/span>, mnemonic);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> account2 = Account.from(mnemonic); &lt;span style="color:#888">// 从助记词生成账户
+&lt;/span>&lt;span style="color:#888">&lt;/span>
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> address2 = Account.encodeAddress(account2.publicKey()); &lt;span style="color:#888">// 从公钥生成地址
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address2: &amp;#39;&lt;/span>, address2);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey2 = Account.decodeAddress(address2); &lt;span style="color:#888">// 从地址获取生成公钥
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey2: &amp;#39;&lt;/span>, publicKey2);
+Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;testnet&amp;#39;&lt;/span>); &lt;span style="color:#888">// 设置为测试网
+&lt;/span>&lt;span style="color:#888">&lt;/span>&lt;span style="color:#080;font-weight:bold">const&lt;/span> address3 = Account.encodeAddress(publicKey2); &lt;span style="color:#888">// 测试网地址
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address3:&amp;#39;&lt;/span>, address3);
+Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mainnet&amp;#39;&lt;/span>); &lt;span style="color:#888">// 设置为主网
+&lt;/span>&lt;span style="color:#888">&lt;/span>&lt;span style="color:#080;font-weight:bold">const&lt;/span> address4 = Account.encodeAddress(publicKey2); &lt;span style="color:#888">// 主网地址
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address4:&amp;#39;&lt;/span>, address4);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> account3 = Account.from(privateKey1); &lt;span style="color:#888">// 从私钥生成账户
+&lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address:&amp;#39;&lt;/span>, account3.address()); &lt;span style="color:#888">// 地址
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rpc">RPC&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js"> &lt;span style="color:#888">//get assets
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> assets = await api.rpc.xassets.getAssets();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;balance:&amp;#34;&lt;/span> + assets);
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="交易接口">交易接口&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> ChainX = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chinx-v2/api&amp;#39;&lt;/span>);
+(async () =&amp;gt; {
+&lt;span style="color:#888">// 目前只支持 websocket 链接
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> chainx = &lt;span style="color:#080;font-weight:bold">new&lt;/span> ChainX(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;ws://47.114.131.193:9000&amp;#39;&lt;/span>);
+&lt;span style="color:#888">// 等待异步的初始化
+&lt;/span>&lt;span style="color:#888">&lt;/span> await chainx.ready();
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = chainx.getApi();
+&lt;span style="color:#888">// 构造交易参数（同步）
+&lt;/span>&lt;span style="color:#888">&lt;/span>
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> extrinsic = api.tx.balances.transfer(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;5DtoAAhWgWSthkcj7JfDcF2fGKEWg91QmgMx37D6tFBAc6Qg&amp;#39;&lt;/span>, &lt;span style="color:#00d;font-weight:bold">12345&lt;/span>);
+&lt;span style="color:#888">// 查看 method 哈希
+&lt;/span>&lt;span style="color:#888">&lt;/span> console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;Function: &amp;#39;&lt;/span>, extrinsic.method.toHex());
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> alice = &lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;5CtoAAhWgWSthkcj7JfDcF2fGKEWg91QmgMx37D6tFBAc6Qg&amp;#39;&lt;/span>;
+&lt;span style="color:#888">// 签名并发送交易，0x0000000000000000000000000000000000000000000000000000000000000000 是用于签名的私钥
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> hash = await transfer.signAndSend(alice);
+})();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: 节点运维</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
