@@ -88,4 +88,33 @@ console.log('address:', account3.address()); // 地址
 
 ## 交易接口
 
+```js
+const ChainX = require('@chinx-v2/api');
+
+(async () => {
+
+  // 目前只支持 websocket 链接
+  const chainx = new ChainX('ws://47.114.131.193:9000');
+
+  // 等待异步的初始化
+  await chainx.ready();
+  
+  const api = chainx.getApi();
+
+
+  // 构造交易参数（同步）
+
+  const extrinsic = api.tx.balances.transfer('5DtoAAhWgWSthkcj7JfDcF2fGKEWg91QmgMx37D6tFBAc6Qg', 12345);
+
+  // 查看 method 哈希
+  console.log('Function: ', extrinsic.method.toHex());
+  
+  const alice = '5CtoAAhWgWSthkcj7JfDcF2fGKEWg91QmgMx37D6tFBAc6Qg';
+
+  // 签名并发送交易，0x0000000000000000000000000000000000000000000000000000000000000000 是用于签名的私钥
+  const hash =  await transfer.signAndSend(alice);
+})();
+
+```
+
 ## 智能合约
