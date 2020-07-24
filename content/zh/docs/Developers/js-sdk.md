@@ -25,6 +25,10 @@ async function main () {
   await chainx.ready();
   const api = chainx.getApi();
   
+  //get assets
+  const assets = await api.rpc.xassets.getAssets();
+  console.log("balance:" + assets);
+  
   // Retrieve the chain & node information information via rpc calls
   const [chain, nodeName, nodeVersion] = await Promise.all([
     api.rpc.system.chain(),
@@ -73,6 +77,13 @@ console.log('address4:', address4);
 
 const account3 = Account.from(privateKey1); // 从私钥生成账户
 console.log('address:', account3.address()); // 地址
+```
+## RPC
+
+```js
+  //get assets
+  const assets = await api.rpc.xassets.getAssets();
+  console.log("balance:" + assets);
 ```
 
 ## 交易接口
