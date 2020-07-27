@@ -86,4 +86,66 @@ Response:
 }
 ```
 
+### `xstaking_getDividendByAccount`
+
+获取用户的投票分红。
+
+Parameters: `[AccountId]`
+
+Request:
+
+```json
+{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method":"xstaking_getDividendByAccount",
+    "params":["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"]
+}
+```
+
+Response:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY": "2851200000" // key 为该用户投票的验证人地址，value 为对应的分红奖励。
+    },
+    "id": 1
+}
+```
+
+### `xstaking_getNominationByAccount`
+
+获取用户的投票信息, 包括投票金额，票龄等。
+
+Parameters: `[AccountId]`
+
+Request:
+
+```json
+{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method":"xstaking_getNominationByAccount",
+    "params":["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"]
+}
+```
+
+Response:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY": { // key 为验证人地址
+            "lastVoteWeight": "0", // 上一次用户总票龄
+            "lastVoteWeightUpdate": 0, // 上一次用户总票龄更新高度
+            "nomination": "500000000000000000000000" // 用户对该节点的投票金额
+        }
+    },
+    "id": 1
+}
+```
+
 ## DEX
