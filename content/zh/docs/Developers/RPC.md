@@ -71,7 +71,7 @@ Response:
     "jsonrpc": "2.0",
     "result": {
         "account": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", // 节点账户地址
-        "isChilled": false, // 是否退选，false 表示已退选
+        "isChilled": false, // 是否退选，false 表示未退选
         "isValidating": true, // 是否正在参与出块
         "lastChilled": null, // 节点上一次退选高度。如果为 null, 表示节点从未退选过。
         "lastTotalVoteWeight": "0", // 节点上一次总票龄
