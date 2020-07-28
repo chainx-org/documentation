@@ -57,6 +57,46 @@
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xstaking_getdividendbyaccount">&lt;code>xstaking_getDividendByAccount&lt;/code>&lt;/h3>
+&lt;p>获取用户的投票分红。&lt;/p>
+&lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getDividendByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2851200000&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为该用户投票的验证人地址，value&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为对应的分红奖励。&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xstaking_getnominationbyaccount">&lt;code>xstaking_getNominationByAccount&lt;/code>&lt;/h3>
+&lt;p>获取用户的投票信息, 包括投票金额，票龄等。&lt;/p>
+&lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getNominationByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>: { &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为验证人地址&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次用户总票龄&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次用户总票龄更新高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;nomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;500000000000000000000000&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">用户对该节点的投票金额&lt;/span>
+}
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: 账户系统</title><link>https://liuchengxu.github.io/documentation/zh/docs/basics/accounts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/basics/accounts/</guid><description/></item><item><title>Docs: JS-SDK</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
