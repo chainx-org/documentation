@@ -38,6 +38,7 @@ Response:
             "lastChilled": null,
             "lastTotalVoteWeight": "0",
             "lastTotalVoteWeightUpdate": 0,
+            "referralId": "Alice",
             "registeredAt": 0,
             "rewardPotAccount": "5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7",
             "rewardPotBalance": "28512000000",
@@ -76,6 +77,7 @@ Response:
         "lastChilled": null, // 节点上一次退选高度。如果为 null, 表示节点从未退选过。
         "lastTotalVoteWeight": "0", // 节点上一次总票龄
         "lastTotalVoteWeightUpdate": 0, // 节点总票龄上一次更新高度
+        "referralId": "Alice", // 验证人的推荐人ID, 可用于跨链渠道推荐, 分享跨链挖矿用户的10%奖励。
         "registeredAt": 0, // 节点注册高度
         "rewardPotAccount": "5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7", // 奖池地址
         "rewardPotBalance": "17107200000", // 奖池金额
