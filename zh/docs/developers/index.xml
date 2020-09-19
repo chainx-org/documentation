@@ -106,7 +106,7 @@
 &lt;h2 id="安装">安装&lt;/h2>
 &lt;p>npm install @chainx-v2/api&lt;/p>
 &lt;h2 id="快速开始">快速开始&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ChainX } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chainx-v2/api&amp;#39;&lt;/span>);
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ChainX } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chainx-v2/api&amp;#39;&lt;/span>);
 async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main () {
 &lt;span style="color:#888">// Initialise the chainx to connect to the local node
 &lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> chainx = &lt;span style="color:#080;font-weight:bold">new&lt;/span> ChainX(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;ws://47.114.131.193:9000&amp;#39;&lt;/span>);
@@ -126,7 +126,7 @@ console.log(&lt;span style="color:#d20;background-color:#fff0f0">`You are connec
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="chainxjs">chainx.js&lt;/h2>
 &lt;h2 id="账户模块">账户模块&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { Account } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chainx-v2/account&amp;#39;&lt;/span>);
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { Account } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chainx-v2/account&amp;#39;&lt;/span>);
 &lt;span style="color:#080;font-weight:bold">const&lt;/span> account1 = Account.generate();
 &lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey1 = account1.publicKey(); &lt;span style="color:#888">// 公钥
 &lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey1: &amp;#39;&lt;/span>, publicKey1);
@@ -151,11 +151,11 @@ Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mai
 &lt;span style="color:#080;font-weight:bold">const&lt;/span> account3 = Account.from(privateKey1); &lt;span style="color:#888">// 从私钥生成账户
 &lt;/span>&lt;span style="color:#888">&lt;/span>console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address:&amp;#39;&lt;/span>, account3.address()); &lt;span style="color:#888">// 地址
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rpc">RPC&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js"> &lt;span style="color:#888">//get assets
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript"> &lt;span style="color:#888">//get assets
 &lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> assets = await api.rpc.xassets.getAssets();
 console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;balance:&amp;#34;&lt;/span> + assets);
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="交易接口">交易接口&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> ChainX = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chinx-v2/api&amp;#39;&lt;/span>);
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#080;font-weight:bold">const&lt;/span> ChainX = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;@chinx-v2/api&amp;#39;&lt;/span>);
 (async () =&amp;gt; {
 &lt;span style="color:#888">// 目前只支持 websocket 链接
 &lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> chainx = &lt;span style="color:#080;font-weight:bold">new&lt;/span> ChainX(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;ws://47.114.131.193:9000&amp;#39;&lt;/span>);
