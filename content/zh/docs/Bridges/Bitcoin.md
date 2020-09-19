@@ -1,211 +1,150 @@
 ---
-title: "Bitcoin"
+title: "比特币转接桥/网关"
 linkTitle: "Bitcoin Bridge"
 description: >
-  A short lead descripton about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  比特币转接桥/网关.
 ---
 
 {{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
+比特币转接桥/网关
 {{% /pageinfo %}}
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+## 介绍
 
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+比特币转接桥/网关是ChainX上实现比特币资产跨链的模块。
 
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
+对于Bitcoin链而言，ChainX采用
 
-> There should be no margin above this first sentence.
+* 比特币轻节点验证（SPV）保证比特币的充值及提现确认过程安全性
+* 比特币多签锁定持有比特币资产及由多签私钥持有者控制比特币提现
+
+总结而言，ChainX对于Bitcoin链采用“单向轻节点验证，多签控制原链资产”的模型。
+
+## 术语
+
+> 比特币轻节点验证：采用比特币轻节点验证逻辑，才有比特币块头的情况下通过默克尔证明验证交易真实存在。
 >
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
+> 比特币多签：在比特币链上采用多签脚本的模式，实现比特币上的多重签名技术。
 >
-> There should be no margin below this final sentence.
+> 比特币信托：在ChainX链上注册并持有比特币多签私钥的角色，由信托候选者经过信托换届后可成为比特币信托。
+>
+> 比特币信托候选者：首先必须是ChainX验证者，然后将一组冷热公钥注册到ChainX链上后即可成为比特币信托候选者。
+>
+> 比特币信托换届：从上一届信托指定下一个信托，并在ChainX链上信托多签投票后通过决定下一届信托并产生信托多签地址的过程。
+>
+> 比特币多签地址：在信托换届时由信托们注册的冷热公钥根据比特币多签脚本生成的冷热地址。
+>
+> 信托多签：当前届的信托在ChainX链上有一个多签地址，信托通过该多签地址可以进行一些决议，如信托缓解，设置比特币提现手续费等
+>
+> 比特币Relay：一个链外程序，将比特币区块头及涉及与ChainX相关的比特币的交易提交到ChainX链上。
 
-## First Header 2
+## 比特币轻节点验证
 
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
+ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑模块，该逻辑模块从某个比特币块高开始（genesis时决定），接受后续高度的比特币区块，并拥有切换“最重工作量证明链”的功能。因此若Bitcoin链上产生的最新区块被比特币Relay正常提交到ChainX上后，比特币转接桥就是具备了一份Bitcoin区块头信息的拷贝，拥有比特币的可验证的元数据。
 
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
+比特币转接桥中的轻节点验证逻辑将会验证比特币块头：
 
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
+* 父hash存在性
+* 工作量证明
+* 时间范围
 
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
+等SPV应该具备的验证逻辑，同时具备与Bitcoin链相同的最重工作量证明下的确认逻辑，假设确认数是m，在接受了第n个块头后，会将第n-m+1个区块标记为确认，参见：
 
+![bitcoin confirm](https://user-images.githubusercontent.com/5023721/56464998-bd10ae80-6427-11e9-877a-e01727c24a81.png)
 
-## Second Header 2
+在比特币转接桥中，只接受外部提交的比特币区块头数据，而验证数据是否合法与轻节点业务逻辑均在ChainX的Runtime中独立运行决策，不受外部影响。
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+因此在ChainX中的比特币轻节点的验证与确认区块逻辑是
 
-### Header 3
+![](../../../../assets/imgs/ChainX_Bitcoin_bridge.jpg)
 
-```
-This is a code block following a header.
-```
+在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan. 
+## 多签管理及信托
 
-#### Header 4
+**在ChainX链中，持有多签私钥的角色称为“信托(trustee)”。**信托主要负责管理资产安全及处理比特币提现申请。
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+信托在ChainX链上需要处理的主要流程为处理提现，执行流程如下：
 
-##### Header 5
+1. 信托周期性根据ChainX链上的提现申请组建比特币提现交易并发送到ChainX链的比特币转接桥；
+2. 比特币转接桥根据信托的提现请求锁定对应提现申请；
+3. 信托根据ChainX链上的比特币交易原文进行比特币多签签名；
+4. 当最后一个多签签名完成后，比特币提现交易会被Relay提交到比特币网络中；
+5. 待比特币网络打包后，Relay发现信托提交的比特币提现交易，将提现交易发送到ChainX链的比特币转接桥；
+6. 比特币转接桥通过轻节点方案验证提现交易有效性，销毁在ChainX链上对应的提现申请及X-BTC代币。
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+另一方面信托需要根据已经充值到ChainX的热地址的余额，周期性移动热冷地址中的比特币以保证比特币锁定在多签地址中的安全性。移动热冷地址的比特币交易可以被Relay提交到比特币转接桥中，但是不会有特别处理。
 
-###### Header 6
+关于多签及信托的更多内容请参见 [信托](Trustee)
 
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
+## 比特币转接桥业务逻辑
 
-----------------
+由以上介绍可知，比特币转接桥采用了单向Relay加信托多签的模式维护比特币转接桥的比特币跨链过程。因此总体的比特币转接桥业务逻辑如下图所示：
 
-There's a horizontal rule above and below this.
+![](../../../../assets/imgs/ChainX_Bitcoin.jpg)
 
-----------------
+由上图可以看到：
 
-Here is an unordered list:
+1. 前置条件：
 
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
+   ChainX链上首先需要有信托生成对应的热冷信托多签地址。
 
-And an ordered list:
+2. 比特币区块头：
 
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
+   1. 比特币区块头由relay提交（也可以通过Substrate offchain worker 提交）
+   2. 比特币转接桥验证比特币区块头并组建比特币区块的最重工作量链。
+   3. 转接桥会根据最新的比特币区块头去确认在之前的某个区块为确认区块。
 
-And an unordered task list:
+3. 充值过程：
 
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
+   1. 链上首先具备区块；
+   2. 用户转账到信托的热地址，并在**交易中的OP_RETURN中携带用户的ChainX地址及其他信息**，携带了信息比特币转接桥才可识别出这笔充值转账交易是与哪个ChainX用户相关；
+   3. Relay发现这笔交易，并将这笔交易提交到转接桥中；（1.0中发现交易就可提交，直到确认才会执行，2.0中只能提交确认过的交易）
+   4. 当这笔交易是确认过的，执行这笔交易。当这笔交易是充值交易时，从OP_RETURN中解析出ChainX地址，发放对应的X-BTC金额至该ChainX账户；
+   5. 至此，比特币充值流程执行完毕。
 
-And a "mixed" task list:
+4. 提现过程：
 
-- [ ] Pack bags
-- ?
-- [ ] Travel!
+   1. 用户申请提现X-BTC；
+   2. ChainX转接桥/网关模块中的记录模块会锁定对应的X-BTC并记录用户申请信息，该信息有唯一ID与其关联；
+   3. 信托周期性获取当前申请中的提现，并根据提现信息组件比特币提现交易原文；
+   4. 提现交易原文发送到ChainX比特币转接桥中后会锁定对应提现记录，之后其他的信托基于这个比特币原文进行比特币多签签名；
+   5. 签名完成后比特币交易会提交到比特币网络中；
+   6. 打包后relay会提交该提现交易至转接桥中，确认后会释放对应提现记录及销毁锁定的X-BTC；
+   7. 至此，比特币提现流程执行完毕。
 
-And a nested list:
+## 其他
 
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
+1. 用户的比特币充值交易没有携带OP_RETURN，或OP_RETURN中解析不出有效的用户ChainX信息。
 
-Definition lists can be used with Markdown syntax. Definition headers are bold.
+   对于这类问题，ChainX的比特币转接桥制定一种协议：
 
-Name
-: Godzilla
+   > 比特币转接桥认为一笔对于ChainX的比特币充值交易，会与这笔比特币交易的**第一个input中含有的地址**相关，这个地址的持有人一定具备这笔充值交易的控制权。
 
-Born
-: 1952
+   因此若交易中无法获取有效的ChainX用户信息，则会在ChainX的比特币转接桥中记录该交易的**第一个input的地址与这笔充值交易的一个关联关系**，并称呼这种充值交易为“未认领充值交易”。
 
-Birthplace
-: Japan
+   当后续若出现使用这个相同地址作为第一个input地址的另一笔充值交易，且这笔充值交易携带有效的OP_RETURN信息能获取到对应的ChainX账户地址时，将会释放与这个地址相关的未认领充值交易至这个ChainX账户地址中。
 
-Color
-: Green
+   例如：
 
+   > 假设有一笔交易tx1 为：
+   >
+   > input1(**address1**) |---------|
+   >
+   > input2(address2)  |---------| output1 (信托地址) **value 100000**
 
-----------------
+   则这笔交易执行后将会在链上记录为：
 
-Tables should have bold headings and alternating shaded rows.
+   ```rust
+   BtcAddress => BtcDepositCache(tx_hash, 100000)
+   ```
 
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
+   当将来比特币转接桥收到了另一笔充值交易为：
 
-If a table is too wide, it should scroll horizontally.
+   > input1(**address1**) |--------|
+   >
+   > ​								|--------| output1(信托地址) value 99999
+   >
+   > ​								|--------| output(OP_RETURN) => **ChainX address: 5Xxxxxxxxx**
 
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
+   此时将会给ChainX地址5Xxxxxxxxx 发放 `100000 + 99999 = 199999` 的X-BTC，并移除与这个地址相关的未认领充值交易。

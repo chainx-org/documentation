@@ -14,7 +14,7 @@ This is a placeholder page. Replace it with your own content.
 npm install @chainx-v2/api
 
 ## 快速开始
-```js
+```javascript
 const { ChainX } = require('@chainx-v2/api');
 
 async function main () {
@@ -42,7 +42,7 @@ async function main () {
 ## chainx.js
 
 ## 账户模块
-```js
+```javascript
 const { Account } = require('@chainx-v2/account');
 
 const account1 = Account.generate();
@@ -80,7 +80,7 @@ console.log('address:', account3.address()); // 地址
 ```
 ## RPC
 
-```js
+```javascript
   //get assets
   const assets = await api.rpc.xassets.getAssets();
   console.log("balance:" + assets);
@@ -88,7 +88,7 @@ console.log('address:', account3.address()); // 地址
 
 ## 交易接口
 
-```js
+```javascript
 const ChainX = require('@chinx-v2/api');
 
 (async () => {
