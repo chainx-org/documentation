@@ -11,6 +11,9 @@ theme = ["docsy"]
 enableGitInfo = true
 enableEmoji = true
 
+# Refer to https://github.com/gohugoio/hugo/issues/4562#issuecomment-380593864
+canonifyurls = "true"
+
 # Language settings
 contentDir = "content/en"
 defaultContentLanguage = "en"
