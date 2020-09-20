@@ -56,13 +56,13 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 因此在ChainX中的比特币轻节点的验证与确认区块逻辑是
 
-![](../../../../assets/imgs/ChainX_Bitcoin_bridge.jpg)
+![ChainX_Bitcoin_bridge](https://user-images.githubusercontent.com/5023721/93670592-078bd400-facf-11ea-80a1-aa1be583baa9.jpg)
 
 在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。
 
 ## 多签管理及信托
 
-**在ChainX链中，持有多签私钥的角色称为“信托(trustee)”。**信托主要负责管理资产安全及处理比特币提现申请。
+**在ChainX链中，持有多签私钥的角色称为“信托(trustee)”**。信托主要负责管理资产安全及处理比特币提现申请。
 
 信托在ChainX链上需要处理的主要流程为处理提现，执行流程如下：
 
@@ -75,13 +75,13 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 另一方面信托需要根据已经充值到ChainX的热地址的余额，周期性移动热冷地址中的比特币以保证比特币锁定在多签地址中的安全性。移动热冷地址的比特币交易可以被Relay提交到比特币转接桥中，但是不会有特别处理。
 
-关于多签及信托的更多内容请参见 [信托](Trustee)
+关于多签及信托的更多内容请参见 [信托](../Trustee)
 
 ## 比特币转接桥业务逻辑
 
 由以上介绍可知，比特币转接桥采用了单向Relay加信托多签的模式维护比特币转接桥的比特币跨链过程。因此总体的比特币转接桥业务逻辑如下图所示：
 
-![](../../../../assets/imgs/ChainX_Bitcoin.jpg)
+![ChainX_Bitcoin](https://user-images.githubusercontent.com/5023721/93670586-fb077b80-face-11ea-9ef7-952761cc6f61.jpg)
 
 由上图可以看到：
 
@@ -127,24 +127,25 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
    例如：
 
-   > 假设有一笔交易tx1 为：
-   >
-   > input1(**address1**) |---------|
-   >
-   > input2(address2)  |---------| output1 (信托地址) **value 100000**
-
+   假设有一笔交易tx1 为：
+   
+   ```
+   input1(address1) |---------|
+   input2(address2) |---------| output1 (信托地址) value 100000
+   ```
+   
    则这笔交易执行后将会在链上记录为：
-
+   
    ```rust
    BtcAddress => BtcDepositCache(tx_hash, 100000)
    ```
-
+   
    当将来比特币转接桥收到了另一笔充值交易为：
-
-   > input1(**address1**) |--------|
-   >
-   > ​								|--------| output1(信托地址) value 99999
-   >
-   > ​								|--------| output(OP_RETURN) => **ChainX address: 5Xxxxxxxxx**
-
+   
+   ```
+   input1(address1) |--------|
+   				 |--------| output1(信托地址) value 99999
+   				 |--------| output(OP_RETURN) => ChainX address: 5Xxxxxxxxx
+   ```
+   
    此时将会给ChainX地址5Xxxxxxxxx 发放 `100000 + 99999 = 199999` 的X-BTC，并移除与这个地址相关的未认领充值交易。
