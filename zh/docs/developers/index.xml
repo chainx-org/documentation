@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – 开发者</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/</link><description>Recent content in 开发者 on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://liuchengxu.github.io/documentation/zh/docs/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: RPC</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/rpc/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – 开发者</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/</link><description>Recent content in 开发者 on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://chainx-org.github.io/documentation/zh/docs/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: RPC</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/rpc/</guid><description>
 &lt;h2 id="assets">Assets&lt;/h2>
 &lt;h2 id="staking">Staking&lt;/h2>
 &lt;h3 id="xstaking_getvalidators">&lt;code>xstaking_getValidators&lt;/code>&lt;/h3>
@@ -99,7 +99,7 @@
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: JS-SDK</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -171,7 +171,7 @@ console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;balanc
 &lt;span style="color:#888">// 签名并发送交易，0x0000000000000000000000000000000000000000000000000000000000000000 是用于签名的私钥
 &lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> hash = await transfer.signAndSend(alice);
 })();
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: 节点运维</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/devops/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: 节点运维</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -434,7 +434,7 @@ This is a warning with a title.
 &lt;h3 id="external-links">External Links&lt;/h3>
 &lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
 &lt;pre>&lt;code>This is the final element on the page and there should be no margin below this.
-&lt;/code>&lt;/pre></description></item><item><title>Docs: 交易所对接</title><link>https://liuchengxu.github.io/documentation/zh/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://liuchengxu.github.io/documentation/zh/docs/developers/exchanges/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: 交易所对接</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/exchanges/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div></description></item></channel></rss>
