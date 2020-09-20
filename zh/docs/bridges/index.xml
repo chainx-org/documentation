@@ -136,7 +136,6 @@
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/5023721/56464998-bd10ae80-6427-11e9-877a-e01727c24a81.png" alt="bitcoin confirm">&lt;/p>
 &lt;p>在比特币转接桥中，只接受外部提交的比特币区块头数据，而验证数据是否合法与轻节点业务逻辑均在ChainX的Runtime中独立运行决策，不受外部影响。&lt;/p>
 &lt;p>因此在ChainX中的比特币轻节点的验证与确认区块逻辑是&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/5023721/93670592-078bd400-facf-11ea-80a1-aa1be583baa9.jpg" alt="ChainX_Bitcoin_bridge">&lt;/p>
 &lt;p>&lt;img src="https://chainx-org.github.io/documentation/images/ChainX_Bitcoin_bridge.jpg" alt="ChainX_Bitcoin_bridge">&lt;/p>
 &lt;p>在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。&lt;/p>
 &lt;h2 id="多签管理及信托">多签管理及信托&lt;/h2>
@@ -154,7 +153,7 @@
 &lt;p>关于多签及信托的更多内容请参见 &lt;a href="../Trustee">信托&lt;/a>&lt;/p>
 &lt;h2 id="比特币转接桥业务逻辑">比特币转接桥业务逻辑&lt;/h2>
 &lt;p>由以上介绍可知，比特币转接桥采用了单向Relay加信托多签的模式维护比特币转接桥的比特币跨链过程。因此总体的比特币转接桥业务逻辑如下图所示：&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/5023721/93670586-fb077b80-face-11ea-9ef7-952761cc6f61.jpg" alt="ChainX_Bitcoin">&lt;/p>
+&lt;p>&lt;img src="https://chainx-org.github.io/documentation/images/ChainX_Bitcoin.jpg" alt="ChainX_Bitcoin">&lt;/p>
 &lt;p>由上图可以看到：&lt;/p>
 &lt;ol>
 &lt;li>
