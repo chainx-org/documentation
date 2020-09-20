@@ -58,6 +58,8 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 ![ChainX_Bitcoin_bridge](https://user-images.githubusercontent.com/5023721/93670592-078bd400-facf-11ea-80a1-aa1be583baa9.jpg)
 
+![ChainX_Bitcoin_bridge](/images/ChainX_Bitcoin_bridge.jpg)
+
 在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。
 
 ## 多签管理及信托
@@ -128,24 +130,24 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
    例如：
 
    假设有一笔交易tx1 为：
-   
+
    ```
    input1(address1) |---------|
    input2(address2) |---------| output1 (信托地址) value 100000
    ```
-   
+
    则这笔交易执行后将会在链上记录为：
-   
+
    ```rust
    BtcAddress => BtcDepositCache(tx_hash, 100000)
    ```
-   
+
    当将来比特币转接桥收到了另一笔充值交易为：
-   
+
    ```
    input1(address1) |--------|
    				 |--------| output1(信托地址) value 99999
    				 |--------| output(OP_RETURN) => ChainX address: 5Xxxxxxxxx
    ```
-   
+
    此时将会给ChainX地址5Xxxxxxxxx 发放 `100000 + 99999 = 199999` 的X-BTC，并移除与这个地址相关的未认领充值交易。
