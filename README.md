@@ -1,5 +1,7 @@
 # ChainX Documentation
 
+[![Build](https://github.com/chainx-org/documentation/workflows/build/badge.svg)](https://github.com/chainx-org/documentation/actions?workflow=build)
+
 ## Running the website locally
 
 ### Requirement
