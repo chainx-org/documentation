@@ -6,15 +6,184 @@
 &lt;h3 id="assets">Assets&lt;/h3>
 &lt;h3 id="staking">Staking&lt;/h3>
 &lt;h3 id="dex">DEX&lt;/h3></description></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/js-sdk/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
-&lt;/div>
-&lt;h2 id="安装">安装&lt;/h2>
-&lt;h2 id="快速开始">快速开始&lt;/h2>
-&lt;h2 id="chainxjs">chainx.js&lt;/h2>
-&lt;h2 id="账户模块">账户模块&lt;/h2>
-&lt;h2 id="交易接口">交易接口&lt;/h2>
-&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: Devops</title><link>https://chainx-org.github.io/documentation/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/devops/</guid><description>
+&lt;!-- TOC -->
+&lt;ul>
+&lt;li>&lt;a href="#getting-started">Getting Started&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#installation">Installation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#basics">Basics&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#create-an-instance">Create an Instance&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#simple-connect">Simple Connect&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#account-module">Account Module&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#account-balances">Balances&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;!-- /TOC -->
+&lt;h1 id="getting-started">Getting Started&lt;/h1>
+&lt;p>These sections would provide you the information needed to install the &lt;code>@chainx-v2/api&lt;/code> package, understand the structures, and start using it. It is not a line-by-line documentation of all existing function calls.&lt;/p>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>Install the API via&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">yarn add @polkadot/api @chainx-v2/api
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="basics">Basics&lt;/h2>
+&lt;p>For general &lt;code>polkadot-js&lt;/code> interactions with the blockchain, e.g. state queries, PRC calls, keyring etc., please refer to the &lt;a href="https://polkadot.js.org/api/start/install.html">&lt;code>polkadot-js/api documentation&lt;/code>&lt;/a> for more details. The &lt;code>acala-network/api&lt;/code> provides types and other interactions specific to the Acala Network.&lt;/p>
+&lt;h3 id="create-an-instance">Create an Instance&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ApiPromise } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/api&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { WsProvider } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/rpc-provider&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { options } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@chainx-v2/api&amp;#34;&lt;/span>);
+async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main() {
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> wsProvider = &lt;span style="color:#080;font-weight:bold">new&lt;/span> WsProvider(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;wss://staging-1.chainx.org/ws&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = await ApiPromise.create(options({ provider: wsProvider }));
+await api.isReady;
+&lt;span style="color:#888">// use api
+&lt;/span>&lt;span style="color:#888">&lt;/span>}
+main();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="simple-connect">Simple Connect&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ApiPromise } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/api&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { WsProvider } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/rpc-provider&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { options } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@chainx-v2/api&amp;#34;&lt;/span>);
+async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main() {
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> wsProvider = &lt;span style="color:#080;font-weight:bold">new&lt;/span> WsProvider(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;wss://staging-1.chainx.org/ws&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = await ApiPromise.create(options({ provider: wsProvider }));
+await api.isReady;
+&lt;span style="color:#888">// use api
+&lt;/span>&lt;span style="color:#888">&lt;/span>
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> [chain, nodeName, nodeVersion] = await &lt;span style="color:#038">Promise&lt;/span>.all([
+api.rpc.system.chain(),
+api.rpc.system.name(),
+api.rpc.sytem.version(),
+]);
+console.log(
+&lt;span style="color:#d20;background-color:#fff0f0">`You are connected to chain &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>chain&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> using &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>nodeName&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> v&lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>nodeVersion&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> `&lt;/span>
+);
+}
+main();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="account-balances">Account Balances&lt;/h3>
+&lt;p>ChainX NetWork supports multi-currencies. Network native token (PCX) can be queried via system balance.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ApiPromise } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/api&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { WsProvider } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/rpc-provider&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { options } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@chainx-v2/api&amp;#34;&lt;/span>);
+async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main() {
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> wsProvider = &lt;span style="color:#080;font-weight:bold">new&lt;/span> WsProvider(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;wss://staging-1.chainx.org/ws&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = await ApiPromise.create(options({ provider: wsProvider }));
+await api.isReady;
+&lt;span style="color:#888">// use api
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> Alice = &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>;
+&lt;span style="color:#888">// Retrieve the initial balance. Since the call has no callback, it is simply a promise
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#888">// that resolves to the current on-chain value
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">let&lt;/span> {
+data: { free: previousFree },
+nonce: previousNonce,
+} = await api.query.system.account(Alice);
+console.log(
+&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>Alice&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> has a balance of &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>previousFree&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">, nonce &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>previousNonce&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>
+);
+console.log(
+&lt;span style="color:#d20;background-color:#fff0f0">`You may leave this example running and start example 06 or transfer any value to &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>Alice&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>
+);
+&lt;span style="color:#888">// Here we subscribe to any balance changes and update the on-screen value
+&lt;/span>&lt;span style="color:#888">&lt;/span> api.query.system.account(
+Alice,
+({ data: { free: currentFree }, nonce: currentNonce }) =&amp;gt; {
+&lt;span style="color:#888">// Calculate the delta
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> change = currentFree.sub(previousFree);
+&lt;span style="color:#888">// Only display positive value changes (Since we are pulling `previous` above already,
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#888">// the initial balance change will also be zero)
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">if&lt;/span> (!change.isZero()) {
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">`New balance change of &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>change&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">, nonce &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>currentNonce&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>);
+previousFree = currentFree;
+previousNonce = currentNonce;
+}
+}
+);
+}
+main();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="subscribe-block-updates">Subscribe Block Updates&lt;/h3>
+&lt;p>This example shows how to subscribe to and later unsubscribe from listening to block updates.
+In this example we&amp;rsquo;re calling the built-in unsubscribe() function after a timeOut of 20s to cleanup and unsubscribe from listening to updates.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ApiPromise } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/api&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { WsProvider } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/rpc-provider&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { options } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@chainx-v2/api&amp;#34;&lt;/span>);
+async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main() {
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> wsProvider = &lt;span style="color:#080;font-weight:bold">new&lt;/span> WsProvider(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;wss://staging-1.chainx.org/ws&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = await ApiPromise.create(options({ provider: wsProvider }));
+await api.isReady;
+&lt;span style="color:#888">// use api
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#888">// Subscribe to chain updates and log the current block number on update.
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> unsubscribe = await api.rpc.chain.subscribeNewHeads((header) =&amp;gt; {
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">`Chain is at block: #&lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>header.number&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>);
+});
+&lt;span style="color:#888">// In this example we&amp;#39;re calling the unsubscribe() function that is being
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#888">// returned by the api call function after 20s.
+&lt;/span>&lt;span style="color:#888">&lt;/span> setTimeout(() =&amp;gt; {
+unsubscribe();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Unsubscribed&amp;#34;&lt;/span>);
+}, &lt;span style="color:#00d;font-weight:bold">20000&lt;/span>);
+}
+main();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="read-storage">Read Storage&lt;/h3>
+&lt;p>In addition to querying the latest storage, you can make storage queries at a specific blockhash.
+Be aware that the node applies a pruning strategy and typically only keeps the last 256 blocks, unless run in archive mode.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { ApiPromise } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/api&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { WsProvider } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@polkadot/rpc-provider&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> { options } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;@chainx-v2/api&amp;#34;&lt;/span>);
+&lt;span style="color:#888">// Our address for Alice on the dev chain
+&lt;/span>&lt;span style="color:#888">&lt;/span>&lt;span style="color:#080;font-weight:bold">const&lt;/span> ALICE = &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>;
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> BOB = &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty&amp;#34;&lt;/span>;
+async &lt;span style="color:#080;font-weight:bold">function&lt;/span> main() {
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> wsProvider = &lt;span style="color:#080;font-weight:bold">new&lt;/span> WsProvider(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;wss://staging-1.chainx.org/ws&amp;#34;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> api = await ApiPromise.create(options({ provider: wsProvider }));
+await api.isReady;
+&lt;span style="color:#888">// Retrieve the last block header, extracting the hash and parentHash
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> { hash, parentHash } = await api.rpc.chain.getHeader();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">`last header hash &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>hash.toHex()&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>);
+&lt;span style="color:#888">// Retrieve the balance at the preceding block for Alice. For at queries
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#888">// the format is always `.at(&amp;lt;blockhash&amp;gt;, ...params)`
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> balance = await api.query.system.account.at(parentHash, ALICE);
+console.log(
+&lt;span style="color:#d20;background-color:#fff0f0">`Alice&amp;#39;s balance at &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>parentHash.toHex()&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> was &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>balance.data.free&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>
+);
+&lt;span style="color:#888">// Now perform a multi query, returning multiple balances at once
+&lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> balances = await api.query.system.account.multi([ALICE, BOB]);
+console.log(
+&lt;span style="color:#d20;background-color:#fff0f0">`Current balances for Alice and Bob are &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>balances[&lt;span style="color:#00d;font-weight:bold">0&lt;/span>].data.free&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0"> and &lt;/span>&lt;span style="color:#33b;background-color:#fff0f0">${&lt;/span>balances[&lt;span style="color:#00d;font-weight:bold">1&lt;/span>].data.free&lt;span style="color:#33b;background-color:#fff0f0">}&lt;/span>&lt;span style="color:#d20;background-color:#fff0f0">`&lt;/span>
+);
+}
+main();
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="account-module">Account Module&lt;/h3>
+&lt;p>We can generaet an account Object by &lt;code>js chainx.account.from(seed | privateKey | mnemonic)&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> alice = chainx.account.from(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x....&amp;#34;&lt;/span>);
+alice.address(); &lt;span style="color:#888">// bs58 address
+&lt;/span>&lt;span style="color:#888">&lt;/span>alice.publicKey(); &lt;span style="color:#888">// publicKey 0x...
+&lt;/span>&lt;span style="color:#888">&lt;/span>alice.privateKey(); &lt;span style="color:#888">// privateKey 0x...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="account-operate">Account Operate&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { Account } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;chainx.js&amp;#39;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> account1 = Account.generate();
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey1 = account1.publicKey();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey1: &amp;#39;&lt;/span>, publicKey1);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> privateKey1 = account1.privateKey();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;privateKey1: &amp;#39;&lt;/span>, privateKey1);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> address1 = account1.address();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address1: &amp;#39;&lt;/span>, address1);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> mnemonic = Account.newMnemonic();
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mnemonic: &amp;#39;&lt;/span>, mnemonic);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> account2 = Account.from(mnemonic);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> address2 = Account.encodeAddress(account2.publicKey());
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address2: &amp;#39;&lt;/span>, address2);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey2 = Account.decodeAddress(address2); &lt;span style="color:#a61717;background-color:#e3d2d2">/&lt;/span>
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey2: &amp;#39;&lt;/span>, publicKey2);
+Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;testnet&amp;#39;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> address3 = Account.encodeAddress(publicKey2);
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address3:&amp;#39;&lt;/span>, address3);
+Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mainnet&amp;#39;&lt;/span>);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> address4 = Account.encodeAddress(publicKey2);
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address4:&amp;#39;&lt;/span>, address4);
+&lt;span style="color:#080;font-weight:bold">const&lt;/span> account3 = Account.from(privateKey1);
+console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address:&amp;#39;&lt;/span>, account3.address());
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Devops</title><link>https://chainx-org.github.io/documentation/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
