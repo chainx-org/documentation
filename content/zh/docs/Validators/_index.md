@@ -23,8 +23,8 @@ penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
 - `session_reward`: 节点的 session 奖励
 - `reward_pot_balance`: 节点奖池金额
 - `F`: 惩罚系数，由 babe 与 im-online 模块计算得出:
-  - babe: [frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265)
-  - im-online: [frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771)
+  - babe: 节点双签，[frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265)
+  - im-online: 节点离线，[frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771)
 - `minimum_penalty`: 最小惩罚值, 即每次惩罚至少罚 `minimum_penalty`。
 
 ChainX 节点作恶并不惩罚本金，而是惩罚节点奖池。当节点奖池被罚完后，节点会被强制退选。
