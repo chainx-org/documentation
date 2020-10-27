@@ -19,6 +19,7 @@ ChainX 在每个 session 会发放奖励，同时惩罚可能作恶的节点，�
 penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
 ```
 
+- `penalty`: 应罚金额
 - `session_reward`: 节点的 session 奖励
 - `reward_pot_balance`: 节点奖池金额
 - `F`: 惩罚系数，由 babe 与 im-online 模块计算得出:
