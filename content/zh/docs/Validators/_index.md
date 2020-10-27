@@ -28,3 +28,9 @@ penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
 - `minimum_penalty`: 最小惩罚值, 即每次惩罚至少罚 `minimum_penalty`。
 
 ChainX 节点作恶并不惩罚本金，而是惩罚节点奖池。当节点奖池被罚完后，节点会被强制退选。
+
+```Rust
+if penalty > reward_pot_balance {
+    // force the validator(offender) to be chilled
+}
+```
