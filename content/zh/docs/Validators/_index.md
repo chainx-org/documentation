@@ -20,14 +20,15 @@ ChainX 验证节点指南
 ### 安装`chainx`程序
 
   我们假设您已经安装好:
-  + `rust:nightly-2020-09-30`
-  + `rust target wsam32-unknown-unknown`
-  + `ntp client`
+  - rust:nightly-2020-09-30
+  - rust target wsam32-unknown-unknown
+  - ntp client
 
   接下来， 您需要按照以下步骤完成编译工作：
 ``` bash
 git clone https://github.com/chainx-org/ChainX
 cd ChainX
+git checkout develop-2.0 && git pull
 make
 ```
 之后，`chainx`程序将在`target/release/`目录下
