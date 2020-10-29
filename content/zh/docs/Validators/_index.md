@@ -56,6 +56,21 @@ TODO: 从 GitHub release 页面下载提供编译好的二进制。
 $ ./chainx --chain=testnet --pruning=archive
 ```
 
+同步完成后，以验证人模式重启节点:
+
+```bash
+$ ./chainx --chain=testnet --validator
+```
+
+或直接以验证人模式启动进行同步：
+
+```bash
+# 使用 --validator 时，同时将默认启用存档模式即 --pruning=archive
+$ ./chainx --chain=testnet --validator
+```
+
+不过注意，一定等待同步完成并且设置好 Session Keys 后再让节点参选。
+
 TODO: 介绍 config.json 以及常用参数， 比如 `name`
 
 {{%alert %}}
@@ -64,7 +79,7 @@ TODO: 介绍 config.json 以及常用参数， 比如 `name`
 
 ### 注册账户
 
-您可以在[新钱包(https://dapp-v2.chainx.org)](https://dapp-v2.chainx.org)上注册账户。
+您可以在[新钱包(https://dapp-v2.chainx.org)](https://dapp-v2.chainx.org)上注册账户, 并向该账户转入一点 PCX 作为交易手续费以及后续抵押等费用。
 
 ![add-account](/images/add-account.png)
 
@@ -100,15 +115,15 @@ TODO: 注意端口，如果启动节点时 `rpc-port` 指定了其他端口, 这
 }
 ```
 
-其中，`result`字段即为获取的 Session Keys。设置`sessionKey`的操作如下：
-
-之后在[`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics)通过`setKeys`设置.
+其中，`result`字段即为获取的 Session Keys, 然后在[`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics)通过`setKeys`进行设置：
 
 ![setKeys](/images/setkeys.png)
 
 {{%alert%}}
 目前，`proof` 填入`0x00` 即可。
 {{%/alert%}}
+
+Session Keys 设置完成后，
 
 ## 备份节点
 
@@ -126,8 +141,8 @@ penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
 - `session_reward`: 节点的 session 奖励
 - `reward_pot_balance`: 节点奖池金额
 - `F`: 惩罚系数，由 babe 与 im-online 模块计算得出:
-  - babe: 节点双签，[frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265)
-  - im-online: 节点离线，[frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771)
+  - babe: [节点双签惩罚详情](https://wiki.polkadot.network/docs/en/learn-staking/#babe-equivocation), [frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265).
+  - im-online: [节点离线惩罚详情](https://wiki.polkadot.network/docs/en/learn-staking/#unresponsiveness)，[frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771).
 - `minimum_penalty`: 最小惩罚值, 即每次惩罚至少罚 `minimum_penalty`。
 
 ChainX 节点作恶并不惩罚本金，而是惩罚节点奖池。当节点奖池被罚完后，节点会被强制退选。
