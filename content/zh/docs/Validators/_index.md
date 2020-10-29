@@ -13,35 +13,54 @@ ChainX 验证节点指南
 
 ## 准备事项
 
-### 一台VPS
+### 一台 VPS
 
-  最简单的方式是使用一台云主机， 您可以自由选择任一主机提供商。 接下来的教程将以`Arch Linux`为例。
+最简单的方式是使用一台云主机， 您可以自由选择任一主机提供商。
+
+#### 测试网硬件配置
+
+- CPU 2 核，内存 2G, 带宽 1M。
 
 ### 安装`chainx`程序
 
-  我们假设您已经安装好:
-  - rust:nightly-2020-09-30
-  - rust target wsam32-unknown-unknown
-  - ntp client
+#### 从源码编译
 
-  接下来， 您需要按照以下步骤完成编译工作：
-``` bash
-git clone https://github.com/chainx-org/ChainX
-cd ChainX
-git checkout develop-2.0 && git pull
-make
-```
-之后，`chainx`程序将在`target/release/`目录下
+我们假设您已经安装好 Rust nightly 与 `wasm32-unknown-unknown`:
 
-### 启动验证节点
-
-  如果之前有以非archive模式启动节点， 您需要移除相关数据库。之后运行：
 ```bash
-./chainx --chain=testnet --name=$YOUR_NODE_NAME --validator
+$ rustup install nightly-2020-09-30
+$ rustup override set nightly-2020-09-30
+$ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 ```
-{{%alert %}}如果成功启动， 您将可以在[Telemetry(stat.chainx.org)](stat.chainx.org)上看到您的节点。{{%/alert%}}
 
-## 链节点
+接下来， 您需要按照以下步骤完成编译工作：
+
+```bash
+$ git clone https://github.com/chainx-org/ChainX
+$ cd ChainX
+$ git checkout develop-2.0
+$ cargo build --release
+```
+
+编译完成后，`chainx`程序将在`target/release/`目录下。
+
+#### 直接下载编译好的二进制
+
+TODO: 从 GitHub release 页面下载提供编译好的二进制。
+
+### 同步至链的最新状态
+
+通过下面的命令开始同步区块链:
+
+```bash
+$ ./chainx --chain=testnet --pruning=archive
+```
+
+TODO: 介绍 config.json 以及常用参数， 比如 `name`
+
+{{%alert %}}
+节点成功启动后， 可以在[Telemetry(stat.chainx.org)](stat.chainx.org)上看到您的节点。
+{{%/alert%}}
 
 ### 注册账户
 
@@ -49,40 +68,51 @@ make
 
 ![add-account](/images/add-account.png)
 
-### 注册节点
+## 注册节点
 
 注册成功后，您可以在[`Network>Staking`](https://dapp-v2.chainx.org/#/staking)页面上注册节点。
 
 ![register-node](/images/register-node.png)
 
-{{% alert  %}}每个账号只能注册一次， 另外， 注册之前您需要保证有足够余额支付交易手续费。新注册的节点默认参选， 您无需进行额外的操作。除了注册节点时的初始质押币， 您也可以通过**投票**的方式再次进行质押。选举时间结束后， 总质押量排名前30的节点， 将成为验证人参与共识。{{%/alert%}}
+{{% alert  %}}
+每个账号只能注册一次. 另外，注册之前您需要保证有足够余额支付交易手续费。新注册的节点默认参选，您无需进行额外的操作。除了注册节点时的初始质押币，您也可以通过**投票**的方式再次进行质押。选举时间结束后，总质押量排名前 30 的节点，将成为验证人参与共识。
+{{%/alert%}}
 
 ![rebond](/images/bond.png)
 
-### 设置`sessionKeys`
+## 设置 Session Keys
 
-您可以通过
+您可以在运行节点的机器上执行以下命令来生成 Session Keys:
+
 ```bash
-curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
 ```
-来获取`sessionKey`, 之后在[`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics)通过`setKeys`设置.
 
-获取的结果应形如：
+TODO: 注意端口，如果启动节点时 `rpc-port` 指定了其他端口, 这里是访问对应的端口。
+
+返回结果如下：
 
 ```json
 {
-   "jsonrpc":"2.0",
-   "result":"0x42a7d53603bac173eb9684ac133e35bcd4a49f308387a0e748b6f6a6dbf5635313f065a67a42a78a2c3e261a63523d92d4e03f9e7c9bba7c3d13b13b6983f0724c46b00699362a374f3fe43dd668eae6fcd815d0b84f88998ca5fc1c41e09b2412e2b9d3a322d9229a24cbce31d53358edc77b6fbaca7d038247743f40b6f205",
-   "id":1
+  "jsonrpc": "2.0",
+  "result": "0x42a7d53603bac173eb9684ac133e35bcd4a49f308387a0e748b6f6a6dbf5635313f065a67a42a78a2c3e261a63523d92d4e03f9e7c9bba7c3d13b13b6983f0724c46b00699362a374f3fe43dd668eae6fcd815d0b84f88998ca5fc1c41e09b2412e2b9d3a322d9229a24cbce31d53358edc77b6fbaca7d038247743f40b6f205",
+  "id": 1
 }
 ```
 
-其中，`result`字段为获取的`sessionKey`。设置`sessionKey`的操作如下：
+其中，`result`字段即为获取的 Session Keys。设置`sessionKey`的操作如下：
+
+之后在[`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics)通过`setKeys`设置.
 
 ![setKeys](/images/setkeys.png)
 
-{{%alert%}} 目前， `proof`暂时无效， 您需要填入`0x00`{{%/alert%}}
+{{%alert%}}
+目前，`proof` 填入`0x00` 即可。
+{{%/alert%}}
 
+## 备份节点
+
+TODO
 
 ## 节点惩罚
 
