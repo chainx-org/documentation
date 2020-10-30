@@ -75,7 +75,7 @@ $ ./chainx --chain=testnet --validator
 #### 配置文件
 
 对于验证者节点， 我们建议如下配置：
-```json
+```javascript
 {
   "validator": true, //  验证者节点必须为 true
   "rpc-external": false, // 验证者节点建议关闭对外的rpc端口
