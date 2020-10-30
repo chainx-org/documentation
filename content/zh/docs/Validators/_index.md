@@ -46,7 +46,7 @@ $ cargo build --release
 
 #### 直接下载编译好的二进制
 
-TODO: 从 GitHub release 页面下载提供编译好的二进制。
+从 [GitHub release(https://github.com/chainx-org/ChainX/releases)](https://github.com/chainx-org/ChainX/releases) 页面下载提供编译好的二进制。
 
 ### 同步至链的最新状态
 
@@ -70,8 +70,32 @@ $ ./chainx --chain=testnet --validator
 ```
 
 不过注意，一定等待同步完成并且设置好 Session Keys 后再让节点参选。
+{{%alert%}}如果出现同步异常， 请确保系统时间和网络时间一致， 删除数据库之后再进行同步。 {{%/alert%}}
 
-TODO: 介绍 config.json 以及常用参数， 比如 `name`
+#### 配置文件
+
+对于验证者节点， 我们建议如下配置：
+```json
+{
+  "validator": true, //  验证者节点必须为 true
+  "rpc-external": false, // 验证者节点建议关闭对外的rpc端口
+  "ws-external": false, // 验证者节点建议关闭对外的ws端口
+  "log": "info,runtime=info",
+  "port": 20222,
+  "ws-port": 8087,
+  "rpc-port": 8086,
+  "other-execution": "NativeElseWasm",
+  "syncing-execution": "NativeElseWasm",
+  "block-construction-execution": "NativeElseWasm",
+  "pruning": "archive",  // 目前强烈建议加上该配置，以存档模式启动
+  "db-cache": 1024,  // 设置节点数据库的缓存，单位MB，即这里为1GB
+  "state-cache-size": 2147483648, // 设置节点状态树缓存，单位B，即这里为2GB (2GB = 2 * 1024 * 1024)
+  "no-mdns": true, 
+  "bootnodes": [],
+  "name": "Your-Node-Name",             // 在节点浏览器Telemetry中显示的节点名
+  "base-path": "<数据存放路径>",
+}
+```
 
 {{%alert %}}
 节点成功启动后， 可以在[Telemetry(stat.chainx.org)](stat.chainx.org)上看到您的节点。
@@ -100,17 +124,17 @@ TODO: 介绍 config.json 以及常用参数， 比如 `name`
 您可以在运行节点的机器上执行以下命令来生成 Session Keys:
 
 ```bash
-$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:$YOUR_RPC_PORT
 ```
 
-TODO: 注意端口，如果启动节点时 `rpc-port` 指定了其他端口, 这里是访问对应的端口。
+其中，`YOUR_RPC_PORT`为启动节点时`rpc-port`指定的端口， 未指定的情况下默认端口是9933。
 
 返回结果如下：
 
 ```json
 {
   "jsonrpc": "2.0",
-  "result": "0x42a7d53603bac173eb9684ac133e35bcd4a49f308387a0e748b6f6a6dbf5635313f065a67a42a78a2c3e261a63523d92d4e03f9e7c9bba7c3d13b13b6983f0724c46b00699362a374f3fe43dd668eae6fcd815d0b84f88998ca5fc1c41e09b2412e2b9d3a322d9229a24cbce31d53358edc77b6fbaca7d038247743f40b6f205",
+  "result": "0x42a7d53603bac173eb96e4ac133e35bcd4a49f308387a0e748b6f6a6dbf5635313f065a67a42a78a2c3e261a63523d92d4e03f9e7c9bba7c3d13b13b6983f0724c46b00699362a374f3fe43dd668eae6fcd815d0b84f88998ca5fc1c41e09b2412e2b9d3a322d9229a24cbce31d53358edc77b6fbaca7d038247743f40b6f205",
   "id": 1
 }
 ```
@@ -127,7 +151,11 @@ Session Keys 设置完成后，
 
 ## 备份节点
 
-TODO
+由于当节点部署不当导致出块异常时， 会受到一定的惩罚。 所以可以部署额外的备份节点， 备份节点以`--pruning=archive`模式启动， 这样当主节点出现异常时， 可以用备份节点代替工作， 以免受到惩罚。
+
+## 验证
+
+当选验证人之后，如果在日志中看到`Prepared block for proposing at 6467`, 即说明节点已成功出块。
 
 ## 节点惩罚
 
