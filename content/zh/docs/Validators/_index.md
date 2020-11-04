@@ -19,7 +19,7 @@ ChainX 验证节点指南
 
 #### 测试网硬件配置
 
-- CPU 2 核，内存 2G, 带宽 1M。
+- CPU 2 核，内存 2G, 带宽 1M, 操作系统 Ubuntu 18.04+。
 
 ### 安装`chainx`程序
 
@@ -75,29 +75,29 @@ $ ./chainx --chain=testnet --validator
 #### 配置文件
 
 对于验证者节点， 我们建议如下配置：
-```javascript
+
+```json
 {
-  "validator": true, //  验证者节点必须为 true, 默认为false
-  "rpc-external": false, // 验证者节点建议关闭对外的rpc端口
+  "log4rs": true, // 打开日志分割功能
+  "no-mdns": true,
+  "validator": true, // 验证者节点必须为 true, 默认为false
   "ws-external": false, // 验证者节点建议关闭对外的ws端口
+  "rpc-external": false, // 验证者节点建议关闭对外的rpc端口
   "log": "info,runtime=info",
-  "port": 20222, //指定p2p协议的tcp端口
-  "ws-port": 8087, //指定websocket的RPC服务端口
-  "rpc-port": 8086, //指定http的RPC服务端口
-  "other-execution": "NativeElseWasm",
-  "syncing-execution": "NativeElseWasm",
-  "block-construction-execution": "NativeElseWasm",
-  "pruning": "archive",  // 目前强烈建议加上该配置，以存档模式启动
-  "db-cache": 1024,  // 设置节点数据库的缓存，单位MB，即这里为1GB
+  "port": 20222, // 指定p2p协议的tcp端口
+  "ws-port": 8087, // 指定websocket的RPC服务端口
+  "rpc-port": 8086, // 指定http的RPC服务端口
+  "pruning": "archive", // 强烈建议加上该配置，以存档模式启动
+  "execution": "NativeElseWasm",
+  "db-cache": 2048, // 设置节点数据库的缓存，单位MB，即这里为2GB
   "state-cache-size": 2147483648, // 设置节点状态树缓存，单位B，即这里为2GB (2GB = 2 * 1024 * 1024)
-  "no-mdns": true, 
-  "bootnodes": [], //种子节点， 为空列表时使用内置的种子节点
-  "name": "Your-Node-Name",             // 在节点浏览器Telemetry中显示的节点名
-  "base-path": "<数据存放路径>",  //数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
+  "name": "Your-Node-Name", // 在节点浏览器Telemetry中显示的节点名
+  "base-path": "<数据存放路径>", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
+  "bootnodes": [] // 种子节点， 为空列表时使用内置的种子节点
 }
 ```
 
-{{%alert color="warning"%}}部分rpc服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
+{{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
 
 {{%alert %}}
 节点成功启动后， 可以在[Telemetry(stat.chainx.org)](stat.chainx.org)上看到您的节点。
@@ -129,7 +129,7 @@ $ ./chainx --chain=testnet --validator
 $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:$YOUR_RPC_PORT
 ```
 
-其中，`YOUR_RPC_PORT`为启动节点时`rpc-port`指定的端口， 未指定的情况下默认端口是8086。
+其中，`YOUR_RPC_PORT`为启动节点时`rpc-port`指定的端口， 未指定的情况下默认端口是 8086。
 
 返回结果如下：
 
@@ -149,14 +149,21 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 目前，`proof` 填入`0x00` 即可。
 {{%/alert%}}
 
-
 ## 备份节点
 
 由于当节点部署不当导致出块异常时， 会受到一定的惩罚。 所以可以部署额外的备份节点， 备份节点以`--pruning=archive`模式启动， 这样当主节点出现异常时， 可以用备份节点代替工作， 以免受到惩罚。
 
 ## 验证
 
-当选验证人之后，如果在日志中看到`Prepared block for proposing at 6467`, 即说明节点已成功出块。
+当选验证人之后，如果在日志中看到`Prepared block for proposing at ...`, 即说明节点已成功出块。
+
+```text
+......
+Nov 04 10:12:06.008  INFO 🙌 Starting consensus session on top of parent 0x6dd1e2edbf490ade94e944b09738c258921655708f6c2b5b8a63b5e38d02ac16
+Nov 04 10:12:06.009  INFO 🎁 Prepared block for proposing at 4 [hash: 0x6740b08d96a329c9be13290760d15a537f3bd6635c85261b63e44395ad830b36; parent_hash: 0x6dd1…ac16; extrinsics (2): [0xe497…419a, 0x3af6…b467]]
+Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66f1579117b6aba16d4f57ae7ddf19ad209c8077a4f4f78ed4cb80877754a0f5, previously 0x6740b08d96a329c9be13290760d15a537f3bd6635c85261b63e44395ad830b36.
+......
+```
 
 ## 节点惩罚
 
