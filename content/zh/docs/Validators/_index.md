@@ -38,7 +38,7 @@ $ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 ```bash
 $ git clone https://github.com/chainx-org/ChainX
 $ cd ChainX
-$ git checkout develop-2.0
+$ git checkout v2.0.0-beta.1
 $ cargo build --release
 ```
 
