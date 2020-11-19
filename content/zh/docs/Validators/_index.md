@@ -21,10 +21,14 @@ ChainX 验证节点指南
 
 - CPU 2 核，内存 2G, 带宽 1M, 操作系统 Ubuntu 18.04+。
 
-#### 使用docker镜像  
+#### 使用 docker 镜像
 
-运行以下命令，可以直接启动节点  
-`docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0-pre.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet-pre --validator`
+运行以下命令，可以直接启动节点
+
+```bash
+$ docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0-pre.1 /usr/local/bin/chainx --name deeeemo --chain=mainnet-pre --validator
+```
+
 {{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
 
 ### 安装`chainx`程序
@@ -32,12 +36,12 @@ ChainX 验证节点指南
 #### 从源码编译
 
 ##### 准备工作
+
 `chainx`依赖于`clang`, `gcc`
 
 ##### 开始编译
 
 我们假设您已经安装好 Rust nightly 与 `wasm32-unknown-unknown`:
-
 
 ```bash
 $ rustup install nightly-2020-09-30
@@ -50,7 +54,7 @@ $ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 ```bash
 $ git clone https://github.com/chainx-org/ChainX
 $ cd ChainX
-$ git checkout v2.0.0-pre.0
+$ git checkout v2.0.0-pre.1
 $ cargo build --release
 ```
 
