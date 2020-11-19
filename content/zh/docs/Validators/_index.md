@@ -23,7 +23,7 @@ ChainX 验证节点指南
 
 #### 使用docker镜像  
 
-运行以下命令，可以直接启动节点
+运行以下命令，可以直接启动节点  
 `docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0-pre.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet-pre --validator`
 {{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
 
@@ -90,7 +90,8 @@ $ ./chainx --chain=mainnet-pre --validator
 
 ```json
 {
-  "log4rs": true, // 打开日志分割功能
+  "log-dir": "./log", // 日志目录
+  "enable-console-log": false, // 同时将日志输出到控制台
   "no-mdns": true,
   "validator": true, // 验证者节点必须为 true, 默认为false
   "ws-external": false, // 验证者节点建议关闭对外的ws端口
