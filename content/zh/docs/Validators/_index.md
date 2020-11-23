@@ -7,7 +7,7 @@ description: ChainX validator guide
 ---
 
 {{% pageinfo %}}
-ChainX 验证节点指南
+ChainX 2.0 验证节点指南
 {{% /pageinfo %}}
 
 ## 准备事项
@@ -19,6 +19,10 @@ ChainX 验证节点指南
 #### 测试网硬件配置
 
 - CPU 2 核，内存 2G, 带宽 1M, 操作系统 Ubuntu 18.04+。
+
+#### 主网硬件配置
+
+以阿里云为例，ChainX 主网推荐配置不低于: CPU 4 核, 内存 4 G, 带宽 10M，磁盘使用 SSD 300G+, 操作系统 18.04+.
 
 #### 使用 docker 镜像
 
