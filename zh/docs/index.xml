@@ -704,267 +704,121 @@ This is a warning with a title.
 &lt;pre>&lt;code>This is the final element on the page and there should be no margin below this.
 &lt;/code>&lt;/pre></description></item><item><title>Docs: 节点运维</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
+&lt;p>节点运维文档&lt;/p>
 &lt;/div>
-&lt;p>Text can be &lt;strong>bold&lt;/strong>, &lt;em>italic&lt;/em>, or &lt;del>strikethrough&lt;/del>. &lt;a href="https://gohugo.io">Links&lt;/a> should be blue with no underlines (unless hovered over).&lt;/p>
-&lt;p>There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.&lt;/p>
-&lt;p>90&amp;rsquo;s four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps &lt;strong>kale chips&lt;/strong>.&lt;/p>
-&lt;blockquote>
-&lt;p>There should be no margin above this first sentence.&lt;/p>
-&lt;p>Blockquotes should be a lighter gray with a border along the left side in the secondary color.&lt;/p>
-&lt;p>There should be no margin below this final sentence.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="first-header-2">First Header 2&lt;/h2>
-&lt;p>This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier &lt;strong>craft beer&lt;/strong>. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven&amp;rsquo;t heard of them copper mug, crucifix green juice vape &lt;em>single-origin coffee&lt;/em> brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!&lt;/p>
-&lt;p>Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.&lt;/p>
-&lt;p>On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.&lt;/p>
-&lt;p>Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&amp;amp;B. &lt;strong>I love this life we live in&lt;/strong>.&lt;/p>
-&lt;h2 id="second-header-2">Second Header 2&lt;/h2>
-&lt;blockquote>
-&lt;p>This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="header-3">Header 3&lt;/h3>
-&lt;pre>&lt;code>This is a code block following a header.
-&lt;/code>&lt;/pre>&lt;p>Next level leggings before they sold out, PBR&amp;amp;B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.&lt;/p>
-&lt;h4 id="header-4">Header 4&lt;/h4>
-&lt;ul>
-&lt;li>This is an unordered list following a header.&lt;/li>
-&lt;li>This is an unordered list following a header.&lt;/li>
-&lt;li>This is an unordered list following a header.&lt;/li>
-&lt;/ul>
-&lt;h5 id="header-5">Header 5&lt;/h5>
-&lt;ol>
-&lt;li>This is an ordered list following a header.&lt;/li>
-&lt;li>This is an ordered list following a header.&lt;/li>
-&lt;li>This is an ordered list following a header.&lt;/li>
-&lt;/ol>
-&lt;h6 id="header-6">Header 6&lt;/h6>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>What&lt;/th>
-&lt;th>Follows&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>A table&lt;/td>
-&lt;td>A header&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>A table&lt;/td>
-&lt;td>A header&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>A table&lt;/td>
-&lt;td>A header&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;p>There&amp;rsquo;s a horizontal rule above and below this.&lt;/p>
-&lt;hr>
-&lt;p>Here is an unordered list:&lt;/p>
-&lt;ul>
-&lt;li>Liverpool F.C.&lt;/li>
-&lt;li>Chelsea F.C.&lt;/li>
-&lt;li>Manchester United F.C.&lt;/li>
-&lt;/ul>
-&lt;p>And an ordered list:&lt;/p>
-&lt;ol>
-&lt;li>Michael Brecker&lt;/li>
-&lt;li>Seamus Blake&lt;/li>
-&lt;li>Branford Marsalis&lt;/li>
-&lt;/ol>
-&lt;p>And an unordered task list:&lt;/p>
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Create a Hugo theme&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add task lists to it&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Take a vacation&lt;/li>
-&lt;/ul>
-&lt;p>And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Pack bags&lt;/li>
-&lt;li>?&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Travel!&lt;/li>
-&lt;/ul>
-&lt;p>And a nested list:&lt;/p>
-&lt;ul>
-&lt;li>Jackson 5
-&lt;ul>
-&lt;li>Michael&lt;/li>
-&lt;li>Tito&lt;/li>
-&lt;li>Jackie&lt;/li>
-&lt;li>Marlon&lt;/li>
-&lt;li>Jermaine&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>TMNT
-&lt;ul>
-&lt;li>Leonardo&lt;/li>
-&lt;li>Michelangelo&lt;/li>
-&lt;li>Donatello&lt;/li>
-&lt;li>Raphael&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>Definition lists can be used with Markdown syntax. Definition headers are bold.&lt;/p>
-&lt;dl>
-&lt;dt>Name&lt;/dt>
-&lt;dd>Godzilla&lt;/dd>
-&lt;dt>Born&lt;/dt>
-&lt;dd>1952&lt;/dd>
-&lt;dt>Birthplace&lt;/dt>
-&lt;dd>Japan&lt;/dd>
-&lt;dt>Color&lt;/dt>
-&lt;dd>Green&lt;/dd>
-&lt;/dl>
-&lt;hr>
-&lt;p>Tables should have bold headings and alternating shaded rows.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Artist&lt;/th>
-&lt;th>Album&lt;/th>
-&lt;th>Year&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Michael Jackson&lt;/td>
-&lt;td>Thriller&lt;/td>
-&lt;td>1982&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Prince&lt;/td>
-&lt;td>Purple Rain&lt;/td>
-&lt;td>1984&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Beastie Boys&lt;/td>
-&lt;td>License to Ill&lt;/td>
-&lt;td>1986&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>If a table is too wide, it should scroll horizontally.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Artist&lt;/th>
-&lt;th>Album&lt;/th>
-&lt;th>Year&lt;/th>
-&lt;th>Label&lt;/th>
-&lt;th>Awards&lt;/th>
-&lt;th>Songs&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Michael Jackson&lt;/td>
-&lt;td>Thriller&lt;/td>
-&lt;td>1982&lt;/td>
-&lt;td>Epic Records&lt;/td>
-&lt;td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical&lt;/td>
-&lt;td>Wanna Be Startin&amp;rsquo; Somethin&amp;rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Prince&lt;/td>
-&lt;td>Purple Rain&lt;/td>
-&lt;td>1984&lt;/td>
-&lt;td>Warner Brothers Records&lt;/td>
-&lt;td>Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal&lt;/td>
-&lt;td>Let&amp;rsquo;s Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I&amp;rsquo;m a Star, Purple Rain&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Beastie Boys&lt;/td>
-&lt;td>License to Ill&lt;/td>
-&lt;td>1986&lt;/td>
-&lt;td>Mercury Records&lt;/td>
-&lt;td>noawardsbutthistablecelliswide&lt;/td>
-&lt;td>Rhymin &amp;amp; Stealin, The New Style, She&amp;rsquo;s Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;p>Code snippets like &lt;code>var foo = &amp;quot;bar&amp;quot;;&lt;/code> can be shown inline.&lt;/p>
-&lt;p>Also, &lt;code>this should vertically align&lt;/code> &lt;del>&lt;code>with this&lt;/code>&lt;/del> &lt;del>and this&lt;/del>.&lt;/p>
-&lt;p>Code can also be shown in a block element.&lt;/p>
-&lt;pre>&lt;code>foo := &amp;quot;bar&amp;quot;;
-bar := &amp;quot;foo&amp;quot;;
-&lt;/code>&lt;/pre>&lt;p>Code can also use syntax highlighting.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#080;font-weight:bold">func&lt;/span> &lt;span style="color:#06b;font-weight:bold">main&lt;/span>() {
-input := &lt;span style="color:#d20;background-color:#fff0f0">`var foo = &amp;#34;bar&amp;#34;;`&lt;/span>
-lexer := lexers.&lt;span style="color:#06b;font-weight:bold">Get&lt;/span>(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;javascript&amp;#34;&lt;/span>)
-iterator, _ := lexer.&lt;span style="color:#06b;font-weight:bold">Tokenise&lt;/span>(&lt;span style="color:#080;font-weight:bold">nil&lt;/span>, input)
-style := styles.&lt;span style="color:#06b;font-weight:bold">Get&lt;/span>(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;github&amp;#34;&lt;/span>)
-formatter := html.&lt;span style="color:#06b;font-weight:bold">New&lt;/span>(html.&lt;span style="color:#06b;font-weight:bold">WithLineNumbers&lt;/span>())
-&lt;span style="color:#080;font-weight:bold">var&lt;/span> buff bytes.Buffer
-formatter.&lt;span style="color:#06b;font-weight:bold">Format&lt;/span>(&amp;amp;buff, style, iterator)
-fmt.&lt;span style="color:#06b;font-weight:bold">Println&lt;/span>(buff.&lt;span style="color:#06b;font-weight:bold">String&lt;/span>())
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-&lt;/code>&lt;/pre>&lt;p>Inline code inside table cells should still be distinguishable.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Language&lt;/th>
-&lt;th>Code&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Javascript&lt;/td>
-&lt;td>&lt;code>var foo = &amp;quot;bar&amp;quot;;&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Ruby&lt;/td>
-&lt;td>&lt;code>foo = &amp;quot;bar&amp;quot;{&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;p>Small images should be shown at their actual size.&lt;/p>
-&lt;p>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg" alt="">&lt;/p>
-&lt;p>Large images should always scale down and fit in the content container.&lt;/p>
-&lt;p>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg" alt="">&lt;/p>
-&lt;p>&lt;em>The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA.&lt;/em>&lt;/p>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="alerts">Alerts&lt;/h3>
-&lt;p>
-&lt;div class="alert alert-primary" role="alert">
-This is an alert.
-&lt;/div>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-This is an alert with a title.
-&lt;/div>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-This is an alert with a title and &lt;strong>Markdown&lt;/strong>.
-&lt;/div>
-&lt;div class="alert alert-success" role="alert">
-This is a successful alert.
-&lt;/div>
-&lt;div class="alert alert-warning" role="alert">
-This is a warning.
-&lt;/div>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-This is a warning with a title.
-&lt;/div>
-&lt;/p>
-&lt;h2 id="another-heading">Another Heading&lt;/h2>
-&lt;p>Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.&lt;/p>
-&lt;h3 id="this-document">This Document&lt;/h3>
-&lt;p>Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam &lt;em>eripitur&lt;/em>? Sitim noceat signa &lt;em>probat quidem&lt;/em>. Sua longis &lt;em>fugatis&lt;/em> quidem genae.&lt;/p>
-&lt;h3 id="pixel-count">Pixel Count&lt;/h3>
-&lt;p>Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&amp;amp;B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.&lt;/p>
-&lt;h3 id="contact-info">Contact Info&lt;/h3>
-&lt;p>Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.&lt;/p>
-&lt;h3 id="external-links">External Links&lt;/h3>
-&lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
-&lt;pre>&lt;code>This is the final element on the page and there should be no margin below this.
+&lt;h2 id="信托自建比特币全节点的参考">信托自建比特币全节点的参考&lt;/h2>
+&lt;p>建议信托节点使用自己搭建的比特币全节点, 推荐的机器配置不低于: CPU 2核, 内存 4G, SSD 硬盘 500G.&lt;/p>
+&lt;h3 id="下载最新版本的-bitcoin-二进制包">下载最新版本的 bitcoin 二进制包&lt;/h3>
+&lt;p>直接在 &lt;a href="https://bitcoin.org/bin/">bitcoin.org&lt;/a> 下载最新版本的 bitcoin 二进制包（或者直接通过发行版的包管理器下载最新的 bitcoin 包），解压并创建软链接&lt;/p>
+&lt;pre>&lt;code># 指定下载目录
+$ cd /opt
+# 下载
+$ wget https://bitcoin.org/bin/bitcoin-core-0.20.1/bitcoin-0.20.1-x86_64-linux-gnu.tar.gz
+# 解压
+$ tar zxvf bitcoin-0.20.1-x86_64-linux-gnu.tar.gz
+# 建立软链接
+$ ln -fs /opt/bitcoin-0.20.1 /opt/bitcoin
+$ ln -fs /opt/bitcoin-0.20.1/bin/bitcoind /usr/local/bin/bitcoind
+$ ln -fs /opt/bitcoin-0.20.1/bin/bitcoin-cli /usr/local/bin/bitcoin-cli
+&lt;/code>&lt;/pre>&lt;h3 id="创建指定的-data-和-wallets-目录">创建指定的 data 和 wallets 目录&lt;/h3>
+&lt;p>或者使用默认路径 &lt;code>~/.bitcoin/data&lt;/code> 和 &lt;code>~/.bitcoin/wallets&lt;/code>&lt;/p>
+&lt;pre>&lt;code>$ mkdir -p /mnt/bitcoin-mainnet/data
+$ mkdir -p /mnt/bitcoin-mainnet/wallets
+&lt;/code>&lt;/pre>&lt;h3 id="创建配置文件">创建配置文件&lt;/h3>
+&lt;p>或者使用默认路径 &lt;code>~/.bitcoin/bitcoin.conf&lt;/code>&lt;/p>
+&lt;pre>&lt;code>$ touch /mnt/bitcoin-mainnet/bitcoin.conf
+$ vim /mnt/bitcoin-mainnet/bitcoin.conf
+&lt;/code>&lt;/pre>&lt;pre>&lt;code># Generated by https://jlopp.github.io/bitcoin-core-config-generator/
+# [core]
+# Set database cache size in megabytes; machines sync faster with a larger cache.
+# Recommend setting as high as possible based upon machine's available RAM.
+dbcache=4096
+# Keep the transaction memory pool below &amp;lt;n&amp;gt; megabytes.
+maxmempool=256
+# Do not keep transactions in the mempool longer than &amp;lt;n&amp;gt; hours.
+mempoolexpiry=12
+# Maintain a full transaction index, used by the getrawtransaction rpc call.
+txindex=1
+# [network]
+# [debug]
+# Enable debug logging for all categories.
+#debug=1
+# Log IP Addresses in debug output.
+logips=1
+# Log timestamps with microsecond precision.
+logtimemicros=1
+# [relay]
+# Maximum size of data in OP_RETURN outputs we relay and mine.
+datacarriersize=82
+# Fee rates (in BTC/kB) smaller than this are considered zero fee for relaying, mining and transaction creation.
+minrelaytxfee=0.000001
+# [mining]
+# Set lowest fee rate (in BTC/kB) for transactions to be included in block creation.
+blockmintxfee=0.000001
+# [rpc]
+# Enable Accounts RPC
+deprecatedrpc=accounts
+# Accept command line and JSON-RPC commands.
+server=1
+# Accept public REST requests.
+rest=1
+# Username and hashed password for JSON-RPC connections.
+# The field &amp;lt;userpw&amp;gt; comes in the format: &amp;lt;USERNAME&amp;gt;:&amp;lt;SALT&amp;gt;$&amp;lt;HASH&amp;gt;.
+# RPC clients connect using rpcuser=&amp;lt;USERNAME&amp;gt;/rpcpassword=&amp;lt;PASSWORD&amp;gt; arguments.
+# You can generate this value with the share/rpcauth/rpcauth.py script in the Bitcoin Core repository.
+# This option can be specified multiple times.
+rpcuser=远程访问的认证用户
+rpcpassword=远程访问密码
+# Allow JSON-RPC connections from specified source.
+# Valid for &amp;lt;ip&amp;gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24).
+# This option can be specified multiple times.
+# 远程访问的ip或网段 建议指定ip范围，不允许陌生ip访问
+rpcallowip=0.0.0.0/0
+# Set the number of threads to service RPC calls
+rpcthreads=16
+# [wallet]
+# [Sections]
+# Most options automatically apply to mainnet, testnet, and regtest networks.
+# If you want to confine an option to just one network, you should add it in the relevant section.
+# EXCEPTIONS: The options addnode, connect, port, bind, rpcport, rpcbind and wallet
+# only apply to mainnet unless they appear in the appropriate section below.
+# Options only for mainnet
+[main]
+# [core]
+# Specify a non-default location to store blockchain data.
+blocksdir=/mnt/bitcoin-mainnet/data
+# Specify a non-default location to store blockchain and other data.
+datadir=/mnt/bitcoin-mainnet/data
+# [network]
+# Listen for incoming connections on non-default port.
+port=8333
+# [debug]
+# Location of the debug log
+debuglogfile=/mnt/bitcoin-mainnet/data/debug.log
+# [rpc]
+# Bind to given address to listen for JSON-RPC connections.
+# This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6.
+# This option can be specified multiple times. (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)
+rpcbind=0.0.0.0
+# Listen for JSON-RPC connections on this port
+rpcport=8332
+# [wallet]
+# Specify a non-default location to store wallet data.
+walletdir=/mnt/bitcoin-mainnet/wallets
+# Options only for testnet
+[test]
+# Options only for regtest
+[regtest]
+&lt;/code>&lt;/pre>&lt;h3 id="启动和停止比特币全节点">启动和停止比特币全节点&lt;/h3>
+&lt;pre>&lt;code># 启动
+$ bitcoind -conf=/mnt/bitcoin-mainnet/bitcoin.conf -daemon
+# 停止
+$ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
+&lt;/code>&lt;/pre>&lt;h3 id="测试比特币节点rpc服务">测试比特币节点rpc服务&lt;/h3>
+&lt;pre>&lt;code>$ curl -s -X POST --user rpcuser:rpcpassword -H 'content-type: text/plain;' http://127.0.0.1:8332/ --data-binary '{&amp;quot;jsonrpc&amp;quot;: &amp;quot;1.0&amp;quot;, &amp;quot;id&amp;quot;:&amp;quot;curltest&amp;quot;, &amp;quot;method&amp;quot;: &amp;quot;getmininginfo&amp;quot;, &amp;quot;params&amp;quot;: [] }'
+&lt;/code>&lt;/pre>&lt;h3 id="导入信托冷热多签地址">导入信托冷热多签地址&lt;/h3>
+&lt;p>往钱包导入信托冷热多签地址 每当信托换届或者信托冷热多签地址更换时，需要运维人员将更换的新地址导入到钱包，以便信托节点在使用 ChainX Wallet 构造提现交易时可以获取到该地址的UTXO列表。导入命令如下:&lt;/p>
+&lt;pre>&lt;code>$ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf importaddress 比特币地址 &amp;quot;&amp;quot; true
 &lt;/code>&lt;/pre></description></item><item><title>Docs: 交易所对接</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/exchanges/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
