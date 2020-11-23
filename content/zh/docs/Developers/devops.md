@@ -2,238 +2,180 @@
 title: "节点运维"
 date: 2017-01-05
 weight: 5
-description: >
-  A short lead descripton about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+description: The Devops documentation.
 ---
 
 {{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
+节点运维文档
 {{% /pageinfo %}}
 
+## 信托自建比特币全节点的参考
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+建议信托节点使用自己搭建的比特币全节点, 推荐的机器配置不低于: CPU 2核, 内存 4G, SSD 硬盘 500G.
 
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+### 下载最新版本的 bitcoin 二进制包
 
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
-
-
-## Second Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
+直接在 [bitcoin.org](https://bitcoin.org/bin/) 下载最新版本的 bitcoin 二进制包（或者直接通过发行版的包管理器下载最新的 bitcoin 包），解压并创建软链接
 
 ```
-This is a code block following a header.
+# 指定下载目录
+$ cd /opt
+# 下载
+$ wget https://bitcoin.org/bin/bitcoin-core-0.20.1/bitcoin-0.20.1-x86_64-linux-gnu.tar.gz
+# 解压
+$ tar zxvf bitcoin-0.20.1-x86_64-linux-gnu.tar.gz
+# 建立软链接
+$ ln -fs /opt/bitcoin-0.20.1 /opt/bitcoin
+$ ln -fs /opt/bitcoin-0.20.1/bin/bitcoind /usr/local/bin/bitcoind
+$ ln -fs /opt/bitcoin-0.20.1/bin/bitcoin-cli /usr/local/bin/bitcoin-cli
 ```
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan. 
+### 创建指定的 data 和 wallets 目录
 
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
+或者使用默认路径 `~/.bitcoin/data` 和 `~/.bitcoin/wallets`
 
 ```
-foo := "bar";
-bar := "foo";
+$ mkdir -p /mnt/bitcoin-mainnet/data
+$ mkdir -p /mnt/bitcoin-mainnet/wallets
 ```
 
-Code can also use syntax highlighting.
+### 创建配置文件
 
-```go
-func main() {
-  input := `var foo = "bar";`
+或者使用默认路径 `~/.bitcoin/bitcoin.conf`
 
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
+```
+$ touch /mnt/bitcoin-mainnet/bitcoin.conf
+$ vim /mnt/bitcoin-mainnet/bitcoin.conf
 ```
 
 ```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+# Generated by https://jlopp.github.io/bitcoin-core-config-generator/
+
+# [core]
+# Set database cache size in megabytes; machines sync faster with a larger cache.
+# Recommend setting as high as possible based upon machine's available RAM.
+dbcache=4096
+
+# Keep the transaction memory pool below <n> megabytes.
+maxmempool=256
+
+# Do not keep transactions in the mempool longer than <n> hours.
+mempoolexpiry=12
+
+# Maintain a full transaction index, used by the getrawtransaction rpc call.
+txindex=1
+
+# [network]
+
+# [debug]
+# Enable debug logging for all categories.
+#debug=1
+
+# Log IP Addresses in debug output.
+logips=1
+
+# Log timestamps with microsecond precision.
+logtimemicros=1
+
+# [relay]
+# Maximum size of data in OP_RETURN outputs we relay and mine.
+datacarriersize=82
+
+# Fee rates (in BTC/kB) smaller than this are considered zero fee for relaying, mining and transaction creation.
+minrelaytxfee=0.000001
+
+# [mining]
+# Set lowest fee rate (in BTC/kB) for transactions to be included in block creation.
+blockmintxfee=0.000001
+
+# [rpc]
+# Enable Accounts RPC
+deprecatedrpc=accounts
+
+# Accept command line and JSON-RPC commands.
+server=1
+# Accept public REST requests.
+rest=1
+
+# Username and hashed password for JSON-RPC connections.
+# The field <userpw> comes in the format: <USERNAME>:<SALT>$<HASH>.
+# RPC clients connect using rpcuser=<USERNAME>/rpcpassword=<PASSWORD> arguments.
+# You can generate this value with the share/rpcauth/rpcauth.py script in the Bitcoin Core repository.
+# This option can be specified multiple times.
+rpcuser=远程访问的认证用户
+rpcpassword=远程访问密码
+
+# Allow JSON-RPC connections from specified source.
+# Valid for <ip> are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24).
+# This option can be specified multiple times.
+# 远程访问的ip或网段 建议指定ip范围，不允许陌生ip访问
+rpcallowip=0.0.0.0/0
+
+# Set the number of threads to service RPC calls
+rpcthreads=16
+
+# [wallet]
+
+# [Sections]
+# Most options automatically apply to mainnet, testnet, and regtest networks.
+# If you want to confine an option to just one network, you should add it in the relevant section.
+# EXCEPTIONS: The options addnode, connect, port, bind, rpcport, rpcbind and wallet
+# only apply to mainnet unless they appear in the appropriate section below.
+
+# Options only for mainnet
+[main]
+# [core]
+# Specify a non-default location to store blockchain data.
+blocksdir=/mnt/bitcoin-mainnet/data
+# Specify a non-default location to store blockchain and other data.
+datadir=/mnt/bitcoin-mainnet/data
+
+# [network]
+# Listen for incoming connections on non-default port.
+port=8333
+
+# [debug]
+# Location of the debug log
+debuglogfile=/mnt/bitcoin-mainnet/data/debug.log
+
+# [rpc]
+# Bind to given address to listen for JSON-RPC connections.
+# This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6.
+# This option can be specified multiple times. (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)
+rpcbind=0.0.0.0
+# Listen for JSON-RPC connections on this port
+rpcport=8332
+
+# [wallet]
+# Specify a non-default location to store wallet data.
+walletdir=/mnt/bitcoin-mainnet/wallets
+
+# Options only for testnet
+[test]
+
+# Options only for regtest
+[regtest]
 ```
 
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-
+### 启动和停止比特币全节点
 
 ```
-This is the final element on the page and there should be no margin below this.
+# 启动
+$ bitcoind -conf=/mnt/bitcoin-mainnet/bitcoin.conf -daemon
+# 停止
+$ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
+```
+
+### 测试比特币节点rpc服务
+
+```
+$ curl -s -X POST --user rpcuser:rpcpassword -H 'content-type: text/plain;' http://127.0.0.1:8332/ --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }'
+```
+
+### 导入信托冷热多签地址
+
+往钱包导入信托冷热多签地址 每当信托换届或者信托冷热多签地址更换时，需要运维人员将更换的新地址导入到钱包，以便信托节点在使用 ChainX Wallet 构造提现交易时可以获取到该地址的UTXO列表。导入命令如下:
+
+```
+$ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf importaddress 比特币地址 "" true
 ```

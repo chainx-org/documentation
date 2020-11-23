@@ -3,8 +3,7 @@ title: "验证人"
 linkTitle: "Validators"
 weight: 4
 date: 2017-01-05
-description: >
-  ChainX validator guide
+description: ChainX validator guide
 ---
 
 {{% pageinfo %}}
