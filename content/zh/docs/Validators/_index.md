@@ -117,7 +117,7 @@ $ ./chainx --chain=mainnet --validator
 {{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
 
 {{%alert %}}
-节点成功启动后， 可以在[Telemetry(stat.chainx.org)](stat.chainx.org)上看到您的节点。
+节点成功启动后， 可以在[Telemetry(stats.chainx.org)](stats.chainx.org)上看到您的节点。
 {{%/alert%}}
 
 ### 注册账户
