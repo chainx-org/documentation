@@ -3,12 +3,11 @@ title: "验证人"
 linkTitle: "Validators"
 weight: 4
 date: 2017-01-05
-description: >
-  ChainX validator guide
+description: ChainX validator guide
 ---
 
 {{% pageinfo %}}
-ChainX 验证节点指南
+ChainX 2.0 验证节点指南
 {{% /pageinfo %}}
 
 ## 准备事项
@@ -21,7 +20,11 @@ ChainX 验证节点指南
 
 - CPU 2 核，内存 2G, 带宽 1M, 操作系统 Ubuntu 18.04+。
 
-#### 使用docker镜像  
+#### 主网硬件配置
+
+以阿里云为例，ChainX 主网推荐配置不低于: CPU 4 核, 内存 4 G, 带宽 10M，磁盘使用 SSD 300G+, 操作系统 18.04+.
+
+#### 使用 docker 镜像
 
 运行以下命令，可以直接启动节点  
 `docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator`
@@ -32,12 +35,12 @@ ChainX 验证节点指南
 #### 从源码编译
 
 ##### 准备工作
+
 `chainx`依赖于`clang`, `gcc`
 
 ##### 开始编译
 
 我们假设您已经安装好 Rust nightly 与 `wasm32-unknown-unknown`:
-
 
 ```bash
 $ rustup install nightly-2020-09-30
