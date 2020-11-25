@@ -54,7 +54,10 @@ $ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 
 接下来， 您需要按照以下步骤完成编译工作：
 
-```bash $ git clone https://github.com/chainx-org/ChainX $ cd ChainX $ git checkout v2.0.0
+```bash
+$ git clone https://github.com/chainx-org/ChainX
+$ cd ChainX
+$ git checkout v2.0.0
 $ cargo build --release
 ```
 
@@ -166,10 +169,7 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 - 目前，`proof` 填入`0x00` 即可。
 {{%/alert%}}
 
-
 调用`nextKey`可以验证是否正确设置。
-
-
 
 ## 备份节点
 
