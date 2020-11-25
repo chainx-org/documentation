@@ -24,7 +24,7 @@ ChainX 验证节点指南
 #### 使用docker镜像  
 
 运行以下命令，可以直接启动节点  
-`docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0-pre.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet-pre --validator`
+`docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator`
 {{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
 
 ### 安装`chainx`程序
@@ -50,7 +50,7 @@ $ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 ```bash
 $ git clone https://github.com/chainx-org/ChainX
 $ cd ChainX
-$ git checkout v2.0.0-pre.0
+$ git checkout v2.0.0
 $ cargo build --release
 ```
 
@@ -65,20 +65,20 @@ $ cargo build --release
 通过下面的命令开始同步区块链:
 
 ```bash
-$ ./chainx --chain=mainnet-pre --pruning=archive
+$ ./chainx --chain=mainnet --pruning=archive
 ```
 
 同步完成后，以验证人模式重启节点:
 
 ```bash
-$ ./chainx --chain=mainnet-pre --validator
+$ ./chainx --chain=mainnet --validator
 ```
 
 或直接以验证人模式启动进行同步：
 
 ```bash
 # 使用 --validator 时，同时将默认启用存档模式即 --pruning=archive
-$ ./chainx --chain=mainnet-pre --validator
+$ ./chainx --chain=mainnet --validator
 ```
 
 不过注意，一定等待同步完成并且设置好 Session Keys 后再让节点参选。
