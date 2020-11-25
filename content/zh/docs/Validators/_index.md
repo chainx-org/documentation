@@ -27,7 +27,11 @@ ChainX 2.0 验证节点指南
 #### 使用 docker 镜像
 
 运行以下命令，可以直接启动节点  
-`docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator`
+
+```bash
+docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator
+```
+
 {{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
 
 ### 安装`chainx`程序
@@ -50,10 +54,7 @@ $ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 
 接下来， 您需要按照以下步骤完成编译工作：
 
-```bash
-$ git clone https://github.com/chainx-org/ChainX
-$ cd ChainX
-$ git checkout v2.0.0
+```bash $ git clone https://github.com/chainx-org/ChainX $ cd ChainX $ git checkout v2.0.0
 $ cargo build --release
 ```
 
@@ -162,8 +163,13 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 ![setKeys](/images/setkeys.png)
 
 {{%alert%}}
-目前，`proof` 填入`0x00` 即可。
+- 目前，`proof` 填入`0x00` 即可。
 {{%/alert%}}
+
+
+调用`nextKey`可以验证是否正确设置。
+
+
 
 ## 备份节点
 
