@@ -1,4 +1,3 @@
-baseURL = "https://chainx-org.github.io/documentation/"
 title = "ChainX Docs"
 publishDir = "public"
 
