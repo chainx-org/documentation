@@ -1,6 +1,7 @@
-baseUrl = "/documentation"
+baseUrl = "https://chainx-org.github.io/documentation"
 title = "ChainX Docs"
 publishDir = "public"
+relativeURLs = true
 
 # enableRobotsTXT = true
 
