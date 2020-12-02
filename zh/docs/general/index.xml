@@ -1,8 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – General</title><link>https://chainx-org.github.io/documentation/zh/docs/general/</link><description>Recent content in General on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://chainx-org.github.io/documentation/zh/docs/general/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: FAQs</title><link>https://chainx-org.github.io/documentation/zh/docs/general/faq/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/general/faq/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – General</title><link>/zh/docs/general/</link><description>Recent content in General on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="/zh/docs/general/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: FAQs</title><link>/zh/docs/general/faq/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/zh/docs/general/faq/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
-&lt;p>FAQ&lt;/p></description></item><item><title>Docs: Resources</title><link>https://chainx-org.github.io/documentation/zh/docs/general/resources/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/general/resources/</guid><description>
+&lt;p>FAQ&lt;/p></description></item><item><title>Docs: Resources</title><link>/zh/docs/general/resources/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/zh/docs/general/resources/</guid><description>
 &lt;ul>
 &lt;li>节点浏览器: &lt;a href="https://stats.chainx.org">https://stats.chainx.org&lt;/a>&lt;/li>
 &lt;li>区块链浏览器: &lt;a href="https://scan.chainx.org">https://scan.chainx.org&lt;/a>&lt;/li>
