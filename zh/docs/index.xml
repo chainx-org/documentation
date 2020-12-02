@@ -1,6 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – Documentation</title><link>/documentation/zh/docs/</link><description>Recent content in Documentation on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="/documentation/zh/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: FAQ</title><link>/documentation/zh/docs/developers/faq/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/developers/faq/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – Documentation</title><link>https://chainx-org.github.io/documentation/zh/docs/</link><description>Recent content in Documentation on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://chainx-org.github.io/documentation/zh/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: FAQ</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/faq/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/faq/</guid><description>
 &lt;p>&lt;strong>Q&lt;/strong>: 为什么出现&lt;code>&amp;quot;error&amp;quot;: {&amp;quot;code&amp;quot;: -32601, &amp;quot;message&amp;quot;: &amp;quot;Method not found&amp;quot;}&lt;/code>?&lt;br>
-&lt;strong>A&lt;/strong>: 当端口可被外部网络访问时，部分rpc被禁用，可以尝试设置&lt;code>{rpc,ws}-external&lt;/code>为&lt;code>false&lt;/code>, 或者打开&lt;code>unsafe-{rpc,ws}-external&lt;/code>选项。&lt;/p></description></item><item><title>Docs: RPC</title><link>/documentation/zh/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/developers/rpc/</guid><description>
+&lt;strong>A&lt;/strong>: 当端口可被外部网络访问时，部分rpc被禁用，可以尝试设置&lt;code>{rpc,ws}-external&lt;/code>为&lt;code>false&lt;/code>, 或者打开&lt;code>unsafe-{rpc,ws}-external&lt;/code>选项。&lt;/p></description></item><item><title>Docs: RPC</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/rpc/</guid><description>
 &lt;h2 id="assets">Assets&lt;/h2>
 &lt;h2 id="staking">Staking&lt;/h2>
 &lt;h3 id="xstaking_getvalidators">&lt;code>xstaking_getValidators&lt;/code>&lt;/h3>
@@ -101,7 +101,7 @@
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: 账户系统</title><link>/documentation/zh/docs/basics/accounts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/basics/accounts/</guid><description/></item><item><title>Docs: JS-SDK</title><link>/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/developers/js-sdk/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: 账户系统</title><link>https://chainx-org.github.io/documentation/zh/docs/basics/accounts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/basics/accounts/</guid><description/></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -173,7 +173,7 @@ console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;balanc
 &lt;span style="color:#888">// 签名并发送交易，0x0000000000000000000000000000000000000000000000000000000000000000 是用于签名的私钥
 &lt;/span>&lt;span style="color:#888">&lt;/span> &lt;span style="color:#080;font-weight:bold">const&lt;/span> hash = await transfer.signAndSend(alice);
 })();
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: 资产系统</title><link>/documentation/zh/docs/basics/assets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/basics/assets/</guid><description/></item><item><title>Docs: 投票选举</title><link>/documentation/zh/docs/basics/staking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/basics/staking/</guid><description/></item><item><title>Docs: Multi-Bear Domicile Setup</title><link>/documentation/zh/docs/smart-contract/multi-bear/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/smart-contract/multi-bear/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="智能合约">智能合约&lt;/h2></description></item><item><title>Docs: 资产系统</title><link>https://chainx-org.github.io/documentation/zh/docs/basics/assets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/basics/assets/</guid><description/></item><item><title>Docs: 投票选举</title><link>https://chainx-org.github.io/documentation/zh/docs/basics/staking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/basics/staking/</guid><description/></item><item><title>Docs: Multi-Bear Domicile Setup</title><link>https://chainx-org.github.io/documentation/zh/docs/smart-contract/multi-bear/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/smart-contract/multi-bear/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -436,12 +436,12 @@ This is a warning with a title.
 &lt;h3 id="external-links">External Links&lt;/h3>
 &lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
 &lt;pre>&lt;code>This is the final element on the page and there should be no margin below this.
-&lt;/code>&lt;/pre></description></item><item><title>Docs: 资产挖矿</title><link>/documentation/zh/docs/basics/asset-mining/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/basics/asset-mining/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: 资产挖矿</title><link>https://chainx-org.github.io/documentation/zh/docs/basics/asset-mining/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/basics/asset-mining/</guid><description>
 &lt;p>根据 ChainX 1.0 06号提案，跨链挖矿用户有着如下提息限制:&lt;/p>
 &lt;ol>
 &lt;li>每个跨链资产的提息间隔不低于 7 天，否则提息失败。&lt;/li>
 &lt;li>用户对所有跨链资产提息时，其 PCX 总投票冻结必须不低于总利息的 10 倍，否则提息失败。&lt;/li>
-&lt;/ol></description></item><item><title>Docs: 公开测试网</title><link>/documentation/zh/docs/testnet/public-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/testnet/public-testnet/</guid><description/></item><item><title>Docs: 本地 Dev 测试网</title><link>/documentation/zh/docs/testnet/local-dev-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/testnet/local-dev-testnet/</guid><description/></item><item><title>Docs: Another Tutorial</title><link>/documentation/zh/docs/smart-contract/tutorial2/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/smart-contract/tutorial2/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 公开测试网</title><link>https://chainx-org.github.io/documentation/zh/docs/testnet/public-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/testnet/public-testnet/</guid><description/></item><item><title>Docs: 本地 Dev 测试网</title><link>https://chainx-org.github.io/documentation/zh/docs/testnet/local-dev-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/testnet/local-dev-testnet/</guid><description/></item><item><title>Docs: Another Tutorial</title><link>https://chainx-org.github.io/documentation/zh/docs/smart-contract/tutorial2/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/smart-contract/tutorial2/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -704,7 +704,7 @@ This is a warning with a title.
 &lt;h3 id="external-links">External Links&lt;/h3>
 &lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
 &lt;pre>&lt;code>This is the final element on the page and there should be no margin below this.
-&lt;/code>&lt;/pre></description></item><item><title>Docs: 节点运维</title><link>/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/developers/devops/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: 节点运维</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>节点运维文档&lt;/p>
 &lt;/div>
@@ -821,10 +821,10 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="导入信托冷热多签地址">导入信托冷热多签地址&lt;/h3>
 &lt;p>往钱包导入信托冷热多签地址 每当信托换届或者信托冷热多签地址更换时，需要运维人员将更换的新地址导入到钱包，以便信托节点在使用 ChainX Wallet 构造提现交易时可以获取到该地址的 UTXO 列表。导入命令如下:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf importaddress 比特币地址 &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#038">true&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 交易所对接</title><link>/documentation/zh/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/developers/exchanges/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 交易所对接</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/exchanges/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
-&lt;/div></description></item><item><title>Docs: 信托</title><link>/documentation/zh/docs/bridges/trustee/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/bridges/trustee/</guid><description>
+&lt;/div></description></item><item><title>Docs: 信托</title><link>https://chainx-org.github.io/documentation/zh/docs/bridges/trustee/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/bridges/trustee/</guid><description>
 &lt;h2 id="介绍">介绍&lt;/h2>
 &lt;p>信托存在的意义为对于跨链而言，若ChainX可以支持被跨链（如Bitcoin）的轻节点验证，而被跨链无法支持ChainX的轻节点验证，则只能进行单向跨链（单向Relay）。因此能够双向跨链的链不需要信托，只有单向跨链的链需要信托。&lt;strong>信托是对于无法双向跨链的一种妥协方案。&lt;/strong>&lt;/p>
 &lt;p>对于这种妥协方案需要具备很高的灵活性，很多细节无法在链上处理（如信托资质确认等），因此信托在某种程度上可以看做是需要一定信任的。因而ChainX的给予信托&lt;strong>极大的灵活性及权利&lt;/strong>&lt;/p>
@@ -927,15 +927,15 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;li>在钱包内ChainX将信托节点置顶排名，置顶有利于信托吸引更多的投票，增强自己的声誉&lt;/li>
 &lt;/ol>
 &lt;h2 id="信托相关操作">信托相关操作&lt;/h2>
-&lt;p>TODO&lt;/p></description></item><item><title>Docs: FAQs</title><link>/documentation/zh/docs/general/faq/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/general/faq/</guid><description>
+&lt;p>TODO&lt;/p></description></item><item><title>Docs: FAQs</title><link>https://chainx-org.github.io/documentation/zh/docs/general/faq/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/general/faq/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
-&lt;p>FAQ&lt;/p></description></item><item><title>Docs: Resources</title><link>/documentation/zh/docs/general/resources/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/general/resources/</guid><description>
+&lt;p>FAQ&lt;/p></description></item><item><title>Docs: Resources</title><link>https://chainx-org.github.io/documentation/zh/docs/general/resources/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/general/resources/</guid><description>
 &lt;ul>
 &lt;li>节点浏览器: &lt;a href="https://stats.chainx.org">https://stats.chainx.org&lt;/a>&lt;/li>
 &lt;li>区块链浏览器: &lt;a href="https://scan.chainx.org">https://scan.chainx.org&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: 比特币转接桥/网关</title><link>/documentation/zh/docs/bridges/bitcoin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/zh/docs/bridges/bitcoin/</guid><description>
+&lt;/ul></description></item><item><title>Docs: 比特币转接桥/网关</title><link>https://chainx-org.github.io/documentation/zh/docs/bridges/bitcoin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/bridges/bitcoin/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>比特币转接桥/网关&lt;/p>
 &lt;/div>
@@ -970,7 +970,7 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/5023721/56464998-bd10ae80-6427-11e9-877a-e01727c24a81.png" alt="bitcoin confirm">&lt;/p>
 &lt;p>在比特币转接桥中，只接受外部提交的比特币区块头数据，而验证数据是否合法与轻节点业务逻辑均在ChainX的Runtime中独立运行决策，不受外部影响。&lt;/p>
 &lt;p>因此在ChainX中的比特币轻节点的验证与确认区块逻辑是&lt;/p>
-&lt;p>&lt;img src="/documentation/images/ChainX_Bitcoin_bridge.jpg" alt="ChainX_Bitcoin_bridge">&lt;/p>
+&lt;p>&lt;img src="../../images/ChainX_Bitcoin_bridge.jpg" alt="ChainX_Bitcoin_bridge">&lt;/p>
 &lt;p>在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。&lt;/p>
 &lt;h2 id="多签管理及信托">多签管理及信托&lt;/h2>
 &lt;p>&lt;strong>在ChainX链中，持有多签私钥的角色称为“信托(trustee)”&lt;/strong>。信托主要负责管理资产安全及处理比特币提现申请。&lt;/p>
@@ -987,7 +987,7 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;p>关于多签及信托的更多内容请参见 &lt;a href="../Trustee">信托&lt;/a>&lt;/p>
 &lt;h2 id="比特币转接桥业务逻辑">比特币转接桥业务逻辑&lt;/h2>
 &lt;p>由以上介绍可知，比特币转接桥采用了单向Relay加信托多签的模式维护比特币转接桥的比特币跨链过程。因此总体的比特币转接桥业务逻辑如下图所示：&lt;/p>
-&lt;p>&lt;img src="/documentation/images/ChainX_Bitcoin.jpg" alt="ChainX_Bitcoin">&lt;/p>
+&lt;p>&lt;img src="../../images/ChainX_Bitcoin.jpg" alt="ChainX_Bitcoin">&lt;/p>
 &lt;p>由上图可以看到：&lt;/p>
 &lt;ol>
 &lt;li>

@@ -1,11 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX Docs – Developers</title><link>/documentation/docs/developers/</link><description>Recent content in Developers on ChainX Docs</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="/documentation/docs/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: RPC</title><link>/documentation/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/docs/developers/rpc/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX Docs – Developers</title><link>https://chainx-org.github.io/documentation/docs/developers/</link><description>Recent content in Developers on ChainX Docs</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://chainx-org.github.io/documentation/docs/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: RPC</title><link>https://chainx-org.github.io/documentation/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/rpc/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
 &lt;h2 id="chainx">ChainX&lt;/h2>
 &lt;h3 id="assets">Assets&lt;/h3>
 &lt;h3 id="staking">Staking&lt;/h3>
-&lt;h3 id="dex">DEX&lt;/h3></description></item><item><title>Docs: JS-SDK</title><link>/documentation/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/docs/developers/js-sdk/</guid><description>
+&lt;h3 id="dex">DEX&lt;/h3></description></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/js-sdk/</guid><description>
 &lt;!-- TOC -->
 &lt;ul>
 &lt;li>&lt;a href="#getting-started">Getting Started&lt;/a>
@@ -183,7 +183,7 @@ Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mai
 console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address4:&amp;#39;&lt;/span>, address4);
 &lt;span style="color:#080;font-weight:bold">const&lt;/span> account3 = Account.from(privateKey1);
 console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address:&amp;#39;&lt;/span>, account3.address());
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Devops</title><link>/documentation/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>/documentation/docs/developers/devops/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Devops</title><link>https://chainx-org.github.io/documentation/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -446,7 +446,7 @@ This is a warning with a title.
 &lt;h3 id="external-links">External Links&lt;/h3>
 &lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
 &lt;pre>&lt;code>This is the final element on the page and there should be no margin below this.
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Exchanges</title><link>/documentation/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>/documentation/docs/developers/exchanges/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Exchanges</title><link>https://chainx-org.github.io/documentation/docs/developers/exchanges/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/exchanges/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div></description></item></channel></rss>
