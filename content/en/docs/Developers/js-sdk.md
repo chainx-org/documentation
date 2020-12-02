@@ -187,52 +187,5 @@ async function main() {
 main();
 ```
 
-### Account Module
 
-We can generaet an account Object by `js chainx.account.from(seed | privateKey | mnemonic)`
 
-```js
-const alice = chainx.account.from("0x....");
-alice.address(); // bs58 address
-alice.publicKey(); // publicKey 0x...
-alice.privateKey(); // privateKey 0x...
-```
-
-#### Account Operate
-
-```js
-const { Account } = require('chainx.js');
-const account1 = Account.generate();
-
-const publicKey1 = account1.publicKey();
-console.log('publicKey1: ', publicKey1);
-
-const privateKey1 = account1.privateKey();
-console.log('privateKey1: ', privateKey1);
-
-const address1 = account1.address();
-console.log('address1: ', address1);
-
-const mnemonic = Account.newMnemonic();
-console.log('mnemonic: ', mnemonic);
-
-const account2 = Account.from(mnemonic);
-
-const address2 = Account.encodeAddress(account2.publicKey());
-console.log('address2: ', address2);
-
-const publicKey2 = Account.decodeAddress(address2); /
-console.log('publicKey2: ', publicKey2);
-
-Account.setNet('testnet');
-const address3 = Account.encodeAddress(publicKey2);
-console.log('address3:', address3);
-
-Account.setNet('mainnet');
-const address4 = Account.encodeAddress(publicKey2);
-console.log('address4:', address4);
-
-const account3 = Account.from(privateKey1);
-console.log('address:', account3.address());
-
-```
