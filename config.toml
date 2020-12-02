@@ -1,3 +1,4 @@
+baseUrl = "/documentation"
 title = "ChainX Docs"
 publishDir = "public"
 
