@@ -153,36 +153,6 @@ console.log(
 );
 }
 main();
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="account-module">Account Module&lt;/h3>
-&lt;p>We can generaet an account Object by &lt;code>js chainx.account.from(seed | privateKey | mnemonic)&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> alice = chainx.account.from(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x....&amp;#34;&lt;/span>);
-alice.address(); &lt;span style="color:#888">// bs58 address
-&lt;/span>&lt;span style="color:#888">&lt;/span>alice.publicKey(); &lt;span style="color:#888">// publicKey 0x...
-&lt;/span>&lt;span style="color:#888">&lt;/span>alice.privateKey(); &lt;span style="color:#888">// privateKey 0x...
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="account-operate">Account Operate&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;font-weight:bold">const&lt;/span> { Account } = require(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;chainx.js&amp;#39;&lt;/span>);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> account1 = Account.generate();
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey1 = account1.publicKey();
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey1: &amp;#39;&lt;/span>, publicKey1);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> privateKey1 = account1.privateKey();
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;privateKey1: &amp;#39;&lt;/span>, privateKey1);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> address1 = account1.address();
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address1: &amp;#39;&lt;/span>, address1);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> mnemonic = Account.newMnemonic();
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mnemonic: &amp;#39;&lt;/span>, mnemonic);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> account2 = Account.from(mnemonic);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> address2 = Account.encodeAddress(account2.publicKey());
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address2: &amp;#39;&lt;/span>, address2);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> publicKey2 = Account.decodeAddress(address2); &lt;span style="color:#a61717;background-color:#e3d2d2">/&lt;/span>
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;publicKey2: &amp;#39;&lt;/span>, publicKey2);
-Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;testnet&amp;#39;&lt;/span>);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> address3 = Account.encodeAddress(publicKey2);
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address3:&amp;#39;&lt;/span>, address3);
-Account.setNet(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;mainnet&amp;#39;&lt;/span>);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> address4 = Account.encodeAddress(publicKey2);
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address4:&amp;#39;&lt;/span>, address4);
-&lt;span style="color:#080;font-weight:bold">const&lt;/span> account3 = Account.from(privateKey1);
-console.log(&lt;span style="color:#d20;background-color:#fff0f0">&amp;#39;address:&amp;#39;&lt;/span>, account3.address());
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Devops</title><link>https://chainx-org.github.io/documentation/docs/developers/devops/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/developers/devops/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
