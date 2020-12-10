@@ -6,6 +6,19 @@ description: >
   Docs about ChainX specific RPC APIs.
 ---
 
+可以通过
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "rpc_methods",
+  "params": []
+}
+```
+
+获取所有可用的 RPC 方法，以 `x` 开头的为 ChainX 特有的 RPC 方法，其他 RPC 由 Substrate 框架原生提供。
+
 ## Assets
 
 ### `xassets_getAssets`
