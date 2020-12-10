@@ -1,63 +1,132 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – 开发者</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/</link><description>Recent content in 开发者 on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://chainx-org.github.io/documentation/zh/docs/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: FAQ</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/faq/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/faq/</guid><description>
 &lt;p>&lt;strong>Q&lt;/strong>: 为什么出现&lt;code>&amp;quot;error&amp;quot;: {&amp;quot;code&amp;quot;: -32601, &amp;quot;message&amp;quot;: &amp;quot;Method not found&amp;quot;}&lt;/code>?&lt;br>
 &lt;strong>A&lt;/strong>: 当端口可被外部网络访问时，部分rpc被禁用，可以尝试设置&lt;code>{rpc,ws}-external&lt;/code>为&lt;code>false&lt;/code>, 或者打开&lt;code>unsafe-{rpc,ws}-external&lt;/code>选项。&lt;/p></description></item><item><title>Docs: RPC</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/rpc/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/rpc/</guid><description>
+&lt;p>可以通过&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;rpc_methods&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: []
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>获取所有可用的 RPC 方法，以 &lt;code>x&lt;/code> 开头的为 ChainX 特有的 RPC 方法，其他 RPC 由 Substrate 框架原生提供。&lt;/p>
 &lt;h2 id="assets">Assets&lt;/h2>
-&lt;h2 id="staking">Staking&lt;/h2>
-&lt;h3 id="xstaking_getvalidators">&lt;code>xstaking_getValidators&lt;/code>&lt;/h3>
+&lt;h3 id="xassets_getassets">&lt;code>xassets_getAssets&lt;/code>&lt;/h3>
 &lt;p>Parameters: &lt;code>[]&lt;/code>&lt;/p>
 &lt;p>Request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getValidators&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[]
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xassets_getAssets&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: []
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Locked&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Reserved&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ReservedDexSpot&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ReservedWithdrawal&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Usable&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;23058037208&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;info&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;chain&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Bitcoin&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;decimals&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">8&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;desc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;ChainX&amp;#39;s Cross-chain Bitcoin&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;token&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;XBTC&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;tokenName&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;ChainX Bitcoin&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isOnline&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;restrictions&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;bits&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">32&lt;/span>
+}
+}
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xassets_getassetsbyaccount">&lt;code>xassets_getAssetsByAccount&lt;/code>&lt;/h3>
+&lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xassets_getAssetsByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Locked&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Reserved&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ReservedDexSpot&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ReservedWithdrawal&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Usable&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;210558966&amp;#34;&lt;/span>
+}
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="staking">Staking&lt;/h2>
+&lt;h3 id="xstaking_getvalidators">&lt;code>xstaking_getValidators&lt;/code>&lt;/h3>
+&lt;p>获取所有验证人。&lt;/p>
+&lt;p>Parameters: &lt;code>[]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getValidators&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: []
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: [
 {
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;account&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;isChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">false&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;isValidating&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">null&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;referralId&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Alice&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;registeredAt&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotAccount&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;28512000000&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;selfBonded&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;total&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;account&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点账户地址&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">false&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">是否退选，false&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示没有退选&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isValidating&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">是否正在参与出块&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastChilled&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点上一次退选高度。如果为&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">null,&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示节点从未退选过。&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;15052283706149193236&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点票龄上一次更新时累计的总票龄&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">189717&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点总票龄上一次更新高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;referralId&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;HashQuark&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">用于跨链挖矿的推荐人渠道ID&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;registeredAt&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点注册高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotAccount&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5Q7qY67db3n9wwXoEwmsjq3VkrSkMiHD26LaTrAYgFNTnpjL&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点奖池账户&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;698200755775&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点奖池余额&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;selfBonded&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2752054904694&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点自抵押金额&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;totalNomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;26005907097205&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点总得票数&lt;/span>
 }
 ],
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xstaking_getvalidatorbyaccount">&lt;code>xstaking_getValidatorByAccount&lt;/code>&lt;/h3>
+&lt;p>获取单个验证人信息。&lt;/p>
 &lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
 &lt;p>Request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getValidatorByAccount&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>]
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getValidatorByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>]
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;account&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点账户地址&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;isChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">false&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">是否退选，false&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示未退选&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;isValidating&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">是否正在参与出块&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">null&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点上一次退选高度。如果为&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">null,&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示节点从未退选过。&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点上一次总票龄&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点总票龄上一次更新高度&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;referralId&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Alice&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">验证人的推荐人ID,&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">可用于跨链渠道推荐,&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">分享跨链挖矿用户的10%奖励。&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;registeredAt&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">节点注册高度&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotAccount&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5EJ3va1i3SYn3mTmKzoZmTjJgQJwqrT1kEuDhFwEcmbi7oE7&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">奖池地址&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;17107200000&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">奖池金额&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;selfBonded&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">自抵押数&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;total&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;10000000000000&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">总得票数&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;account&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isChilled&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">false&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;isValidating&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastChilled&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;15052283706149193236&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">189717&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;referralId&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;HashQuark&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;registeredAt&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotAccount&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5Q7qY67db3n9wwXoEwmsjq3VkrSkMiHD26LaTrAYgFNTnpjL&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;698200755775&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;selfBonded&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2752054904694&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;totalNomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;26005907097205&amp;#34;&lt;/span>
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
@@ -66,16 +135,18 @@
 &lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
 &lt;p>Request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getDividendByAccount&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>]
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getDividendByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>]
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2851200000&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为该用户投票的验证人地址，value&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为对应的分红奖励。&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;158905&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为该用户投票的验证人地址，value&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为对应的Staking分红奖励。&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;257865635289&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5VJPK9vpjfw2HjvgGdX56zuTi6Pr7vGvYbyN5CWEZyYaby7w&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;42847&amp;#34;&lt;/span>
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
@@ -84,24 +155,163 @@
 &lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
 &lt;p>Request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getNominationByAccount&amp;#34;&lt;/span>,
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>]
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xstaking_getNominationByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>]
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY&amp;#34;&lt;/span>: { &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为验证人地址&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次用户总票龄&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次用户总票龄更新高度&lt;/span>
-&lt;span style="color:#b06;font-weight:bold">&amp;#34;nomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;500000000000000000000000&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">用户对该节点的投票金额&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2368000000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;nomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;unbondedChunks&amp;#34;&lt;/span>: []
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5039840899021026894&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;nomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2752054904694&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;unbondedChunks&amp;#34;&lt;/span>: []
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;5VJPK9vpjfw2HjvgGdX56zuTi6Pr7vGvYbyN5CWEZyYaby7w&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;450000000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastVoteWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;nomination&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;unbondedChunks&amp;#34;&lt;/span>: []
 }
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2></description></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dex">DEX&lt;/h2>
+&lt;h3 id="xspot_gettradingpairs">&lt;code>xspot_getTradingPairs&lt;/code>&lt;/h3>
+&lt;p>获取所有交易对信息。&lt;/p>
+&lt;p>Parameters: &lt;code>[]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xspot_getTradingPairs&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: []
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;baseCurrency&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">PCX/BTC&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">-&amp;gt;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">PCX&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;highestBid&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">当前最高价&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">交易对ID&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastUpdated&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">最新成交对价更新高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;latestPrice&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;100000&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">最新成交价&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lowestAsk&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">当前最低价&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;maxValidBid&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">最高有效买入价&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;minValidAsk&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;100&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">最低有效卖出价&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;pipDecimals&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">9&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">交易对精度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;quoteCurrency&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">PCX/BTC&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">-&amp;gt;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">BTC&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;tickDecimals&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">2&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">单跳精度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;tradable&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">交易对可正常交易&lt;/span>
+}
+],
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xspot_getordersbyaccount">&lt;code>xspot_getOrdersByAccount&lt;/code>&lt;/h3>
+&lt;p>获取用户订单列表。&lt;/p>
+&lt;p>Parameters: &lt;code>[AccountId, page_index, page_size]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xspot_getOrdersByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>, &lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#00d;font-weight:bold">100&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;h3 id="xspot_getdepth">&lt;code>xspot_getDepth&lt;/code>&lt;/h3>
+&lt;p>获取交易对盘口附近深度。&lt;/p>
+&lt;p>Parameters: &lt;code>[pair_id, depth_size]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xspot_getDepth&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#00d;font-weight:bold">0&lt;/span>, &lt;span style="color:#00d;font-weight:bold">10&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;h2 id="mining-asset">Mining Asset&lt;/h2>
+&lt;h3 id="xminingasset_getminingassets">&lt;code>xminingasset_getMiningAssets&lt;/code>&lt;/h3>
+&lt;p>获取所有参与挖矿的跨链资产。&lt;/p>
+&lt;p>Parameters: &lt;code>[]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xminingasset_getMiningAssets&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: []
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">跨链资产ID&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalMiningWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;23491518002714020&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次更新的总挖矿权重&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastTotalMiningWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">188250&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次总挖矿权重更新高度&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;miningPower&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">400&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">资产挖矿算力&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPot&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RVjEbHJak6YQDwujo78pRH9V8WVoM3CYn3Ub7BhnMLs9Yx8&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">奖池地址&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;rewardPotBalance&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;470655234171&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">奖池金额&lt;/span>
+}
+],
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xminingasset_getdividendbyaccount">&lt;code>xminingasset_getDividendByAccount&lt;/code>&lt;/h3>
+&lt;p>获取跨链挖矿用户的挖矿利息。&lt;/p>
+&lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xminingasset_getDividendByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为用户的跨链资产ID&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;insufficientStake&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">跨链挖矿用户需要在staking中抵押相应资产才能提息，如果&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">insufficientStake&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">不为0，表示用户还需要在staking中抵押更多才能提息&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;other&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1742250653&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">用户跨链挖矿总利息的10%归推荐人，如果没有推荐人则归为财库&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;own&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;15680255878&amp;#34;&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">用户最终能领取的跨链挖矿利息&lt;/span>
+}
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xminingasset_getminerledgerbyaccount">&lt;code>xminingasset_getMinerLedgerByAccount&lt;/code>&lt;/h3>
+&lt;p>获取跨链挖矿用户的挖矿记录。&lt;/p>
+&lt;p>Parameters: &lt;code>[AccountId]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xminingasset_getNominationByAccount&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>: [&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">key&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">为跨链资产ID&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastClaim&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">null&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次提息高度，null&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">表示还从未提过息&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastMiningWeight&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;831778601884312&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次挖矿总票龄&lt;/span>
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;lastMiningWeightUpdate&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">0&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">上一次挖矿总票龄更新高度&lt;/span>
+}
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
