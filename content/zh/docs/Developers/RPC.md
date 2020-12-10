@@ -8,6 +8,85 @@ description: >
 
 ## Assets
 
+### `xassets_getAssets`
+
+Parameters: `[]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xassets_getAssets",
+  "params": []
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "1": {
+      "balance": {
+        "Locked": "0",
+        "Reserved": "0",
+        "ReservedDexSpot": "0",
+        "ReservedWithdrawal": "0",
+        "Usable": "23058037208"
+      },
+      "info": {
+        "chain": "Bitcoin",
+        "decimals": 8,
+        "desc": "ChainX's Cross-chain Bitcoin",
+        "token": "XBTC",
+        "tokenName": "ChainX Bitcoin"
+      },
+      "isOnline": true,
+      "restrictions": {
+        "bits": 32
+      }
+    }
+  },
+  "id": 1
+}
+```
+
+### `xassets_getAssetsByAccount`
+
+Parameters: `[AccountId]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xassets_getAssetsByAccount",
+  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4"]
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "1": {
+      "Locked": "0",
+      "Reserved": "0",
+      "ReservedDexSpot": "0",
+      "ReservedWithdrawal": "0",
+      "Usable": "210558966"
+    }
+  },
+  "id": 1
+}
+```
+
 ## Staking
 
 ### `xstaking_getValidators`
@@ -170,6 +249,86 @@ Response:
 ```
 
 ## DEX
+
+### `xspot_getTradingPairs`
+
+获取所有交易对信息。
+
+Parameters: `[]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xspot_getTradingPairs",
+  "params": []
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "baseCurrency": 0, // PCX/BTC -> PCX
+      "highestBid": "0", // 当前最高价
+      "id": 0, // 交易对ID
+      "lastUpdated": 0, // 最新成交对价更新高度
+      "latestPrice": "100000", // 最新成交价
+      "lowestAsk": "0", // 当前最低价
+      "maxValidBid": "0", // 最高有效买入价
+      "minValidAsk": "100", // 最低有效卖出价
+      "pipDecimals": 9, // 交易对精度
+      "quoteCurrency": 1, // PCX/BTC -> BTC
+      "tickDecimals": 2, // 单跳精度
+      "tradable": true // 交易对可正常交易
+    }
+  ],
+  "id": 1
+}
+```
+
+### `xspot_getOrdersByAccount`
+
+获取用户订单列表。
+
+Parameters: `[AccountId, page_index, page_size]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xspot_getOrdersByAccount",
+  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4", 0, 100]
+}
+```
+
+Response:
+
+### `xspot_getDepth`
+
+获取交易对盘口附近深度。
+
+Parameters: `[pair_id, depth_size]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xspot_getDepth",
+  "params": [0, 10]
+}
+```
+
+Response:
 
 ## Mining Asset
 
