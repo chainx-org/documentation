@@ -26,7 +26,7 @@ ChainX 2.0 验证节点指南
 
 #### 使用 docker 镜像
 
-运行以下命令，可以直接启动节点  
+运行以下命令，可以直接启动节点
 
 ```bash
 docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator
@@ -120,7 +120,7 @@ $ ./chainx --chain=mainnet --validator
 {{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
 
 {{%alert %}}
-节点成功启动后， 可以在[Telemetry(stats.chainx.org)](stats.chainx.org)上看到您的节点。
+节点成功启动后， 可以在[Telemetry(stats.chainx.org)](https://stats.chainx.org)上看到您的节点。
 {{%/alert%}}
 
 ### 注册账户
@@ -166,8 +166,9 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 ![setKeys](/images/setkeys.png)
 
 {{%alert%}}
+
 - 目前，`proof` 填入`0x00` 即可。
-{{%/alert%}}
+  {{%/alert%}}
 
 调用`nextKey`可以验证是否正确设置。
 
@@ -175,7 +176,7 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 
 由于当节点部署不当导致出块异常时， 会受到一定的惩罚。 所以可以部署额外的备份节点， 备份节点以`--pruning=archive`模式启动， 这样当主节点出现异常时， 可以用备份节点代替工作， 以免受到惩罚。
 
-## 验证
+## 验证出块
 
 当选验证人之后，如果在日志中看到`Prepared block for proposing at ...`, 即说明节点已成功出块。
 
@@ -186,6 +187,12 @@ Nov 04 10:12:06.009  INFO 🎁 Prepared block for proposing at 4 [hash: 0x6740b0
 Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66f1579117b6aba16d4f57ae7ddf19ad209c8077a4f4f78ed4cb80877754a0f5, previously 0x6740b08d96a329c9be13290760d15a537f3bd6635c85261b63e44395ad830b36.
 ......
 ```
+
+## 注意事项
+
+- 第一次减半前，每个 session 约 5 分钟，共发行 50 PCX。
+- 每 12 个 session 进行一次验证人选举换届。
+- 如果节点自抵押小于 1PCX 或总得票数小于 10PCX, 在选举验证人时将会被强制退选。
 
 ## 节点惩罚
 
