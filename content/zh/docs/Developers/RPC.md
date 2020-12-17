@@ -261,6 +261,194 @@ Response:
 }
 ```
 
+## DEX
+
+### `xspot_getTradingPairs`
+
+获取所有交易对信息。
+
+Parameters: `[]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xspot_getTradingPairs",
+  "params": []
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "baseCurrency": 0, // PCX/BTC -> PCX
+      "highestBid": "0", // 当前最高价
+      "id": 0, // 交易对ID
+      "lastUpdated": 0, // 最新成交对价更新高度
+      "latestPrice": "100000", // 最新成交价
+      "lowestAsk": "0", // 当前最低价
+      "maxValidBid": "0", // 最高有效买入价
+      "minValidAsk": "100", // 最低有效卖出价
+      "pipDecimals": 9, // 交易对精度
+      "quoteCurrency": 1, // PCX/BTC -> BTC
+      "tickDecimals": 2, // 单跳精度
+      "tradable": true // 交易对可正常交易
+    }
+  ],
+  "id": 1
+}
+```
+
+### `xspot_getOrdersByAccount`
+
+获取用户订单列表。
+
+Parameters: `[AccountId, page_index, page_size]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xspot_getOrdersByAccount",
+  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4", 0, 100]
+}
+```
+
+Response:
+
+### `xspot_getDepth`
+
+获取交易对盘口附近深度。
+
+Parameters: `[pair_id, depth_size]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xspot_getDepth",
+  "params": [0, 10]
+}
+```
+
+Response:
+
+## Mining Asset
+
+### `xminingasset_getMiningAssets`
+
+获取所有参与挖矿的跨链资产。
+
+Parameters: `[]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xminingasset_getMiningAssets",
+  "params": []
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "assetId": 1, // 跨链资产ID
+      "lastTotalMiningWeight": "23491518002714020", // 上一次更新的总挖矿权重
+      "lastTotalMiningWeightUpdate": 188250, // 上一次总挖矿权重更新高度
+      "miningPower": 400, // 资产挖矿算力
+      "rewardPot": "5RVjEbHJak6YQDwujo78pRH9V8WVoM3CYn3Ub7BhnMLs9Yx8", // 奖池地址
+      "rewardPotBalance": "470655234171" // 奖池金额
+    }
+  ],
+  "id": 1
+}
+```
+
+### `xminingasset_getDividendByAccount`
+
+获取跨链挖矿用户的挖矿利息。
+
+Parameters: `[AccountId]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xminingasset_getDividendByAccount",
+  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4"]
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    // key 为用户的跨链资产ID
+    "1": {
+      "insufficientStake": "0", // 跨链挖矿用户需要在staking中抵押相应资产才能提息，如果 insufficientStake 不为0，表示用户还需要在staking中抵押更多才能提息
+      "other": "1742250653", // 用户跨链挖矿总利息的10%归推荐人，如果没有推荐人则归为财库
+      "own": "15680255878" // 用户最终能领取的跨链挖矿利息
+    }
+  },
+  "id": 1
+}
+```
+
+### `xminingasset_getMinerLedgerByAccount`
+
+获取跨链挖矿用户的挖矿记录。
+
+Parameters: `[AccountId]`
+
+Request:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "xminingasset_getNominationByAccount",
+  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4"]
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    // key 为跨链资产ID
+    "1": {
+      "lastClaim": null, // 上一次提息高度，null 表示还从未提过息
+      "lastMiningWeight": "831778601884312", // 上一次挖矿总票龄
+      "lastMiningWeightUpdate": 0 // 上一次挖矿总票龄更新高度
+    }
+  },
+  "id": 1
+}
+```
+
 ## Gateway
 
 ### `xgatewaycommon_boundAddrs`
@@ -507,193 +695,5 @@ Response:
     "jsonrpc": "2.0",
     "result": {},
     "id": 1
-}
-```
-
-## DEX
-
-### `xspot_getTradingPairs`
-
-获取所有交易对信息。
-
-Parameters: `[]`
-
-Request:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "xspot_getTradingPairs",
-  "params": []
-}
-```
-
-Response:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": [
-    {
-      "baseCurrency": 0, // PCX/BTC -> PCX
-      "highestBid": "0", // 当前最高价
-      "id": 0, // 交易对ID
-      "lastUpdated": 0, // 最新成交对价更新高度
-      "latestPrice": "100000", // 最新成交价
-      "lowestAsk": "0", // 当前最低价
-      "maxValidBid": "0", // 最高有效买入价
-      "minValidAsk": "100", // 最低有效卖出价
-      "pipDecimals": 9, // 交易对精度
-      "quoteCurrency": 1, // PCX/BTC -> BTC
-      "tickDecimals": 2, // 单跳精度
-      "tradable": true // 交易对可正常交易
-    }
-  ],
-  "id": 1
-}
-```
-
-### `xspot_getOrdersByAccount`
-
-获取用户订单列表。
-
-Parameters: `[AccountId, page_index, page_size]`
-
-Request:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "xspot_getOrdersByAccount",
-  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4", 0, 100]
-}
-```
-
-Response:
-
-### `xspot_getDepth`
-
-获取交易对盘口附近深度。
-
-Parameters: `[pair_id, depth_size]`
-
-Request:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "xspot_getDepth",
-  "params": [0, 10]
-}
-```
-
-Response:
-
-## Mining Asset
-
-### `xminingasset_getMiningAssets`
-
-获取所有参与挖矿的跨链资产。
-
-Parameters: `[]`
-
-Request:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "xminingasset_getMiningAssets",
-  "params": []
-}
-```
-
-Response:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": [
-    {
-      "assetId": 1, // 跨链资产ID
-      "lastTotalMiningWeight": "23491518002714020", // 上一次更新的总挖矿权重
-      "lastTotalMiningWeightUpdate": 188250, // 上一次总挖矿权重更新高度
-      "miningPower": 400, // 资产挖矿算力
-      "rewardPot": "5RVjEbHJak6YQDwujo78pRH9V8WVoM3CYn3Ub7BhnMLs9Yx8", // 奖池地址
-      "rewardPotBalance": "470655234171" // 奖池金额
-    }
-  ],
-  "id": 1
-}
-```
-
-### `xminingasset_getDividendByAccount`
-
-获取跨链挖矿用户的挖矿利息。
-
-Parameters: `[AccountId]`
-
-Request:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "xminingasset_getDividendByAccount",
-  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4"]
-}
-```
-
-Response:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    // key 为用户的跨链资产ID
-    "1": {
-      "insufficientStake": "0", // 跨链挖矿用户需要在staking中抵押相应资产才能提息，如果 insufficientStake 不为0，表示用户还需要在staking中抵押更多才能提息
-      "other": "1742250653", // 用户跨链挖矿总利息的10%归推荐人，如果没有推荐人则归为财库
-      "own": "15680255878" // 用户最终能领取的跨链挖矿利息
-    }
-  },
-  "id": 1
-}
-```
-
-### `xminingasset_getMinerLedgerByAccount`
-
-获取跨链挖矿用户的挖矿记录。
-
-Parameters: `[AccountId]`
-
-Request:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "xminingasset_getNominationByAccount",
-  "params": ["5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4"]
-}
-```
-
-Response:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    // key 为跨链资产ID
-    "1": {
-      "lastClaim": null, // 上一次提息高度，null 表示还从未提过息
-      "lastMiningWeight": "831778601884312", // 上一次挖矿总票龄
-      "lastMiningWeightUpdate": 0 // 上一次挖矿总票龄更新高度
-    }
-  },
-  "id": 1
 }
 ```
