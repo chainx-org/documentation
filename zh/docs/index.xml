@@ -311,6 +311,286 @@
 },
 &lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
 }
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gateway">Gateway&lt;/h2>
+&lt;h3 id="xgatewaycommon_boundaddrs">&lt;code>xgatewaycommon_boundAddrs&lt;/code>&lt;/h3>
+&lt;p>Get bound addrs of an accountid&lt;/p>
+&lt;p>Parameter: &lt;code>[AccountId, Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_boundAddrs&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5QPPvMtpstjYm1srogvjfbNzzo1NaUqF1wJzynZkvS9KrSMS&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Bitcoin&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;3J1oPTKHZAK21mfgYQ8AEhuyCNRyn9ZLtJ&amp;#34;&lt;/span>]
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewaycommon_withdrawallimit">&lt;code>xgatewaycommon_withdrawalLimit&lt;/code>&lt;/h3>
+&lt;p>Get withdrawal limit(minimal_withdrawal&amp;amp;fee) for an AssetId&lt;/p>
+&lt;p>Parameter: &lt;code>[AssetId, Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_withdrawalLimit&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#00d;font-weight:bold">1&lt;/span>] &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">the&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">AssetId&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">of&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">X-BTC&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">is&lt;/span> &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;fee&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;100000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;minimalWithdrawal&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;150000&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewaycommon_verifywithdrawal">&lt;code>xgatewaycommon_verifyWithdrawal&lt;/code>&lt;/h3>
+&lt;p>Use the params to verify whether the withdrawal apply is valid.
+Notice those params is same as the params for call &lt;code>XGatewayCommon::withdraw(...)&lt;/code>,
+including checking address is valid or something else.
+Front-end should use this rpc to check params first, then could create the extrinsic.&lt;/p>
+&lt;p>Parameter: &lt;code>[AssetId, u64, String, String, Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_verifyWithdrawal&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[
+&lt;span style="color:#00d;font-weight:bold">1&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">the&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">AssetId&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">of&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">XBTC&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">is&lt;/span> &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+&lt;span style="color:#00d;font-weight:bold">500000&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">value&lt;/span>
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;3J1oPTKHZAK21mfgYQ8AEhuyCNRyn9ZLtJ&amp;#34;&lt;/span>, &lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">bitcoin&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">address&lt;/span>
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;&amp;#34;&lt;/span>,&lt;span style="color:#a61717;background-color:#e3d2d2">//&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">memo&lt;/span>
+]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: &lt;span style="color:#080;font-weight:bold">true&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewaycommon_trusteemultisigs">&lt;code>xgatewaycommon_trusteeMultisigs&lt;/code>&lt;/h3>
+&lt;p>Return the trustee multisig address for all chain.&lt;/p>
+&lt;p>Parameter: &lt;code>[Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_trusteeMultisigs&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;Bitcoin&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5QbRFQrfFEikrdckCwJq9LAQoh5kNPCHN9uu55WZcEPeRvE4&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewaycommon_bitcointrusteeproperties">&lt;code>xgatewaycommon_bitcoinTrusteeProperties&lt;/code>&lt;/h3>
+&lt;p>Return bitcoin trustee for current session(e.g. trustee hot/cold address and else).&lt;/p>
+&lt;p>Parameter: &lt;code>[AccountId, Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_bitcoinTrusteeProperties&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;about&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;buildlinks&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;coldEntity&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x02c179b0e69b342bf295200fa072bd2a4e956a2b74d7319c256946bc349c67d209&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;hotEntity&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x034d3e7f87e69c6c71df6052b44f9ed99a3d811613140ebf09f8fdaf904a2e1de8&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewaycommon_bitcointrusteesessioninfo">&lt;code>xgatewaycommon_bitcoinTrusteeSessionInfo&lt;/code>&lt;/h3>
+&lt;p>Return bitcoin trustee for current session&lt;/p>
+&lt;p>Parameter: &lt;code>[Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_bitcoinTrusteeSessionInfo&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;coldAddress&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;37DzisAW8DpyY2oqAfT3NfEwpG3SFVUUoR&amp;#34;&lt;/span>,&lt;span style="color:#b06;font-weight:bold">&amp;#34;redeemScript&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x542103615bee4a2f2e80605be8730dc9630b002ad83b068a902df03b155797357030f721037f8d0b44a282a89352b238b2d09f996df290aa65e0a95e6c99a445072ce390ce210281687791324c3d99d9bd39370baf4c138b1e1670a9939a406e3ac22577e39c00210386b58f51da9b37e59c40262153173bdb59d7e4e45b73994b99eec4d964ee7e88210299b5c30667f2e80ddccbac8d112e52387fa1056ef2510c0b7a627215eb0a45502102c179b0e69b342bf295200fa072bd2a4e956a2b74d7319c256946bc349c67d20956ae&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;hotAddress&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;3LrrqZ2LtZxAcroVaYKgM6yDeRszV2sY1r&amp;#34;&lt;/span>,&lt;span style="color:#b06;font-weight:bold">&amp;#34;redeemScript&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x542102e2b2720a9e54617ba87fca287c3d7f9124154d30fa8dc9cd260b6b254e1d7aea210219fc860933a1362bc5e0a0bbe1b33a47aedf904765f4a85cd166ba1d767927ee2102b921cb319a14c6887b12cee457453f720e88808a735a578d6c57aba0c74e5af32102df92e88c4380778c9c48268460a124a8f4e7da883f80477deaa644ced486efc6210346aa7ade0b567b34182cacf9444deb44ee829e14705dc87175107dd09d5dbf4021034d3e7f87e69c6c71df6052b44f9ed99a3d811613140ebf09f8fdaf904a2e1de856ae&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;threshold&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">4&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;trusteeList&amp;#34;&lt;/span>:[
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5SY3yajabLKYcuxPjXwLMc7p6WDC4Tv1H3sVMx6Hmjtxycji&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5V7ygyZ53psrNSFgT3n7Xnxd6r7eC6bga3eA4W8KYEs75ZeC&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5ReDj2o2xRQowpcrRdrCq3hR4cj1dJgj239dGMHnB9QzAnPa&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5QpTfTDYSLWkuVEvRqEcugQtFZnhE3qyJLCzwGQgdzNRpiSQ&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa&amp;#34;&lt;/span>
+]
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewaycommon_bitcoingeneratetrusteesessioninfo">&lt;code>xgatewaycommon_bitcoinGenerateTrusteeSessionInfo&lt;/code>&lt;/h3>
+&lt;p>Try to generate bitcoin trustee info for a list of candidates.
+(this api is used to check the trustee info which would be generated by those candidates)&lt;/p>
+&lt;p>Parameter: &lt;code>[Vec&amp;lt;AccountId&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewaycommon_bitcoinGenerateTrusteeSessionInfo&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5SY3yajabLKYcuxPjXwLMc7p6WDC4Tv1H3sVMx6Hmjtxycji&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5V7ygyZ53psrNSFgT3n7Xnxd6r7eC6bga3eA4W8KYEs75ZeC&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5ReDj2o2xRQowpcrRdrCq3hR4cj1dJgj239dGMHnB9QzAnPa&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5QpTfTDYSLWkuVEvRqEcugQtFZnhE3qyJLCzwGQgdzNRpiSQ&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa&amp;#34;&lt;/span>
+]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;coldAddress&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;37DzisAW8DpyY2oqAfT3NfEwpG3SFVUUoR&amp;#34;&lt;/span>,&lt;span style="color:#b06;font-weight:bold">&amp;#34;redeemScript&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x542103615bee4a2f2e80605be8730dc9630b002ad83b068a902df03b155797357030f721037f8d0b44a282a89352b238b2d09f996df290aa65e0a95e6c99a445072ce390ce210281687791324c3d99d9bd39370baf4c138b1e1670a9939a406e3ac22577e39c00210386b58f51da9b37e59c40262153173bdb59d7e4e45b73994b99eec4d964ee7e88210299b5c30667f2e80ddccbac8d112e52387fa1056ef2510c0b7a627215eb0a45502102c179b0e69b342bf295200fa072bd2a4e956a2b74d7319c256946bc349c67d20956ae&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;hotAddress&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;3LrrqZ2LtZxAcroVaYKgM6yDeRszV2sY1r&amp;#34;&lt;/span>,&lt;span style="color:#b06;font-weight:bold">&amp;#34;redeemScript&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;0x542102e2b2720a9e54617ba87fca287c3d7f9124154d30fa8dc9cd260b6b254e1d7aea210219fc860933a1362bc5e0a0bbe1b33a47aedf904765f4a85cd166ba1d767927ee2102b921cb319a14c6887b12cee457453f720e88808a735a578d6c57aba0c74e5af32102df92e88c4380778c9c48268460a124a8f4e7da883f80477deaa644ced486efc6210346aa7ade0b567b34182cacf9444deb44ee829e14705dc87175107dd09d5dbf4021034d3e7f87e69c6c71df6052b44f9ed99a3d811613140ebf09f8fdaf904a2e1de856ae&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;threshold&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">4&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;trusteeList&amp;#34;&lt;/span>:[
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5SY3yajabLKYcuxPjXwLMc7p6WDC4Tv1H3sVMx6Hmjtxycji&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5V7ygyZ53psrNSFgT3n7Xnxd6r7eC6bga3eA4W8KYEs75ZeC&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5ReDj2o2xRQowpcrRdrCq3hR4cj1dJgj239dGMHnB9QzAnPa&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5RjfjwXjzJtVd6EiTCG3RsJmUM9h4FgocswJyAaLvuBicwE4&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5QpTfTDYSLWkuVEvRqEcugQtFZnhE3qyJLCzwGQgdzNRpiSQ&amp;#34;&lt;/span>,
+&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa&amp;#34;&lt;/span>
+]
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewayrecords_withdrawallist">&lt;code>xgatewayrecords_withdrawalList&lt;/code>&lt;/h3>
+&lt;p>Return current withdraw list(include Applying and Processing withdraw state)&lt;/p>
+&lt;p>Parameter: &lt;code>[Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewayrecords_withdrawalList&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;0&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;39WkLFHVp5fzFqzQanNPKryWi4QypRgqmB&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;applicant&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5SZWXKrihcv69iVXFpktGhTBB4oTx29W47TUhvHB2ZtY5i9t&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ext&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;test new trustee tools, this withdrawal is created by buildlinks.&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;height&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">304808&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;state&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Processing&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1Ar7GpT3bYbqw1w6esU5embS24X2Jb7dGM&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;applicant&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5TEsk4nRDF1fT1Kv7Pn5dz2JTAXe4D6zWstd6aXfch4pWnee&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;11038400&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ext&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;height&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">305328&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;state&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Applying&amp;#34;&lt;/span>
+},
+&lt;span style="color:#a61717;background-color:#e3d2d2">...&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewayrecords_withdrawallistbychain">&lt;code>xgatewayrecords_withdrawalListByChain&lt;/code>&lt;/h3>
+&lt;p>Return current withdraw list for a chain(include Applying and Processing withdraw state)&lt;/p>
+&lt;p>Parameter: &lt;code>[Chain, Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewayrecords_withdrawalListByChain&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Bitcoin&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;0&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;39WkLFHVp5fzFqzQanNPKryWi4QypRgqmB&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;applicant&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5SZWXKrihcv69iVXFpktGhTBB4oTx29W47TUhvHB2ZtY5i9t&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ext&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;test new trustee tools, this withdrawal is created by buildlinks.&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;height&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">304808&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;state&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Processing&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1Ar7GpT3bYbqw1w6esU5embS24X2Jb7dGM&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;applicant&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5TEsk4nRDF1fT1Kv7Pn5dz2JTAXe4D6zWstd6aXfch4pWnee&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;11038400&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ext&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;height&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">305328&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;state&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Applying&amp;#34;&lt;/span>
+},
+&lt;span style="color:#a61717;background-color:#e3d2d2">...&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="xgatewayrecords_pendingwithdrawallistbychain">&lt;code>xgatewayrecords_pendingWithdrawalListByChain&lt;/code>&lt;/h3>
+&lt;p>Return current pending withdraw list for a chain&lt;/p>
+&lt;p>Parameter: &lt;code>[Chain, Option&amp;lt;BlockHash&amp;gt;]&lt;/code>&lt;/p>
+&lt;p>Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;method&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;xgatewayrecords_pendingWithdrawalListByChain&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;params&amp;#34;&lt;/span>:[&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Bitcoin&amp;#34;&lt;/span>]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;jsonrpc&amp;#34;&lt;/span>: &lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>: {
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;0&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;39WkLFHVp5fzFqzQanNPKryWi4QypRgqmB&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;applicant&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5SZWXKrihcv69iVXFpktGhTBB4oTx29W47TUhvHB2ZtY5i9t&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1000000&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ext&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;test new trustee tools, this withdrawal is created by buildlinks.&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;height&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">304808&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;state&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Processing&amp;#34;&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;1&amp;#34;&lt;/span>:{
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;addr&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;1Ar7GpT3bYbqw1w6esU5embS24X2Jb7dGM&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;applicant&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;5TEsk4nRDF1fT1Kv7Pn5dz2JTAXe4D6zWstd6aXfch4pWnee&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;assetId&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">1&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;balance&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;11038400&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;ext&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;&amp;#34;&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;height&amp;#34;&lt;/span>:&lt;span style="color:#00d;font-weight:bold">305328&lt;/span>,
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;state&amp;#34;&lt;/span>:&lt;span style="color:#d20;background-color:#fff0f0">&amp;#34;Applying&amp;#34;&lt;/span>
+},
+&lt;span style="color:#a61717;background-color:#e3d2d2">...&lt;/span>
+},
+&lt;span style="color:#b06;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#00d;font-weight:bold">1&lt;/span>
+}
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 账户系统</title><link>https://chainx-org.github.io/documentation/zh/docs/basics/accounts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/basics/accounts/</guid><description/></item><item><title>Docs: JS-SDK</title><link>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/developers/js-sdk/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
