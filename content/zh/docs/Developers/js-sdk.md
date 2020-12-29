@@ -89,7 +89,7 @@ console.log('address:', account3.address()); // 地址
 ## 交易接口
 
 ```javascript
-const ChainX = require('@chinx-v2/api');
+const ChainX = require('@chainx-v2/api');
 
 (async () => {
 
