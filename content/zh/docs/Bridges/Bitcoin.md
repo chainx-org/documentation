@@ -56,7 +56,7 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 因此在ChainX中的比特币轻节点的验证与确认区块逻辑是
 
-![ChainX_Bitcoin_bridge](/images/ChainX_Bitcoin_bridge.jpg)
+![ChainX_Bitcoin_bridge](./images/ChainX.jpg)
 
 在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。
 
@@ -81,8 +81,6 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 由以上介绍可知，比特币转接桥采用了单向Relay加信托多签的模式维护比特币转接桥的比特币跨链过程。因此总体的比特币转接桥业务逻辑如下图所示：
 
-![ChainX_Bitcoin](/images/ChainX_Bitcoin.jpg)
-
 由上图可以看到：
 
 1. 前置条件：
@@ -97,6 +95,8 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 3. 充值过程：
 
+   ![ChainXBTC](./images/ChainXBTC.jpg)
+
    1. 链上首先具备区块；
    2. 用户转账到信托的热地址，并在**交易中的OP_RETURN中携带用户的ChainX地址及其他信息**，携带了信息比特币转接桥才可识别出这笔充值转账交易是与哪个ChainX用户相关；
    3. Relay发现这笔交易，并将这笔交易提交到转接桥中；（1.0中发现交易就可提交，直到确认才会执行，2.0中只能提交确认过的交易）
@@ -104,6 +104,8 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
    5. 至此，比特币充值流程执行完毕。
 
 4. 提现过程：
+
+   ![ChainXBTC1](./images/ChainXBTC 1.jpg)
 
    1. 用户申请提现X-BTC；
    2. ChainX转接桥/网关模块中的记录模块会锁定对应的X-BTC并记录用户申请信息，该信息有唯一ID与其关联；
