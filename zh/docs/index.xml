@@ -1477,7 +1477,6 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;p>关于多签及信托的更多内容请参见 &lt;a href="../Trustee">信托&lt;/a>&lt;/p>
 &lt;h2 id="比特币转接桥业务逻辑">比特币转接桥业务逻辑&lt;/h2>
 &lt;p>由以上介绍可知，比特币转接桥采用了单向Relay加信托多签的模式维护比特币转接桥的比特币跨链过程。因此总体的比特币转接桥业务逻辑如下图所示：&lt;/p>
-&lt;p>&lt;img src="../../images/ChainX_Bitcoin.jpg" alt="ChainX_Bitcoin">&lt;/p>
 &lt;p>由上图可以看到：&lt;/p>
 &lt;ol>
 &lt;li>
@@ -1494,6 +1493,7 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;/li>
 &lt;li>
 &lt;p>充值过程：&lt;/p>
+&lt;p>&lt;img src="../../images/ChainX_BTC_Deposit.jpg" alt="ChainX_BTC_Deposit">&lt;/p>
 &lt;ol>
 &lt;li>链上首先具备区块；&lt;/li>
 &lt;li>用户转账到信托的热地址，并在&lt;strong>交易中的OP_RETURN中携带用户的ChainX地址及其他信息&lt;/strong>，携带了信息比特币转接桥才可识别出这笔充值转账交易是与哪个ChainX用户相关；&lt;/li>
@@ -1504,6 +1504,7 @@ $ bitcoin-cli -conf=/mnt/bitcoin-mainnet/bitcoin.conf stop
 &lt;/li>
 &lt;li>
 &lt;p>提现过程：&lt;/p>
+&lt;p>&lt;img src="../../images/ChainX_BTC_Withdraw.jpg" alt="ChainX_BTC_Withdraw">&lt;/p>
 &lt;ol>
 &lt;li>用户申请提现X-BTC；&lt;/li>
 &lt;li>ChainX转接桥/网关模块中的记录模块会锁定对应的X-BTC并记录用户申请信息，该信息有唯一ID与其关联；&lt;/li>
