@@ -56,7 +56,7 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 因此在ChainX中的比特币轻节点的验证与确认区块逻辑是
 
-![ChainX_Bitcoin_bridge](./images/ChainX.jpg)
+![ChainX_Bitcoin_bridge](/images/ChainX_Bitcoin_bridge.jpg)
 
 在ChainX 1.0 中，与ChainX相关的比特币交易可以先提交到转接后，再等待到比特币区块头确认后执行交易处理流程，而在ChainX 2.0简化了这一过程，只允许提交在ChainX链上已经确认的区块头之前的比特币交易，在还未确认的区块头下的比特币交易不允许提交。
 
@@ -95,7 +95,7 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 3. 充值过程：
 
-   ![ChainXBTC](./images/ChainXBTC.jpg)
+   ![ChainX_BTC_Deposit](/images/ChainX_BTC_Deposit.jpg)
 
    1. 链上首先具备区块；
    2. 用户转账到信托的热地址，并在**交易中的OP_RETURN中携带用户的ChainX地址及其他信息**，携带了信息比特币转接桥才可识别出这笔充值转账交易是与哪个ChainX用户相关；
@@ -105,7 +105,7 @@ ChainX在Runtime环境内实现了一个完全的比特币轻节点验证逻辑�
 
 4. 提现过程：
 
-   ![ChainXBTC1](./images/ChainXBTC 1.jpg)
+   ![ChainX_BTC_Withdraw](/images/ChainX_BTC_Withdraw.jpg)
 
    1. 用户申请提现X-BTC；
    2. ChainX转接桥/网关模块中的记录模块会锁定对应的X-BTC并记录用户申请信息，该信息有唯一ID与其关联；
