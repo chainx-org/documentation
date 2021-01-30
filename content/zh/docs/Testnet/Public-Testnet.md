@@ -10,8 +10,14 @@ ChainX malan testnet 是一个类似波卡 westend 的测试网络，用于 Chai
 
 ```bash
 # 使用 --chain=malan 或 --chain=testnet 连接 malan 测试网
-$ chainx --chain=malan
+$ chainx --chain=malan --enable-console-log -d malan-db
 ```
+
+- 测试网浏览器：http://testnet-scan.chainx.org/
+- 测试网 API: testnet-api.chainx.org
+- Telemetry:
+  - https://telemetry.polkadot.io/#list/ChainX%20Malan
+  - https://telemetry.chainx.org/#list/ChainX%20Malan
 
 malan 测试网提供了下面的 RPC 和 WS 节点:
 
