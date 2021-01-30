@@ -931,7 +931,25 @@ This is a warning with a title.
 &lt;ol>
 &lt;li>每个跨链资产的提息间隔不低于 7 天，否则提息失败。&lt;/li>
 &lt;li>用户对所有跨链资产提息时，其 PCX 总投票冻结必须不低于总利息的 10 倍，否则提息失败。&lt;/li>
-&lt;/ol></description></item><item><title>Docs: 公开测试网</title><link>https://chainx-org.github.io/documentation/zh/docs/testnet/public-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/testnet/public-testnet/</guid><description/></item><item><title>Docs: 本地 Dev 测试网</title><link>https://chainx-org.github.io/documentation/zh/docs/testnet/local-dev-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/testnet/local-dev-testnet/</guid><description/></item><item><title>Docs: Another Tutorial</title><link>https://chainx-org.github.io/documentation/zh/docs/smart-contract/tutorial2/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/smart-contract/tutorial2/</guid><description>
+&lt;/ol></description></item><item><title>Docs: 公开测试网</title><link>https://chainx-org.github.io/documentation/zh/docs/testnet/public-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/testnet/public-testnet/</guid><description>
+&lt;p>ChainX malan testnet 是一个类似波卡 westend 的测试网络，用于 ChainX 主网升级前的一个试验性网络, 其代币不具有任何价值。对于想接入 ChainX 主网的钱包，交易所等第三方，可以在该测试网进行功能测试和调试。如果需要测试币，可以线下联系相关人员或在 &lt;a href="https://github.com/chainx-org/ChainX/issues/new">GitHub 上用 issue 留言&lt;/a>。&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#888"># 使用 --chain=malan 或 --chain=testnet 连接 malan 测试网&lt;/span>
+$ chainx --chain=malan --enable-console-log -d malan-db
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>测试网浏览器：http://testnet-scan.chainx.org/&lt;/li>
+&lt;li>测试网 API: testnet-api.chainx.org&lt;/li>
+&lt;li>Telemetry:
+&lt;ul>
+&lt;li>&lt;a href="https://telemetry.polkadot.io/#list/ChainX%20Malan">https://telemetry.polkadot.io/#list/ChainX%20Malan&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://telemetry.chainx.org/#list/ChainX%20Malan">https://telemetry.chainx.org/#list/ChainX%20Malan&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>malan 测试网提供了下面的 RPC 和 WS 节点:&lt;/p>
+&lt;ul>
+&lt;li>47.99.172.185: RPC 8086, WS 8087&lt;/li>
+&lt;li>47.110.34.31: RPC 8086, WS 8087&lt;/li>
+&lt;/ul></description></item><item><title>Docs: 本地 Dev 测试网</title><link>https://chainx-org.github.io/documentation/zh/docs/testnet/local-dev-testnet/</link><pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/testnet/local-dev-testnet/</guid><description/></item><item><title>Docs: Another Tutorial</title><link>https://chainx-org.github.io/documentation/zh/docs/smart-contract/tutorial2/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/smart-contract/tutorial2/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
