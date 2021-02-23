@@ -57,7 +57,9 @@ $ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
 ```bash
 $ git clone https://github.com/chainx-org/ChainX
 $ cd ChainX
-$ git checkout v2.0.0
+# 切到最新的 tag
+$ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+# 编译 Release 版本的二进制
 $ cargo build --release
 ```
 
@@ -120,7 +122,7 @@ $ ./chainx --chain=mainnet --validator
 {{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
 
 {{%alert %}}
-节点成功启动后， 可以在[Telemetry](https://telemetry.chainx.org)上看到您的节点。
+节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
 {{%/alert%}}
 
 ### 注册账户
