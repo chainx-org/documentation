@@ -104,7 +104,7 @@ $ ./chainx --chain=mainnet --validator
   "db-cache": 2048, // 设置节点数据库的缓存，单位MB，即这里为2GB
   "state-cache-size": 2147483648, // 设置节点状态树缓存，单位B，即这里为2GB (2GB = 2 * 1024 * 1024)
   "name": "Your-Node-Name", // 在节点浏览器Telemetry中显示的节点名
-  "base-path": "${DB_PATH}", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
+  "base-path": "data", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
   "bootnodes": [] // 种子节点， 为空列表时使用内置的种子节点
 }
 ```
@@ -117,16 +117,41 @@ $ ./chainx --chain=mainnet --validator
 
 #### 使用 docker 镜像
 
+将上述配置文件放在当前目录下， 命名为`config.json`, 去掉注释的部分。 运行如下命令：
+
+```bash
+$cat ./config.json
+{
+  "log-dir": "./log",
+  "enable-console-log": false,
+  "no-mdns": true,
+  "validator": true,
+  "ws-external": false,
+  "rpc-external": false,
+  "log": "info,runtime=info",
+  "port": 20222,
+  "ws-port": 8087,
+  "rpc-port": 8086,
+  "pruning": "archive",
+  "execution": "NativeElseWasm",
+  "db-cache": 2048,
+  "state-cache-size": 2147483648,
+  "name": "Your-Node-Name",
+  "base-path": "data",
+  "bootnodes": []
+}
+```
+
 运行以下命令，可以直接启动节点
 
 ```bash
-docker run -it --rm -p $RPC_PORT:$RPC_PORT -p $WS_PORT:$WS_PORT -p $P2P_PORT:$P2P_PORT -v $PWD/config.json:/config.json -v $PWD/$DBPATH:$DBPATH -v $PWD/$LOG_DIR:$LOG_DIR -v $PWD/$KEYSTORE_PATH:$KEYSTORE_PATH chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+docker run -it --rm -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
 ```
 
 其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
 
 ```bash
-docker run -d --restart always --name chainx -p $RPC_PORT:$RPC_PORT -p $WS_PORT:$WS_PORT -p $P2P_PORT:$P2P_PORT -v $PWD/config.json:/config.json -v $PWD/$DBPATH:$DBPATH -v $PWD/$LOG_DIR:$LOG_DIR -v $PWD/$KEYSTORE_PATH:$KEYSTORE_PATH chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
 ```
 
 后台运行的 docker 可以通过:
@@ -136,7 +161,7 @@ docker logs -f chainx // 查看部分error日志
 tail -f log/chainx.log //查看全部日志
 ```
 
-{{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
+{{%warn}}端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。{{%/warn%}}
 
 ### 注册账户
 
