@@ -171,6 +171,29 @@ $ tail -f log/chainx.log # 查看全部日志
 ......
 ```
 
+#### 使用 docker 镜像
+
+运行以下命令，可以直接启动节点
+
+```bash
+docker run -it --rm -p $RPC_PORT:$RPC_PORT -p $WS_PORT:$WS_PORT -p $P2P_PORT:$P2P_PORT -v $PWD/config.json:/config.json -v $PWD/$DBPATH:$DBPATH -v $PWD/$LOG_DIR:$LOG_DIR -v $PWD/$KEYSTORE_PATH:$KEYSTORE_PATH chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+```
+
+其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
+
+```bash
+docker run -d --restart always --name chainx -p $RPC_PORT:$RPC_PORT -p $WS_PORT:$WS_PORT -p $P2P_PORT:$P2P_PORT -v $PWD/config.json:/config.json -v $PWD/$DBPATH:$DBPATH -v $PWD/$LOG_DIR:$LOG_DIR -v $PWD/$KEYSTORE_PATH:$KEYSTORE_PATH chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+```
+
+后台运行的 docker 可以通过:
+
+```bash
+docker logs -f chainx // 查看部分error日志
+tail -f log/chainx.log //查看全部日志
+```
+
+{{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
+
 ### 注册账户
 
 您可以在[新钱包(https://dapp-v2.chainx.org)](https://dapp-v2.chainx.org)上注册账户, 并向该账户转入一点 PCX 作为交易手续费以及后续抵押等费用。
