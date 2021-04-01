@@ -24,16 +24,6 @@ ChainX 2.0 验证节点指南
 
 以阿里云为例，ChainX 主网推荐配置不低于: CPU 4 核, 内存 4 G, 带宽 10M，磁盘使用 SSD 300G+, 操作系统 18.04+.
 
-#### 使用 docker 镜像
-
-运行以下命令，可以直接启动节点
-
-```bash
-docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator
-```
-
-{{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
-
 ### 安装`chainx`程序
 
 #### 从源码编译
@@ -114,7 +104,7 @@ $ ./chainx --chain=mainnet --validator
   "db-cache": 2048, // 设置节点数据库的缓存，单位MB，即这里为2GB
   "state-cache-size": 2147483648, // 设置节点状态树缓存，单位B，即这里为2GB (2GB = 2 * 1024 * 1024)
   "name": "Your-Node-Name", // 在节点浏览器Telemetry中显示的节点名
-  "base-path": "<数据存放路径>", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
+  "base-path": "${DB_PATH}", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
   "bootnodes": [] // 种子节点， 为空列表时使用内置的种子节点
 }
 ```
@@ -124,6 +114,29 @@ $ ./chainx --chain=mainnet --validator
 {{%alert %}}
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
 {{%/alert%}}
+
+#### 使用 docker 镜像
+
+运行以下命令，可以直接启动节点
+
+```bash
+docker run -it --rm -p $RPC_PORT:$RPC_PORT -p $WS_PORT:$WS_PORT -p $P2P_PORT:$P2P_PORT -v $PWD/config.json:/config.json -v $PWD/$DBPATH:$DBPATH -v $PWD/$LOG_DIR:$LOG_DIR -v $PWD/$KEYSTORE_PATH:$KEYSTORE_PATH chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+```
+
+其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
+
+```bash
+docker run -d --restart always --name chainx -p $RPC_PORT:$RPC_PORT -p $WS_PORT:$WS_PORT -p $P2P_PORT:$P2P_PORT -v $PWD/config.json:/config.json -v $PWD/$DBPATH:$DBPATH -v $PWD/$LOG_DIR:$LOG_DIR -v $PWD/$KEYSTORE_PATH:$KEYSTORE_PATH chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+```
+
+后台运行的 docker 可以通过:
+
+```bash
+docker logs -f chainx // 查看部分error日志
+tail -f log/chainx.log //查看全部日志
+```
+
+{{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
 
 ### 注册账户
 
