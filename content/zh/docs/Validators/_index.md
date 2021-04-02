@@ -111,13 +111,13 @@ $ ./chainx --chain=mainnet --validator
 
 {{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-method unsafe`参数{{%/alert%}}
 
-{{%alert %}}
+{{% alert %}}
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
-{{%/alert%}}
+{{% /alert %}}
 
 #### 使用 docker 镜像
 
-将上述配置文件放在当前目录下， 命名为`config.json`, 去掉注释的部分。 运行如下命令：
+将上述配置文件放在当前目录下，命名为`config.json`, 去掉注释的部分，运行如下命令：
 
 ```bash
 $cat ./config.json
@@ -142,34 +142,34 @@ $cat ./config.json
 }
 ```
 
-运行以下命令，可以直接后台启动节点
+`name` 选项会显示在节点浏览器上，修改为自己想要的任意名称，然后运行以下命令可以直接后台启动节点:
 
 ```bash
 docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
 ```
 
-其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
+{{% alert color="warning" %}}
+如果需要对外提供 RPC 服务, 需要在配置文件中开启 `ws-external: true` 和 `rpc-external: true`, 同时指定 `rpc-cors: all` 接受所有外部请求。
 
-后台运行的 docker 可以通过:
+建议验证节点关闭对外的 RPC 选项，只通过同步节点对外提供 RPC 服务。
+
+注意端口的映射必须与`config.json`中保持一致，否则将无法正常使用 RPC。
+{{% /alert %}}
+
+查看节点运行日志:
 
 ```bash
-$tail -f log/chainx.log # 查看全部日志
+$ tail -f log/chainx.log # 查看全部日志
 ```
 
-当日志出现开始同步块的时候， 即说明节点成功启动。
-"""
+当日志出现如下类似的同步信息时，即说明节点成功启动。
+
+```
+......
 2021-04-02 03:05:43:700 INFO tokio-runtime-worker substrate ⚙️ Syncing, target=#1834748 (4 peers), best: #251 (0x4d58…0729), finalized #0 (0x012c…4810), ⬇ 175.1kiB/s ⬆ 11.6kiB/s
 2021-04-02 03:05:48:700 INFO tokio-runtime-worker substrate ⚙️ Syncing 74.4 bps, target=#1834748 (7 peers), best: #623 (0xe3ce…db06), finalized #601 (0x78d1…b55e), ⬇ 54.0kiB/s ⬆ 6.0kiB/s
-"""
-
-{{% alert  %}}
-如果需要在外部使用 rpc 服务, 需要在配置文件中加入`ws-external: true`和`rpc-external: true`。其他选项参考[上文](#配置文件)。
-{{%/alert%}}
-{{% alert  %}}
-在配置时，建议更改配置文件中的`name`项。
-{{%/alert%}}
-
-{{%alert color="warning"%}}端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。{{%/alert%}}
+......
+```
 
 ### 注册账户
 
