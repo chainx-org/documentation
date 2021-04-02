@@ -157,7 +157,6 @@ docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:
 后台运行的 docker 可以通过:
 
 ```bash
-$docker logs -f chainx # 查看部分error日志
 $tail -f log/chainx.log # 查看全部日志
 ```
 
