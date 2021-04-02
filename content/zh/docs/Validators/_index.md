@@ -204,9 +204,7 @@ $cat ./config.json
 docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
 ```
 
-其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
-
-后台运行的 docker 可以通过:
+其中，各参数为配置文件中对应参数, 后台运行的 docker 可以通过:
 
 ```bash
 $tail -f log/chainx.log # 查看全部日志
