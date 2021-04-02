@@ -109,7 +109,7 @@ $ ./chainx --chain=mainnet --validator
 }
 ```
 
-{{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
+{{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-method unsafe`参数{{%/alert%}}
 
 {{%alert %}}
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
@@ -122,7 +122,7 @@ $ ./chainx --chain=mainnet --validator
 ```bash
 $cat ./config.json
 {
-  "log-dir": "./log",
+  "log-dir": "/log",
   "enable-console-log": false,
   "no-mdns": true,
   "validator": true,
@@ -137,7 +137,7 @@ $cat ./config.json
   "db-cache": 2048,
   "state-cache-size": 2147483648,
   "name": "Your-Node-Name",
-  "base-path": "data",
+  "base-path": "/data",
   "bootnodes": []
 }
 ```
@@ -157,9 +157,16 @@ docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:
 后台运行的 docker 可以通过:
 
 ```bash
-docker logs -f chainx // 查看部分error日志
-tail -f log/chainx.log //查看全部日志
+$docker logs -f chainx # 查看部分error日志
+$tail -f log/chainx.log # 查看全部日志
 ```
+
+{{% alert  %}}
+如果需要在外部使用 rpc 服务, 需要在配置文件中加入`ws-external: true`和`rpc-external: true`。其他选项参考[上文](#配置文件)。
+{{%/alert%}}
+{{% alert  %}}
+在配置时，建议更改配置文件中的`name`项。
+{{%/alert%}}
 
 {{%warn}}端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。{{%/warn%}}
 
