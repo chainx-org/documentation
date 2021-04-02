@@ -224,7 +224,7 @@ $tail -f log/chainx.log # 查看全部日志
 在配置时，建议更改配置文件中的`name`项。
 {{%/alert%}}
 
-{{%warn}}端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。{{%/warn%}}
+{{%alert color="warning"%}}端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。{{%/alert%}}
 
 ### 注册账户
 
