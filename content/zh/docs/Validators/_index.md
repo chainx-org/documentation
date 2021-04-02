@@ -115,7 +115,7 @@ $ ./chainx --chain=mainnet --validator
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
 {{% /alert %}}
 
-#### 使用 docker 镜像
+#### 使用 Docker 镜像
 
 将上述配置文件放在当前目录下，命名为`config.json`, 去掉注释的部分，运行如下命令：
 
@@ -164,7 +164,7 @@ $ tail -f log/chainx.log # 查看全部日志
 
 当日志出现如下类似的同步信息时，即说明节点成功启动。
 
-```
+```text
 ......
 2021-04-02 03:05:43:700 INFO tokio-runtime-worker substrate ⚙️ Syncing, target=#1834748 (4 peers), best: #251 (0x4d58…0729), finalized #0 (0x012c…4810), ⬇ 175.1kiB/s ⬆ 11.6kiB/s
 2021-04-02 03:05:48:700 INFO tokio-runtime-worker substrate ⚙️ Syncing 74.4 bps, target=#1834748 (7 peers), best: #623 (0xe3ce…db06), finalized #601 (0x78d1…b55e), ⬇ 54.0kiB/s ⬆ 6.0kiB/s
