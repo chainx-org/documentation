@@ -157,9 +157,11 @@ $tail -f log/chainx.log # 查看全部日志
 ```
 
 当日志出现开始同步块的时候， 即说明节点成功启动。
-"""
+""" text
+......
 2021-04-02 03:05:43:700 INFO tokio-runtime-worker substrate ⚙️ Syncing, target=#1834748 (4 peers), best: #251 (0x4d58…0729), finalized #0 (0x012c…4810), ⬇ 175.1kiB/s ⬆ 11.6kiB/s
 2021-04-02 03:05:48:700 INFO tokio-runtime-worker substrate ⚙️ Syncing 74.4 bps, target=#1834748 (7 peers), best: #623 (0xe3ce…db06), finalized #601 (0x78d1…b55e), ⬇ 54.0kiB/s ⬆ 6.0kiB/s
+......
 """
 
 {{% alert  %}}
