@@ -142,23 +142,25 @@ $cat ./config.json
 }
 ```
 
-运行以下命令，可以直接启动节点
-
-```bash
-docker run -it --rm -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
-```
-
-其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
+运行以下命令，可以直接后台启动节点
 
 ```bash
 docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
 ```
+
+其中，各参数为配置文件中对应参数，此命令会前台运行 chainx， 如需要后台运行请使用:
 
 后台运行的 docker 可以通过:
 
 ```bash
 $tail -f log/chainx.log # 查看全部日志
 ```
+
+当日志出现开始同步块的时候， 即说明节点成功启动。
+"""
+2021-04-02 03:05:43:700 INFO tokio-runtime-worker substrate ⚙️ Syncing, target=#1834748 (4 peers), best: #251 (0x4d58…0729), finalized #0 (0x012c…4810), ⬇ 175.1kiB/s ⬆ 11.6kiB/s
+2021-04-02 03:05:48:700 INFO tokio-runtime-worker substrate ⚙️ Syncing 74.4 bps, target=#1834748 (7 peers), best: #623 (0xe3ce…db06), finalized #601 (0x78d1…b55e), ⬇ 54.0kiB/s ⬆ 6.0kiB/s
+"""
 
 {{% alert  %}}
 如果需要在外部使用 rpc 服务, 需要在配置文件中加入`ws-external: true`和`rpc-external: true`。其他选项参考[上文](#配置文件)。
