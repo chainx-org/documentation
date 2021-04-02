@@ -24,16 +24,6 @@ ChainX 2.0 验证节点指南
 
 以阿里云为例，ChainX 主网推荐配置不低于: CPU 4 核, 内存 4 G, 带宽 10M，磁盘使用 SSD 300G+, 操作系统 18.04+.
 
-#### 使用 docker 镜像
-
-运行以下命令，可以直接启动节点
-
-```bash
-docker run -it -p 8086:8086 -p 8087:8087 chainxorg/chainx:v2.0.0 /usr/local/bin/chainx --name deeeemo --chain=mainnet --validator
-```
-
-{{%alert%}}可以通过`-v`选项映射配置文件或数据库， 并在启动参数中注明。{{%/alert%}}
-
 ### 安装`chainx`程序
 
 #### 从源码编译
@@ -114,16 +104,72 @@ $ ./chainx --chain=mainnet --validator
   "db-cache": 2048, // 设置节点数据库的缓存，单位MB，即这里为2GB
   "state-cache-size": 2147483648, // 设置节点状态树缓存，单位B，即这里为2GB (2GB = 2 * 1024 * 1024)
   "name": "Your-Node-Name", // 在节点浏览器Telemetry中显示的节点名
-  "base-path": "<数据存放路径>", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
+  "base-path": "data", // 数据库路径， linux下默认为`$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db`
   "bootnodes": [] // 种子节点， 为空列表时使用内置的种子节点
 }
 ```
 
-{{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--unsafe-{ws,rpc}-external`参数{{%/alert%}}
+{{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-method unsafe`参数{{%/alert%}}
 
-{{%alert %}}
+{{% alert %}}
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
-{{%/alert%}}
+{{% /alert %}}
+
+#### 使用 Docker 镜像
+
+将上述配置文件放在当前目录下，命名为`config.json`, 去掉注释的部分，运行如下命令：
+
+```bash
+$cat ./config.json
+{
+  "log-dir": "/log",
+  "enable-console-log": false,
+  "no-mdns": true,
+  "validator": true,
+  "ws-external": false,
+  "rpc-external": false,
+  "log": "info,runtime=info",
+  "port": 20222,
+  "ws-port": 8087,
+  "rpc-port": 8086,
+  "pruning": "archive",
+  "execution": "NativeElseWasm",
+  "db-cache": 2048,
+  "state-cache-size": 2147483648,
+  "name": "Your-Node-Name",
+  "base-path": "/data",
+  "bootnodes": []
+}
+```
+
+`name` 选项会显示在节点浏览器上，修改为自己想要的任意名称，然后运行以下命令可以直接后台启动节点:
+
+```bash
+docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+```
+
+{{% alert color="warning" %}}
+如果需要对外提供 RPC 服务, 需要在配置文件中开启 `ws-external: true` 和 `rpc-external: true`, 同时指定 `rpc-cors: all` 接受所有外部请求。
+
+建议验证节点关闭对外的 RPC 选项，只通过同步节点对外提供 RPC 服务。
+
+注意端口的映射必须与`config.json`中保持一致，否则将无法正常使用 RPC。
+{{% /alert %}}
+
+查看节点运行日志:
+
+```bash
+$ tail -f log/chainx.log # 查看全部日志
+```
+
+当日志出现如下类似的同步信息时，即说明节点成功启动。
+
+```text
+......
+2021-04-02 03:05:43:700 INFO tokio-runtime-worker substrate ⚙️ Syncing, target=#1834748 (4 peers), best: #251 (0x4d58…0729), finalized #0 (0x012c…4810), ⬇ 175.1kiB/s ⬆ 11.6kiB/s
+2021-04-02 03:05:48:700 INFO tokio-runtime-worker substrate ⚙️ Syncing 74.4 bps, target=#1834748 (7 peers), best: #623 (0xe3ce…db06), finalized #601 (0x78d1…b55e), ⬇ 54.0kiB/s ⬆ 6.0kiB/s
+......
+```
 
 ### 注册账户
 
