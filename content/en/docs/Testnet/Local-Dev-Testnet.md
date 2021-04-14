@@ -11,3 +11,5 @@ Install the `chainx` binary, and then simply run the following the command to st
 ```bash
 $ chainx --dev
 ```
+
+Please use the help `chainx --help` for more information.
