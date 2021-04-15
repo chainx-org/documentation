@@ -140,8 +140,6 @@ You can fetch the log by
 $ tail -f log/chainx.log
 ```
 
-## Test your node
-
 If some text like below occurs in your log file, means your node start successfully.
 
 ```text
@@ -150,3 +148,82 @@ If some text like below occurs in your log file, means your node start successfu
 2021-04-02 03:05:48:700 INFO tokio-runtime-worker substrate ⚙️ Syncing 74.4 bps, target=#1834748 (7 peers), best: #623 (0xe3ce…db06), finalized #601 (0x78d1…b55e), ⬇ 54.0kiB/s ⬆ 6.0kiB/s
 ......
 ```
+
+### Register
+
+You can register in [Our wallet app](https://dapps.chainx.org). Make sure your account has some PCXs for further use.
+
+## Register node
+
+After you registering account, you can register node at [`Network>Staking`](https://dapps.chainx.org/#/staking)
+![register-node](/images/register-node.png)
+
+{{%alert%}}Each account can only register once. And before that, you should make sure have enough balance for transaction fee. A new registered node is nominated by default. You can bond more pcx for yout node.{{%/alert%}}
+
+![rebond](/images/bond.png)
+
+## Set Session Keys
+
+Generate session key in the host where you run the node:
+
+```bash
+$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:$YOUR_RPC_PORT
+```
+
+{{%alert%}}`YOUR_RPC_PORT` is the port you specify with `rpc-port`(Default is 8086).{{%/alert%}}
+
+You'll get something like this:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x42a7d53603bac173eb96e4ac133e35bcd4a49f308387a0e748b6f6a6dbf5635313f065a67a42a78a2c3e261a63523d92d4e03f9e7c9bba7c3d13b13b6983f0724c46b00699362a374f3fe43dd668eae6fcd815d0b84f88998ca5fc1c41e09b2412e2b9d3a322d9229a24cbce31d53358edc77b6fbaca7d038247743f40b6f205",
+  "id": 1
+}
+```
+
+The `result` field is the generated session keys. Then goto [`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics) page, and set it by call extrinsic.
+
+![setKeys](/images/setkeys.png)
+
+{{%alert%}} Enter `0x00` for `proof` field {{%/alert%}}
+
+Call `nextKey` for validating you config.
+
+## Backup node
+
+You'll be pubnished while your node run incorrectlly. So it's necessary to deploy an extra node for backup. The backup node should run with `--pruning=archive` flag. When the main node went wrong, you can quickly switch to backup node to avoid pubnishment.
+
+## Test your validator
+
+If you were a validator, you may want to check if your node run correctly. Just cat the log file, your node is all ok if you see `Prepared block for proposing at ...` occurred.
+
+```text
+......
+Nov 04 10:12:06.008  INFO 🙌 Starting consensus session on top of parent 0x6dd1e2edbf490ade94e944b09738c258921655708f6c2b5b8a63b5e38d02ac16
+Nov 04 10:12:06.009  INFO 🎁 Prepared block for proposing at 4 [hash: 0x6740b08d96a329c9be13290760d15a537f3bd6635c85261b63e44395ad830b36; parent_hash: 0x6dd1…ac16; extrinsics (2): [0xe497…419a, 0x3af6…b467]]
+Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66f1579117b6aba16d4f57ae7ddf19ad209c8077a4f4f78ed4cb80877754a0f5, previously 0x6740b08d96a329c9be13290760d15a537f3bd6635c85261b63e44395ad830b36.
+......
+```
+
+## Notes
+
+- Before the first time go half, each session will take about 5 minutes and mint 50 pcx.
+- Each term is last for 12 sessions for re-election.
+- Node will be dropout if self-bond is less than 1pcx or total is less than 10 pcx.
+
+## Pubnishment
+
+ChainX distributes reward at the end of each session, and at the same time pubnishes each evil node. The types of punishment generally include double-signature and node offline. Once a node found to be evil, all the reward the node deserves in the session will be punished to the treasury, and the node reward pool will be punished according to the evil coefficient recorded on the chain.
+
+```text
+penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
+```
+
+- `penalty`: amount of punishment
+- `session_reward`: reward the node deserves in this session
+- `reward_pot_balance`: amount of the node's reward pool
+- `F`: evil coefficient, calculated by `babe` and `im-online`
+  - babe: [double signature punishment](https://wiki.polkadot.network/docs/en/learn-staking/#babe-equivocation), [frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265).
+  - im-online: [node offline punishment](https://wiki.polkadot.network/docs/en/learn-staking/#unresponsiveness), [frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771).
+- `minimum_penalty`: lower bound of punishment

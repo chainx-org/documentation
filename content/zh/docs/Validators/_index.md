@@ -174,7 +174,7 @@ $tail -f log/chainx.log # 查看全部日志
 
 ### 注册账户
 
-您可以在[新钱包(https://dapp-v2.chainx.org)](https://dapp-v2.chainx.org)上注册账户, 并向该账户转入一点 PCX 作为交易手续费以及后续抵押等费用。
+您可以在[新钱包(https://dapp-v2.chainx.org)](https://dapps.chainx.org)上注册账户, 并向该账户转入一点 PCX 作为交易手续费以及后续抵押等费用。
 
 ![add-account](/images/add-account.png)
 
