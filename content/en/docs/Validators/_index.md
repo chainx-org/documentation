@@ -58,7 +58,7 @@ Run command below to synchronize chain data.
 $ ./chainx --chain=mainnet --pruning=archive
 ```
 
-When compeletion, you need to restart node with validator flag.
+When completion, you need to restart node with validator flag.
 
 ```bash
 $ ./chainx --chain=mainnet --validator
@@ -192,7 +192,7 @@ Call `nextKey` for validating you config.
 
 ## Backup node
 
-You'll be pubnished while your node run incorrectlly. So it's necessary to deploy an extra node for backup. The backup node should run with `--pruning=archive` flag. When the main node went wrong, you can quickly switch to backup node to avoid pubnishment.
+You'll be punished while your node run incorrectlly. So it's necessary to deploy an extra node for backup. The backup node should run with `--pruning=archive` flag. When the main node went wrong, you can quickly switch to backup node to avoid punishment.
 
 ## Test your validator
 
@@ -212,9 +212,9 @@ Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66
 - Each term is last for 12 sessions for re-election.
 - Node will be dropout if self-bond is less than 1pcx or total is less than 10 pcx.
 
-## Pubnishment
+## Punishment
 
-ChainX distributes reward at the end of each session, and at the same time pubnishes each evil node. The types of punishment generally include double-signature and node offline. Once a node found to be evil, all the reward the node deserves in the session will be punished to the treasury, and the node reward pool will be punished according to the evil coefficient recorded on the chain.
+ChainX distributes reward at the end of each session, and at the same time punishes each evil node. The types of punishment generally include double-signature and node offline. Once a node found to be evil, all the reward the node deserves in the session will be punished to the treasury, and the node reward pool will be punished according to the evil coefficient recorded on the chain.
 
 ```text
 penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
