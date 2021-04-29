@@ -65,7 +65,7 @@ $ ./chainx --chain=mainnet --validator
 ```
 
 Or you can run the above command directly because the validator node will run with `archive` by default.
-IMPORTANT! You should wait for node syncing completely and set the session key correctly before you as a candidate.
+IMPORTANT! You should wait for the completion of node syncing and ensure the session key is set correctly before you become a candidate.
 
 {{%alert%}}If the error occurred when node syncing, you need to check if the system time consists of the internet time and remove the full database before you try again.{{%/alert%}}
 
