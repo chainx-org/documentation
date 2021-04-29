@@ -13,7 +13,7 @@ This page is about running a validator node in ChainX network.
 
 ## Hardware requirements
 
-The most common way for a beginner to run a validator is on a cloud server running Linux. You may choose whatever VPS provider that your prefer, Ubuntu 18.04+ is recommended.
+The most common way for a beginner to run a validator is on a cloud server running Linux. You may choose whatever VPS provider that you prefer. Ubuntu 18.04+ is recommended.
 
 - OS: Ubuntu 18.04+
 - CPU: 4+ Core
@@ -52,22 +52,22 @@ You can also directly download from the prebuilt binary from [GitHub release(htt
 
 ## Synchronize Chain Data
 
-Run command below to synchronize chain data.
+Run the command below to synchronize chain data.
 
 ```bash
 $ ./chainx --chain=mainnet --pruning=archive
 ```
 
-When compeletion, you need to restart node with validator flag.
+When completed, you need to restart the node with the validator flag.
 
 ```bash
 $ ./chainx --chain=mainnet --validator
 ```
 
-or you can run above command directly, cause the validator node will run with `archive` by default.
-IMPORTANT! You should wait node syncing completely and set the session key correctly before you as a candidate.
+Or you can run the above command directly because the validator node will run with `archive` by default.
+IMPORTANT! You should wait for the completion of node syncing and ensure the session key is set correctly before you become a candidate.
 
-{{%alert%}}If error occurred when node syncing, you need to check if the system time consist of the internet time and remove the full database before you try again.{{%/alert%}}
+{{%alert%}}If the error occurred when node syncing, you need to check if the system time is consistent with the internet time and remove the full database before you try again.{{%/alert%}}
 
 ## Configuration
 
@@ -95,13 +95,13 @@ The recommended config for validator node:
 }
 ```
 
-{{%alert color="warning"%}} Some rpc is dangerous for validator node, if you want to expose, please use a proxy server to filter. Visit [https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC) for details. If you are aware of and understand the potential risks, you can enable it by add `--rpc-method unsafe` to starting arguments.{{%/alert%}}
+{{%alert color="warning"%}} Some RPCs are dangerous for the validator node. If you want to expose them, please use a proxy server to filter. Visit [https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC) for details. If you are aware of and understand the potential risks, you can enable it by adding the argument `--rpc-method unsafe`.{{%/alert%}}
 
 {{%alert%}} When you node is setup correctly, you can see it at [ChainX Telemetry](https://telemetry.chainx.org) or [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX). {{%/alert%}}
 
 ## Use docker
 
-Copy above configuration to `config.json`, and put it in current directory.
+Copy the above configuration to `config.json` and put it in the current directory.
 
 ```bash
 $cat ./config.json
@@ -128,7 +128,7 @@ $cat ./config.json
 
 {{%alert%}} You may want to change `name` field to something else you want to display in telemetry{{%/alert%}}
 
-Run command below to start a validator node in background.
+Run the command below to start a validator node in the background.
 
 ```bash
 docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
@@ -140,7 +140,7 @@ You can fetch the log by
 $ tail -f log/chainx.log
 ```
 
-If some text like below occurs in your log file, means your node start successfully.
+If some text like the below occurs in your log file, it means that your node starts successfully.
 
 ```text
 ......
@@ -155,10 +155,10 @@ You can register in [Our wallet app](https://dapps.chainx.org). Make sure your a
 
 ## Register node
 
-After you registering account, you can register node at [`Network>Staking`](https://dapps.chainx.org/#/staking)
+After you register an account, you can register node at [`Network>Staking`](https://dapps.chainx.org/#/staking)
 ![register-node](/images/register-node.png)
 
-{{%alert%}}Each account can only register once. And before that, you should make sure have enough balance for transaction fee. A new registered node is nominated by default. You can bond more pcx for yout node.{{%/alert%}}
+{{%alert%}}Each account can only register once. And before that, you should make sure enough balance for the transaction fee. A newly registered node is nominated by default. You can bond more pcx for your node.{{%/alert%}}
 
 ![rebond](/images/bond.png)
 
@@ -182,21 +182,21 @@ You'll get something like this:
 }
 ```
 
-The `result` field is the generated session keys. Then goto [`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics) page, and set it by call extrinsic.
+The `result` field is the generated session keys. Then go to [`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics) page, and set it by calling extrinsic.
 
 ![setKeys](/images/setkeys.png)
 
 {{%alert%}} Enter `0x00` for `proof` field {{%/alert%}}
 
-Call `nextKey` for validating you config.
+Call `nextKey` for validating your config.
 
 ## Backup node
 
-You'll be pubnished while your node run incorrectlly. So it's necessary to deploy an extra node for backup. The backup node should run with `--pruning=archive` flag. When the main node went wrong, you can quickly switch to backup node to avoid pubnishment.
+You'll be punished while your node is run incorrectly. So it's necessary to deploy an extra node for backup. The backup node should run with `--pruning=archive` flag. When the main node went wrong, you can quickly switch to the backup node to avoid punishment.
 
 ## Test your validator
 
-If you were a validator, you may want to check if your node run correctly. Just cat the log file, your node is all ok if you see `Prepared block for proposing at ...` occurred.
+If you are a validator, you may want to check that your node is running correctly. Just cat the log file, your node is all ok if you see `Prepared block for proposing at ...` occurred.
 
 ```text
 ......
@@ -208,13 +208,13 @@ Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66
 
 ## Notes
 
-- Before the first time go half, each session will take about 5 minutes and mint 50 pcx.
+- Before the first time goes half, each session will take about 5 minutes and mint 50 pcx.
 - Each term is last for 12 sessions for re-election.
 - Node will be dropout if self-bond is less than 1pcx or total is less than 10 pcx.
 
-## Pubnishment
+## Punishment
 
-ChainX distributes reward at the end of each session, and at the same time pubnishes each evil node. The types of punishment generally include double-signature and node offline. Once a node found to be evil, all the reward the node deserves in the session will be punished to the treasury, and the node reward pool will be punished according to the evil coefficient recorded on the chain.
+ChainX distributes reward at the end of each session and at the same time punishes each evil node. The types of punishment generally include double-signature and node offline. Once a node is found to be evil, all the reward the node deserves in the session will be punished to the treasury, and the node reward pool will be punished according to the evil coefficient recorded on the chain.
 
 ```text
 penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
