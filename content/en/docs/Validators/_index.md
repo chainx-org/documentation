@@ -95,7 +95,7 @@ The recommended config for validator node:
 }
 ```
 
-{{%alert color="warning"%}} Some RPC is dangerous for validator node. If you want to expose, please use a proxy server to filter. Visit [https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC) for details. If you are aware of and understand the potential risks, you can enable it by add `--rpc-method unsafe` to starting arguments.{{%/alert%}}
+{{%alert color="warning"%}} Some RPCs are dangerous for the validator node. If you want to expose them, please use a proxy server to filter. Visit [https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC) for details. If you are aware of and understand the potential risks, you can enable it by adding the argument `--rpc-method unsafe`.{{%/alert%}}
 
 {{%alert%}} When you node is setup correctly, you can see it at [ChainX Telemetry](https://telemetry.chainx.org) or [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX). {{%/alert%}}
 
