@@ -18,7 +18,7 @@ ChainX 2.0 验证节点指南
 
 #### 测试网硬件配置
 
-- CPU 2 核，内存 2G, 带宽 1M, 操作系统 Ubuntu 18.04+。
+- CPU 2 核，内存 2G, 带宽 1M, 操作系统 Ubuntu 20.04+。
 
 #### 主网硬件配置
 
@@ -37,9 +37,9 @@ ChainX 2.0 验证节点指南
 我们假设您已经安装好 Rust nightly 与 `wasm32-unknown-unknown`:
 
 ```bash
-$ rustup install nightly-2020-09-30
-$ rustup override set nightly-2020-09-30
-$ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
+$ rustup install nightly-2021-11-07
+$ rustup override set nightly-2021-11-07
+$ rustup target add wasm32-unknown-unknown --toolchain nightly-2021-11-07
 ```
 
 接下来， 您需要按照以下步骤完成编译工作：
@@ -81,7 +81,7 @@ $ ./chainx --chain=mainnet --validator
 ```
 
 不过注意，一定等待同步完成并且设置好 Session Keys 后再让节点参选。
-{{%alert%}}如果出现同步异常， 请确保系统时间和网络时间一致， 删除数据库之后再进行同步。 {{%/alert%}}
+> 如果出现同步异常， 请确保系统时间和网络时间一致， 删除数据库之后再进行同步。
 
 #### 配置文件
 
@@ -93,8 +93,9 @@ $ ./chainx --chain=mainnet --validator
   "enable-console-log": false, // 同时将日志输出到控制台
   "no-mdns": true,
   "validator": true, // 验证者节点必须为 true, 默认为false
-  "ws-external": false, // 验证者节点建议关闭对外的ws端口
-  "rpc-external": false, // 验证者节点建议关闭对外的rpc端口
+  "unsafe-ws-external": true, // 验证者节点建议关闭对外的ws端口
+  "unsafe-rpc-external": true, // 验证者节点建议关闭对外的rpc端口
+  "rpc-methods": "unsafe",
   "log": "info,runtime=info",
   "port": 20222, // 指定p2p协议的tcp端口
   "ws-port": 8087, // 指定websocket的RPC服务端口
@@ -109,11 +110,9 @@ $ ./chainx --chain=mainnet --validator
 }
 ```
 
-{{%alert color="warning"%}}部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-method unsafe`参数{{%/alert%}}
+部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤（详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)）。如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-method unsafe`参数
 
-{{% alert %}}
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org) 或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX)上看到您的节点。
-{{% /alert %}}
 
 #### 使用 docker 镜像
 
@@ -126,8 +125,9 @@ $cat ./config.json
   "enable-console-log": false,
   "no-mdns": true,
   "validator": true,
-  "ws-external": false,
-  "rpc-external": false,
+  "unsafe-ws-external": true,
+  "unsafe-rpc-external": true,
+  "rpc-methods": "unsafe",
   "log": "info,runtime=info",
   "port": 20222,
   "ws-port": 8087,
@@ -145,7 +145,8 @@ $cat ./config.json
 运行以下命令，可以直接后台启动节点
 
 ```bash
-docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+docker pull chainxorg/chainx:v4.0.0
+docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v4.0.0 /usr/local/bin/chainx --config /config.json
 ```
 
 其中，各参数为配置文件中对应参数, 后台运行的 docker 可以通过:
@@ -163,32 +164,27 @@ $tail -f log/chainx.log # 查看全部日志
 ......
 ```
 
-{{% alert  %}}
 如果需要在外部使用 rpc 服务, 需要在配置文件中加入`ws-external: true`和`rpc-external: true`。其他选项参考[上文](#配置文件)。
-{{%/alert%}}
-{{% alert  %}}
-在配置时，建议更改配置文件中的`name`项。
-{{%/alert%}}
 
-{{%alert color="warning"%}}端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。{{%/alert%}}
+在配置时，建议更改配置文件中的`name`项。
+
+端口的映射必须与`config.json`中保持一致，否则将无法正常使用 rpc。
 
 ### 注册账户
 
 您可以在[新钱包(https://dapp-v2.chainx.org)](https://dapps.chainx.org)上注册账户, 并向该账户转入一点 PCX 作为交易手续费以及后续抵押等费用。
 
-![add-account](/images/add-account.png)
+![add-account](../../../../static/images/add-account.png)
 
 ## 注册节点
 
 注册成功后，您可以在[`Network>Staking`](https://dapp-v2.chainx.org/#/staking)页面上注册节点。
 
-![register-node](/images/register-node.png)
+![register-node](../../../../static/images/register-node.png)
 
-{{% alert  %}}
 每个账号只能注册一次. 另外，注册之前您需要保证有足够余额支付交易手续费。新注册的节点默认参选，您无需进行额外的操作。除了注册节点时的初始质押币，您也可以通过**投票**的方式再次进行质押。选举时间结束后，总质押量排名前 30 的节点，将成为验证人参与共识。
-{{%/alert%}}
 
-![rebond](/images/bond.png)
+![rebond](../../../../static/images/bond.png)
 
 ## 设置 Session Keys
 
@@ -212,12 +208,9 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 
 其中，`result`字段即为获取的 Session Keys, 然后在[`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics)通过`setKeys`进行设置：
 
-![setKeys](/images/setkeys.png)
-
-{{%alert%}}
+![setKeys](../../../../static/images/setkeys.png)
 
 - 目前，`proof` 填入`0x00` 即可。
-  {{%/alert%}}
 
 调用`nextKey`可以验证是否正确设置。
 
