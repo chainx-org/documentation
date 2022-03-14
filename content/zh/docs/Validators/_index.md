@@ -6,9 +6,7 @@ date: 2017-01-05
 description: ChainX validator guide
 ---
 
-{{% pageinfo %}}
 ChainX 2.0 验证节点指南
-{{% /pageinfo %}}
 
 ## 准备事项
 
