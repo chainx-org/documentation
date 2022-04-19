@@ -1,7 +1,7 @@
 ---
 title: "资产转接桥/网关（2.0中称为资产网关Gateway）"
-linkTitle: "Bridges"
-weight: 9
+linkTitle: "资产转接桥/网关"
+weight: 7
 description: >
   资产转接桥/网关指代其他链的资产转移到ChainX或从ChainX转移回去的控制模块。
 ---

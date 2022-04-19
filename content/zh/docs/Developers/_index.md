@@ -1,7 +1,7 @@
 ---
 title: "开发者"
-linkTitle: "Developers"
-weight: 6
+linkTitle: "开发者"
+weight: 5
 date: 2017-01-05
 description: The develop documentation.
 ---

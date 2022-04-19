@@ -1,13 +1,13 @@
 ---
 title: "基本概念"
-linkTitle: "Basics"
-weight: 3
+linkTitle: "基本概念"
+weight: 2
 description: >
   What does your user need to understand about your project in order to use it - or potentially contribute to it?
 ---
 
 {{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
+基本概念
 {{% /pageinfo %}}
 
 For many projects, users may not need much information beyond the information in the [Overview](/docs/overview/), so this section is **optional**. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.

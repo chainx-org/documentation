@@ -1,6 +1,6 @@
 ---
 title: "信托"
-linkTitle: "Trustee"
+linkTitle: "信托"
 weight: 9
 description: >
   信托介绍

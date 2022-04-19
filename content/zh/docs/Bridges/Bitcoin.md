@@ -1,6 +1,6 @@
 ---
 title: "比特币转接桥/网关"
-linkTitle: "Bitcoin Bridge"
+linkTitle: "比特币转接桥/网关"
 description: >
   比特币转接桥/网关.
 ---
