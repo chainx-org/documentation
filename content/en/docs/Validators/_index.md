@@ -7,30 +7,38 @@ description: >
   ChainX validator guide
 ---
 
-{{% pageinfo %}}
 This page is about running a validator node in ChainX network.
-{{% /pageinfo %}}
 
-## Hardware requirements
+## 1. Prepare
+### 1.1 Hardware requirements
 
-The most common way for a beginner to run a validator is on a cloud server running Linux. You may choose whatever VPS provider that you prefer. Ubuntu 18.04+ is recommended.
+The most common way for a beginner to run a validator is on a cloud server running Linux. 
+You may choose whatever VPS provider that you prefer. 
+Ubuntu 20.04+ is recommended.
 
-- OS: Ubuntu 18.04+
+- OS: Ubuntu 20.04+
 - CPU: 4+ Core
 - Memory: 4+ GB
 - Storage: SSD 300+ GB
 - Bandwidth: 10+ M
 
-## Install the `chainx` binary
+### 1.2 Install the `chainx` binary
 
-### Build from source
-
-First, you need to install Rust on your system:
+#### 1.2.1 Build from source
+install libraries on Ubuntu 20.04
 
 ```bash
-$ rustup install nightly-2020-09-30
-$ rustup override set nightly-2020-09-30
-$ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-30
+sudo apt update -y
+sudo apt install --no-install-recommends -y \
+     git curl ca-certificates \
+     gcc g++ cmake clang
+```
+
+install Rust on Ubuntu 20.04
+```bash
+$ rustup install nightly-2021-11-07
+$ rustup override set nightly-2021-11-07
+$ rustup target add wasm32-unknown-unknown --toolchain nightly-2021-11-07
 ```
 
 Fetch the source code from GitHub and compile it locally:
@@ -46,16 +54,37 @@ $ cargo build --release
 
 The binary is under `/target/release`.
 
-### Download the prebuilt binary
+#### 1.2.2 Download the prebuilt binary
 
 You can also directly download from the prebuilt binary from [GitHub release(https://github.com/chainx-org/ChainX/releases)](https://github.com/chainx-org/ChainX/releases).
 
-## Synchronize Chain Data
+### 1.3 Synchronize Chain Data
 
 Run the command below to synchronize chain data.
 
+>
+>#### `How to sync blocks from genesis(block #0)`
+>- (0)  You should know [Debug: panicked at 'Storage root must match that calculated ' #609](https://github.com/chainx-org/ChainX/issues/609)
+   >  **if  you use ChainX v4.x.x directly sync blocks will be stuck at #881910** or other block.
+>- (1)  Compile [ChainX v3.0.0](https://github.com/chainx-org/ChainX/tree/v3.0.0) by `nightly-2020-09-30` or Download  [chainx-v3.0.0-ubuntu20.04-x86_64-unknown-linux-gnu-1](https://github.com/chainx-org/ChainX/releases/download/v3.0.0/chainx-v3.0.0-ubuntu20.04-x86_64-unknown-linux-gnu-1)
+   >  the ChainX v3.0.0 seed nodes are bad, so you should use new mainnet bootnodes with `--bootnodes`
+>```
+>"/ip4/52.77.243.26/tcp/23555/ws/p2p/12D3KooWQ6GGfmvmmmsbKRmZqMA3A8rxaHz25HvA7JNBbcZhLXtk"
+>"/ip4/120.26.57.227/tcp/36789/ws/p2p/12D3KooWEAX2BcQCZP79MuxQpqLQUop7P3tZY97eNxxUgc4ZTu3k"
+>"/ip4/47.114.74.52/tcp/36789/ws/p2p/12D3KooWJPMUkGytfAMt3AMqm4AFn4VToXjbWZoC4Z2NxXNXvTwb"
+>```
+>- (2)  Until **#3038400**, please use ChainX v3.0.0 to synchronize with `NativeElseWasm (default mode)`
+>- (3)  For blocks after **#3038400**, complete (2) first, and then replace ChainX v3.0.0 with ChainX v4.x.x to complete the db migration (note that the migration process is irreversible, it is recommended to back up the data first)
+>- (4)  ChainX v4.x.x continues to synchronize blocks
+>
+
 ```bash
-$ ./chainx --chain=mainnet --pruning=archive
+$ ./chainx-v3.0.0 --chain=mainnet --pruning=archive \
+  --bootnodes="/ip4/52.77.243.26/tcp/23555/ws/p2p/12D3KooWQ6GGfmvmmmsbKRmZqMA3A8rxaHz25HvA7JNBbcZhLXtk" \
+  --bootnodes="/ip4/120.26.57.227/tcp/36789/ws/p2p/12D3KooWEAX2BcQCZP79MuxQpqLQUop7P3tZY97eNxxUgc4ZTu3k"
+
+# until block #3038400
+$ ./chainx-v4.2.0 --chain=mainnet --pruning=archive 
 ```
 
 When completed, you need to restart the node with the validator flag.
@@ -64,12 +93,17 @@ When completed, you need to restart the node with the validator flag.
 $ ./chainx --chain=mainnet --validator
 ```
 
-Or you can run the above command directly because the validator node will run with `archive` by default.
-IMPORTANT! You should wait for the completion of node syncing and ensure the session key is set correctly before you become a candidate.
+Or you can run the above command directly because the validator node will 
+run with `archive` by default.
 
-{{%alert%}}If the error occurred when node syncing, you need to check if the system time is consistent with the internet time and remove the full database before you try again.{{%/alert%}}
+**IMPORTANT! You should wait for the completion of node syncing and 
+ensure the session key is set correctly before you become a candidate.**
 
-## Configuration
+If the error occurred when node syncing, 
+you need to check if the system time is consistent with the internet time and 
+remove the full database before you try again
+
+#### 1.3.1 Configuration
 
 The recommended config for validator node:
 
@@ -91,15 +125,33 @@ The recommended config for validator node:
   "state-cache-size": 2147483648, // state cache size in B
   "name": "Your-Node-Name", // The display name in telemetry
   "base-path": "data", // path to database, in linux `$HOME/.local/share/chainx/chains/$CHAIN_TYPE/db` by default.
-  "bootnodes": [] // bootnodes' url, left empty to use built-in bootnodes.
+  "bootnodes": [
+    "/ip4/120.26.57.227/tcp/36789/ws/p2p/12D3KooWEAX2BcQCZP79MuxQpqLQUop7P3tZY97eNxxUgc4ZTu3k",
+    "/ip4/47.114.74.52/tcp/36789/ws/p2p/12D3KooWJPMUkGytfAMt3AMqm4AFn4VToXjbWZoC4Z2NxXNXvTwb"
+  ] // bootnodes' url, left empty to use built-in bootnodes.
 }
 ```
 
-{{%alert color="warning"%}} Some RPCs are dangerous for the validator node. If you want to expose them, please use a proxy server to filter. Visit [https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC) for details. If you are aware of and understand the potential risks, you can enable it by adding the argument `--rpc-method unsafe`.{{%/alert%}}
+Some RPCs are dangerous for the validator node. 
+If you want to expose them, please use a proxy server to filter. 
+Visit [https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC) for details. 
+If you are aware of and understand the potential risks, 
+you can enable it by adding the argument `--rpc-methods unsafe`.
 
-{{%alert%}} When you node is setup correctly, you can see it at [ChainX Telemetry](https://telemetry.chainx.org) or [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX). {{%/alert%}}
+```txt
+{
+---snip---
+  "unsafe-ws-external": true, // replace ws-external
+  "unsafe-rpc-external": true, // replace rpc-external
+  "rpc-methods": "unsafe",
+---snip---
+}
+```
 
-## Use docker
+
+When you node is setup correctly, you can see it at [ChainX Telemetry](https://telemetry.chainx.org) or [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX).
+
+#### 1.3.2 Use docker
 
 Copy the above configuration to `config.json` and put it in the current directory.
 
@@ -126,12 +178,19 @@ $cat ./config.json
 }
 ```
 
-{{%alert%}} You may want to change `name` field to something else you want to display in telemetry{{%/alert%}}
+You may want to change `name` field to something else you want to display in telemetry.
 
 Run the command below to start a validator node in the background.
 
 ```bash
-docker run -d --restart always --name chainx -p 8086:8086 -p 8087:8087 -p 20222:20222 -v $PWD/config.json:/config.json -v $PWD/data:/data -v $PWD/log:/log -v $PWD/keystore:/keystore chainxorg/chainx:v2.0.9 /usr/local/bin/chainx --config /config.json
+docker pull chainxorg/chainx:v4.2.0
+docker run -d --restart always --name chainx \
+  -p 8086:8086 -p 8087:8087 -p 20222:20222 \
+  -v $PWD/config.json:/config.json -v $PWD/data:/data \
+  -v $PWD/log:/log -v $PWD/keystore:/keystore \
+  chainxorg/chainx:v4.2.0 /usr/local/bin/chainx \
+  --config /config.json
+
 ```
 
 You can fetch the log by
@@ -149,20 +208,20 @@ If some text like the below occurs in your log file, it means that your node sta
 ......
 ```
 
-### Register
+### 1.4 Register
 
-You can register in [Our wallet app](https://dapps.chainx.org). Make sure your account has some PCXs for further use.
+You can register in [ChainX wallet dapp](https://dapps.chainx.org). Make sure your account has some PCXs for further use.
 
-## Register node
+## 2. Register node
 
 After you register an account, you can register node at [`Network>Staking`](https://dapps.chainx.org/#/staking)
-![register-node](/images/register-node.png)
+![register-node](../../../../static/images/register-node.png)
 
-{{%alert%}}Each account can only register once. And before that, you should make sure enough balance for the transaction fee. A newly registered node is nominated by default. You can bond more pcx for your node.{{%/alert%}}
+Each account can only register once. And before that, you should make sure enough balance for the transaction fee. A newly registered node is nominated by default. You can bond more pcx for your node.
 
-![rebond](/images/bond.png)
+![rebond](../../../../static/images/bond.png)
 
-## Set Session Keys
+## 3. Set Session Keys
 
 Generate session key in the host where you run the node:
 
@@ -170,7 +229,7 @@ Generate session key in the host where you run the node:
 $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:$YOUR_RPC_PORT
 ```
 
-{{%alert%}}`YOUR_RPC_PORT` is the port you specify with `rpc-port`(Default is 8086).{{%/alert%}}
+`YOUR_RPC_PORT` is the port you specify with `rpc-port`(Default is 8086).
 
 You'll get something like this:
 
@@ -184,17 +243,17 @@ You'll get something like this:
 
 The `result` field is the generated session keys. Then go to [`Developer>Extrinsic`](https://dapp-v2.chainx.org/#/extrinsics) page, and set it by calling extrinsic.
 
-![setKeys](/images/setkeys.png)
+![setKeys](../../../../static/images/setkeys.png)
 
-{{%alert%}} Enter `0x00` for `proof` field {{%/alert%}}
+- Enter `0x00` for `proof` field
 
 Call `nextKey` for validating your config.
 
-## Backup node
+## 4. Backup node
 
 You'll be punished while your node is run incorrectly. So it's necessary to deploy an extra node for backup. The backup node should run with `--pruning=archive` flag. When the main node went wrong, you can quickly switch to the backup node to avoid punishment.
 
-## Test your validator
+## 5. Test your validator
 
 If you are a validator, you may want to check that your node is running correctly. Just cat the log file, your node is all ok if you see `Prepared block for proposing at ...` occurred.
 
@@ -206,13 +265,37 @@ Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66
 ......
 ```
 
-## Notes
+## 6. Drop out(no income and does not participate in any staking activities)
+### 6.1 Force Slash
+When the validator reward pot is slashed to 0 or other slashes, 
+the validator is kicked out of the current validator set and becomes a drop-out node.
+If you want to be a validator, you need to participate in the election manually.
+
+### 6.2 Quit XStaking Election
+click `Drop`
+![drop1](../../../../static/images/drop1.png)
+![drop2](../../../../static/images/drop2.png)
+
+Or call `chill` to drop out by [`Developer>Extrinsic`](https://dapp.chainx.org/#/chainstate/extrinsics)
+![drop3](../../../../static/images/drop3.png)
+
+### 6.3 Participate XStaking Election
+click `Candidate`
+![candidate1](../../../../static/images/candidate1.png)
+![candidate2](../../../../static/images/candidate2.png)
+
+Or call `validate` to be candidate by [`Developer>Extrinsic`](https://dapp.chainx.org/#/chainstate/extrinsics)
+![candidate3](../../../../static/images/candidate3.png)
+
+
+## 7. Notes
 
 - Before the first time goes half, each session will take about 5 minutes and mint 50 pcx.
 - Each term is last for 12 sessions for re-election.
 - Node will be dropout if self-bond is less than 1pcx or total is less than 10 pcx.
+- Since ChainX v4.2.0, [Neither reward nor slash current candidate nodes](https://github.com/chainx-org/ChainX/pull/625)
 
-## Punishment
+## 8. Punishment
 
 ChainX distributes reward at the end of each session and at the same time punishes each evil node. The types of punishment generally include double-signature and node offline. Once a node is found to be evil, all the reward the node deserves in the session will be punished to the treasury, and the node reward pool will be punished according to the evil coefficient recorded on the chain.
 

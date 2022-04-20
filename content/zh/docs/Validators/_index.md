@@ -135,7 +135,16 @@ $ ./chainx --chain=mainnet --validator
 
 部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤 (详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)). 
 
-如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-method unsafe`参数.
+如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-methods unsafe`参数.
+```txt
+{
+---snip---
+  "unsafe-ws-external": true, // replace ws-external
+  "unsafe-rpc-external": true, // replace rpc-external
+  "rpc-methods": "unsafe",
+---snip---
+}
+```
 
 节点成功启动后， 可以在[ChainX Telemetry](https://telemetry.chainx.org)或者 [Polkadot Telemetry](https://telemetry.polkadot.io/#list/ChainX) 上看到您的节点。
 
