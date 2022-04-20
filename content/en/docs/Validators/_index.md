@@ -2,7 +2,7 @@
 title: "Validators"
 linkTitle: "Validators"
 weight: 4
-date: 2017-01-05
+date: 2022-04-20
 description: >
   ChainX validator guide
 ---
