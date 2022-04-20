@@ -287,12 +287,12 @@ Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66
 
 ### 6.3 手动参选
 点击右上角 `参选(Candidate)`
-![candidate1](/static/images/candidate1.png)
-![candidate2](/static/images/candidate2.png)
+![candidate1](/images/candidate1.png)
+![candidate2](/images/candidate2.png)
 
 或者在[`Developer>Extrinsic`](https://dapp.chainx.org/#/chainstate/extrinsics)
 通过`validate`进行设置
-![candidate3](/static/images/candidate3.png)
+![candidate3](/images/candidate3.png)
 
 ## 7. 注意事项
 
