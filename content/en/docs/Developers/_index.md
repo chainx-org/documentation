@@ -1,7 +1,7 @@
 ---
 title: "Developers"
 linkTitle: "Developers"
-weight: 6
+weight: 5
 date: 2017-01-05
 description: >
   What can your user do with your project?

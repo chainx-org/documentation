@@ -1,7 +1,7 @@
 ---
 title: "Bridges"
 linkTitle: "Bridges"
-weight: 9
+weight: 6
 description: >
   Low level reference docs for your project.
 ---
