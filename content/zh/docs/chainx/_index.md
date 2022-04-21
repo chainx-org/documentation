@@ -4,8 +4,8 @@ title: "ChainX"
 linkTitle: "ChainX"
 weight: 20
 menu:
-main:
-weight: 20
+  main:
+    weight: 20
 ---
 
 {{% pageinfo %}}

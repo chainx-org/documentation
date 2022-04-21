@@ -4,8 +4,8 @@ title: "SherpaX"
 linkTitle: "SherpaX"
 weight: 20
 menu:
-main:
-weight: 20
+  main:
+    weight: 20
 ---
 
 {{% pageinfo %}}
