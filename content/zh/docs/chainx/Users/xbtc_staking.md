@@ -6,9 +6,9 @@ date: 2022-04-19
 description: Deposit BTC, Reward PCX
 ---
 
-### 4 XBTC挖矿
+## 4 XBTC挖矿
 
-#### 4.1 充值
+### 4.1 充值
 
 **第1步**
 确认地址及账户名称信息无误后，点击“Top up”
@@ -20,7 +20,7 @@ description: Deposit BTC, Reward PCX
 
 ![](/images/xbtc2.png)
 
-#### 4.2 提现
+### 4.2 提现
 
 **第1步**
 确认地址及账户名称信息无误后，点击“Withdrawals”
@@ -32,7 +32,7 @@ description: Deposit BTC, Reward PCX
 
 ![](/images/xbtc4.png)
 
-#### 4.3 XBTC转账
+### 4.3 XBTC转账
 
 **第1步**
 确认地址及账户名称信息无误后，点击“tansfer”
