@@ -175,16 +175,6 @@ enable = false
 	icon = "fab fa-telegram"
         desc = "Chat with other project developers"
 
-[[params.versions]]
-version = "v2.0 (Latest)"
-archived_version = false
-url  = "/"
-
-[[params.versions]]
-version = "v1.0"
-archived_version = true
-url = "https://doc.chainx.org"
-
 [menu]
   [[menu.main]]
     identifier = "GitHub"

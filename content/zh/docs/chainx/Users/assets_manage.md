@@ -3,8 +3,7 @@ title: "资产管理"
 linkTitle: "资产管理"
 weight: 1
 date: 2022-04-19
-description: >
-    ChainX user guide
+description: PCX and XBTC assets manage
 ---
 
 ### 1 资产管理

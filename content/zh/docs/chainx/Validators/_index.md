@@ -1,13 +1,13 @@
 ---
-title: "验证人"
-linkTitle: "验证人"
+title: "验证节点指南"
+linkTitle: "验证节点指南"
 weight: 4
 date: 2022-04-20
 description: ChainX validator guide
 ---
 
 {{% pageinfo %}}
-ChainX 4.0 验证节点指南
+验证节点指南
 {{% /pageinfo %}}
 
 ## 1. 准备事项

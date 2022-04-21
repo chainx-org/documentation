@@ -1,10 +1,9 @@
 ---
-title: "XBTC挖矿"
-linkTitle: "XBTC挖矿"
-weight: 8
+title: "BTC挖矿"
+linkTitle: "BTC挖矿"
+weight: 3
 date: 2022-04-19
-description: >
-    ChainX user guide
+description: Deposit BTC, Reward PCX
 ---
 
 ### 4 XBTC挖矿

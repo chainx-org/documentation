@@ -3,8 +3,7 @@ title: "链上治理"
 linkTitle: "链上治理"
 weight: 2
 date: 2022-04-19
-description: >
-  ChainX user guide
+description: ChainX council election and democracy referendums
 ---
 
 ### 2 链上治理

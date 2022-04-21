@@ -1,10 +1,9 @@
 ---
-title: "Users"
-linkTitle: "Users"
+title: "用户指南"
+linkTitle: "用户指南"
 weight: 2
 date: 2022-04-19
-description: >
-  ChainX user guide
+description: ChainX user guide
 ---
 
 {{% pageinfo %}}
