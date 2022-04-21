@@ -1,7 +1,7 @@
 
 ---
-title: "文档"
-linkTitle: "文档"
+title: "Chainx"
+linkTitle: "Chainx"
 weight: 20
 menu:
   main:
