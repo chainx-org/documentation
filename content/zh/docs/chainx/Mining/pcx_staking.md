@@ -1,7 +1,7 @@
 ---
 title: "PCX挖矿"
 linkTitle: "PCX挖矿"
-weight: 3
+weight: 8
 date: 2022-04-19
 description: >
     ChainX user guide

@@ -1,7 +1,7 @@
 ---
 title: "XBTC挖矿"
 linkTitle: "XBTC挖矿"
-weight: 4
+weight: 8
 date: 2022-04-19
 description: >
     ChainX user guide
