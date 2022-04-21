@@ -3,11 +3,11 @@ title: "SoSwap"
 linkTitle: "SoSwap"
 weight: 4
 date: 2022-04-20
-description: ChainX validator guide
+description: SherpaX Tokens Swap 
 ---
 
 {{% pageinfo %}}
-ChainX 4.0 验证节点指南
+SoSwap
 {{% /pageinfo %}}
 
 ## 1. Swap
