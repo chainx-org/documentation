@@ -12,13 +12,13 @@ description: >
 #### 1.1 注册账户
 您可以在新钱包(https://dapp-v2.chainx.org)上注册账户
 
-![](/images/add-account.png)
+![](/images/sadd-account.png)
 
 #### 1.2 钱包主页
-![](/images/homepage.png)
+![](/images/shomepage.png)
 
 #### 1.3 发起转账
 
 点击转账，输入收款人地址，输入发送金额
 
-![](/images/transfer.png)
+![](/images/stransfer.png)
