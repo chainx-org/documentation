@@ -1,5 +1,5 @@
 ---
-title: "Exchanges"
+title: "Exchange docking"
 date: 2020-07-13
 weight: 6
 description: >

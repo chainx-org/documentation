@@ -10,5 +10,5 @@ description: SherpaX Tokens Swap
 SoSwap
 {{% /pageinfo %}}
 
-https://soswap-finance.gitbook.io/soswap/
+[SoSwap Guide](https://soswap-finance.gitbook.io/soswap/)
 
