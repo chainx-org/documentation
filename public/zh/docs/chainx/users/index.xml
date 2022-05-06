@@ -1,0 +1,205 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChainX 文档 – 用户指南</title>
+    <link>https://chainx-org.github.io/documentation/zh/docs/chainx/users/</link>
+    <description>Recent content in 用户指南 on ChainX 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://chainx-org.github.io/documentation/zh/docs/chainx/users/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 资产管理</title>
+      <link>https://chainx-org.github.io/documentation/zh/docs/chainx/users/assets_manage/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chainx-org.github.io/documentation/zh/docs/chainx/users/assets_manage/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-资产管理&#34;&gt;1 资产管理&lt;/h2&gt;
+&lt;h3 id=&#34;11-注册账户&#34;&gt;1.1 注册账户&lt;/h3&gt;
+&lt;p&gt;您可以在新钱包(&lt;a href=&#34;https://dapp-v2.chainx.org&#34;&gt;https://dapp-v2.chainx.org&lt;/a&gt;)上注册账户&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/add-account.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;12-钱包主页&#34;&gt;1.2 钱包主页&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/homepage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;13-发起转账&#34;&gt;1.3 发起转账&lt;/h3&gt;
+&lt;p&gt;点击转账，输入收款人地址，输入发送金额&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/transfer.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 链上治理</title>
+      <link>https://chainx-org.github.io/documentation/zh/docs/chainx/users/government/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chainx-org.github.io/documentation/zh/docs/chainx/users/government/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;2-链上治理&#34;&gt;2 链上治理&lt;/h2&gt;
+&lt;p&gt;点击治理转到治理主页&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/goverment_homepage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;21-民主权利&#34;&gt;2.1 民主权利&lt;/h3&gt;
+&lt;p&gt;现阶段民主权利主要体现为公民提案与全民公投。公民提案即每个公民可以提任意特定提案，该提案在运行时采用特权函数调用的形式（其中包括最强大的调用：set_code，它可以切换出运行时的整个代码，从而实现原本需要的“硬叉”）。每个固定周期内，会选出该期间附议最多的议案，进入全民公投。全民公投同样具有固定的投票发生时间段，然后被计票，如果投票获得批准，则会进行各类交易调用。全民公投是简单，包容，基于抵押的投票方案，主要根据不同锁定时长及锁定数额影响投票的权重。所有全民公投通过的议案都有与之相关的执行延迟，这是全民公投通过到实施更改之间的时间段。
+注释：后期我们将形成类似 polkassembly 的提案论坛，公民皆可于论坛提出文字方案，待达成多数人赞同后，再以提交特权函数调用的形式发起链上提案。&lt;/p&gt;
+&lt;h3 id=&#34;22-民主提案&#34;&gt;2.2 民主提案&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+点击提交原象hash,如图，原像哈希是0xc3ddb44b117574311101843e1fdb64d0fc5491fcd16b832f76e773cd8b060b12&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/submit_preimage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+提交提案，将刚才的原象hash填进去，点击提交&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/submit_proposal.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;23-民主附议&#34;&gt;2.3 民主附议&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+选择赞同的提案，点击“Second“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/second.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+选择参与附议的账户，点击“Second“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/second2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;24-议会&#34;&gt;2.4 议会&lt;/h3&gt;
+&lt;p&gt;议会是一个代表被动利益相关者的链上集体。它通过提出重要的改变和取消毫无争议的危险提议来做到这一点。任何 PCX 代币持有者都可以竞选议会，
+用户可以投票给他们支持的任意数量的候选人， 议会选举还说明了用户投票给议员的顺序，方法是根据排名领先的数量对议员进行评分。得分最高的议员为首席议员。&lt;/p&gt;
+&lt;h4 id=&#34;241-参选议会&#34;&gt;2.4.1 参选议会&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+导入账户后，点击治理栏中的“议会”，进入议会界面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/council.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+点击“Submit Candidacy”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/submit_candidacy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第3步&lt;/strong&gt;
+确认参与竞选的账户无误后，点击“提交”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/submit_candidacy2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第4步&lt;/strong&gt;
+输入密码后，若参选成功，页面将出现绿色弹窗&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/submit_candidacy3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;242-投票&#34;&gt;2.4.2 投票&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+点击“Vote”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/vote.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+填写要投票的数额，从候选人栏中选择投票人选，点击“Vote”
+注:一次最多可以给16个人投票，投票权重根据顺序依次递减&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/vote2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第3步&lt;/strong&gt;
+输入密码后，若投票成功，界面将显示下图绿色弹窗&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/vote3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;25-国库&#34;&gt;2.5 国库&lt;/h3&gt;
+&lt;h4 id=&#34;251-国库提案&#34;&gt;2.5.1 国库提案&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+导入账户后，点击治理模块栏中的“treasury”，进入财政界面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+点击“Submit Proposal”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第3步&lt;/strong&gt;
+填写受益人及金额，点击“Submit Proposal”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;252-小费提案&#34;&gt;2.5.2 小费提案&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+导入账户后，点击治理模块栏中的“treasury”，进入财政界面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+点击“Tip”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第3步&lt;/strong&gt;
+点击“Proposal Tip”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第4步&lt;/strong&gt;
+填写受益人地址、奖励原因，点击“Proposal Tip”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/treasury6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: BTC挖矿</title>
+      <link>https://chainx-org.github.io/documentation/zh/docs/chainx/users/xbtc_staking/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chainx-org.github.io/documentation/zh/docs/chainx/users/xbtc_staking/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;4-xbtc挖矿&#34;&gt;4 XBTC挖矿&lt;/h2&gt;
+&lt;h3 id=&#34;41-充值&#34;&gt;4.1 充值&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+确认地址及账户名称信息无误后，点击“Top up”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/xbtc.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+获取跨链充值所需的OP_RETURN信息和信托多签托管地址，复制OP_RETURN信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/xbtc2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;42-提现&#34;&gt;4.2 提现&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+确认地址及账户名称信息无误后，点击“Withdrawals”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/xbtc3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+填写BTC地址、提现数量后，点击“提现”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/xbtc4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;43-xbtc转账&#34;&gt;4.3 XBTC转账&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+确认地址及账户名称信息无误后，点击“tansfer”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/xbtc5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+填写对方地址、X-BTC转账数量后，点击“进行交易”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/xbtc6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PCX挖矿</title>
+      <link>https://chainx-org.github.io/documentation/zh/docs/chainx/users/pcx_staking/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chainx-org.github.io/documentation/zh/docs/chainx/users/pcx_staking/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;3-pcx挖矿&#34;&gt;3 PCX挖矿&lt;/h2&gt;
+&lt;h3 id=&#34;31-投票&#34;&gt;3.1 投票&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第一步&lt;/strong&gt;
+导入账户后，点击投票质押栏中的“stak over”，进入质押概览界面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+选择要投票的节点，点击“Vote”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第3步&lt;/strong&gt;
+填写投票数量，点击“Vote”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;32-提息&#34;&gt;3.2 提息&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+导入账户后，点击投票质押栏中“my staking”按钮，进入我的质押页面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt; 选择要提息的节点，点击“Claim Interests”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第3步&lt;/strong&gt; 点击“Claim Interests”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;33-撤票&#34;&gt;3.3 撤票&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+选择要撤票的节点，点击“UnBound”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+填写撤票数量，点击“UnBound”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;34-切换&#34;&gt;3.4 切换&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;第1步&lt;/strong&gt;
+选择要切换投票的节点，点击“ReBound”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第2步&lt;/strong&gt;
+选择目标节点，填写切换投票数量，点击“ReBound“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../images/pcx10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

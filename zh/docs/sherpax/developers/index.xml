@@ -1,0 +1,68 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChainX 文档 – 开发者文档</title>
+    <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/</link>
+    <description>Recent content in 开发者文档 on ChainX 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: EVM</title>
+      <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/evm/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/evm/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;evm 文档&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;evm-support&#34;&gt;Evm Support&lt;/h2&gt;
+&lt;h3 id=&#34;1-metamask-for-account&#34;&gt;1. metamask (for account)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;sherpax mainnet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;Network Name: sherpax-mainnet
+New RPC URL: https://mainnet.sherpax.io/rpc
+Chain ID: 1506
+Currency Symbol: KSX
+Block Explorer URL: https://evm.sherpax.io/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;sherpax testnet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;Network Name: sherpax-testnet
+New RPC URL: https://sherpax-testnet.chainx.org/rpc
+Chain ID: 1507
+Currency Symbol: KSX
+Block Explorer URL: https://evm-pre.sherpax.io/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Refer &lt;a href=&#34;https://docs.moonbeam.network/getting-started/moonbase/metamask/&#34;&gt;Connect MetaMask to Moonbase Alpha&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-remix-for-contract&#34;&gt;2. Remix (for contract)&lt;/h3&gt;
+&lt;p&gt;Refer &lt;a href=&#34;https://docs.moonbeam.network/getting-started/local-node/using-remix/&#34;&gt;Interacting with Moonbeam Using Remix&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-ethereum-apis&#34;&gt;3. Ethereum apis&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./develop_docs/Ethereum-JSON-RPC.postman_collection.json&#34;&gt;Ethereum JSON-RPC.postman_collection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/PureStake/moonbeam-docs-cn/blob/master/builders/get-started/eth-compare/rpc-support.md&#34;&gt;Ethereum RPC Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.quicknode.com/docs&#34;&gt;QuickNode Ethereum RPC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eth.wiki/json-rpc/API#&#34;&gt;Ethereum JSON-RPC Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-frontier-account&#34;&gt;4. frontier account&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/chainx-org/chainx-technical-archive/blob/main/ZhaoJianBing/substrate_account_and_ethereum_account.md&#34;&gt;How does frontier manage the substrate account and ethereum account&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

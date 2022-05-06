@@ -1,0 +1,18 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChainX 文档 – 验证节点指南</title>
+    <link>https://chainx-org.github.io/documentation/zh/docs/chainx/validators/</link>
+    <description>Recent content in 验证节点指南 on ChainX 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://chainx-org.github.io/documentation/zh/docs/chainx/validators/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
