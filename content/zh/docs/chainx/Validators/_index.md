@@ -65,9 +65,9 @@ $ cargo build --release
 >
 >#### `How to sync blocks from genesis(block #0)`
 >- (0)  You should know [Debug: panicked at 'Storage root must match that calculated ' #609](https://github.com/chainx-org/ChainX/issues/609)
->  **if  you use ChainX v4.x.x directly sync blocks will be stuck at #881910** or other block.
+   >  **if  you use ChainX v4.x.x directly sync blocks will be stuck at #881910** or other block.
 >- (1)  Compile [ChainX v3.0.0](https://github.com/chainx-org/ChainX/tree/v3.0.0) by `nightly-2020-09-30` or Download  [chainx-v3.0.0-ubuntu20.04-x86_64-unknown-linux-gnu-1](https://github.com/chainx-org/ChainX/releases/download/v3.0.0/chainx-v3.0.0-ubuntu20.04-x86_64-unknown-linux-gnu-1)
->  the ChainX v3.0.0 seed nodes are bad, so you should use new mainnet bootnodes with `--bootnodes`
+   >  the ChainX v3.0.0 seed nodes are bad, so you should use new mainnet bootnodes with `--bootnodes`
 >```
 >"/ip4/52.77.243.26/tcp/23555/ws/p2p/12D3KooWQ6GGfmvmmmsbKRmZqMA3A8rxaHz25HvA7JNBbcZhLXtk"
 >"/ip4/120.26.57.227/tcp/36789/ws/p2p/12D3KooWEAX2BcQCZP79MuxQpqLQUop7P3tZY97eNxxUgc4ZTu3k"
@@ -135,7 +135,7 @@ $ ./chainx --chain=mainnet --validator
 }
 ```
 
-部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤 (详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)). 
+部分 rpc 服务属于敏感操作，如需暴露于公网，建议使用代理服务器进行过滤 (详见：[https://github.com/paritytech/substrate/wiki/Public-RPC](https://github.com/paritytech/substrate/wiki/Public-RPC)).
 
 如果您已知悉并了解相关风险，可在启动节点时加入`--rpc-methods unsafe`参数.
 ```txt
@@ -281,7 +281,7 @@ Nov 04 10:12:06.012  INFO 🔖 Pre-sealed block for proposal at 4. Hash now 0x66
 ![drop1](/images/drop1.png)
 ![drop2](/images/drop2.png)
 
-或者在[`Developer>Extrinsic`](https://dapp.chainx.org/#/chainstate/extrinsics) 
+或者在[`Developer>Extrinsic`](https://dapp.chainx.org/#/chainstate/extrinsics)
 通过`chill`进行设置
 ![drop3](/images/drop3.png)
 
@@ -313,14 +313,14 @@ penalty = max(session_reward + reward_pot_balance * F, minimum_penalty)
 - `session_reward`: 节点的 session 奖励
 - `reward_pot_balance`: 节点奖池金额
 - `F`: 惩罚系数，由 babe 与 im-online 模块计算得出:
-  - babe: [节点双签惩罚详情](https://wiki.polkadot.network/docs/en/learn-staking/#babe-equivocation), [frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265).
-  - im-online: [节点离线惩罚详情](https://wiki.polkadot.network/docs/en/learn-staking/#unresponsiveness), [frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771).
+    - babe: [节点双签惩罚详情](https://wiki.polkadot.network/docs/en/learn-staking/#babe-equivocation), [frame/babe/src/equivocation.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/babe/src/equivocation.rs#L265).
+    - im-online: [节点离线惩罚详情](https://wiki.polkadot.network/docs/en/learn-staking/#unresponsiveness), [frame/im-online/src/lib.rs](https://github.com/paritytech/substrate/blob/c60f00840034017d4b7e6d20bd4fcf9a3f5b529a/frame/im-online/src/lib.rs#L771).
 - `minimum_penalty`: 最小惩罚值, 即每次惩罚至少罚 `minimum_penalty`。
 
 ChainX 节点作恶并不惩罚本金，而是惩罚节点奖池。当节点奖池被罚完后，节点会被强制退选。
 
 ```Rust
 if penalty > reward_pot_balance {
-    // force the validator(offender) to be chilled
+// force the validator(offender) to be chilled
 }
 ```
