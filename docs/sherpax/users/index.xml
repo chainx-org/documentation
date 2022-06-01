@@ -1,124 +1,81 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ChainX Docs – User guide</title>
-    <link>https://chainx-org.github.io/documentation/docs/sherpax/users/</link>
-    <description>Recent content in User guide on ChainX Docs</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="https://chainx-org.github.io/documentation/docs/sherpax/users/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: asset Management</title>
-      <link>https://chainx-org.github.io/documentation/docs/sherpax/users/assets_manage/</link>
-      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/docs/sherpax/users/assets_manage/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;1-asset-management&#34;&gt;1 asset Management&lt;/h2&gt;
-&lt;h3 id=&#34;11-register-an-account&#34;&gt;1.1 Register an account&lt;/h3&gt;
-&lt;p&gt;You can register an account on the new wallet (&lt;a href=&#34;https://dapp-v2.chainx.org&#34;&gt;https://dapp-v2.chainx.org&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/sadd-account.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;12-wallet-homepage&#34;&gt;1.2 Wallet Homepage&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/shomepage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;13-initiate-transfer&#34;&gt;1.3 Initiate transfer&lt;/h3&gt;
-&lt;p&gt;Click Transfer, enter the recipient&amp;rsquo;s address, and enter the amount to send&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/stransfer.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: On-chain governance</title>
-      <link>https://chainx-org.github.io/documentation/docs/sherpax/users/government/</link>
-      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/docs/sherpax/users/government/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;2-on-chain-governance&#34;&gt;2 On-chain governance&lt;/h2&gt;
-&lt;p&gt;Click Governance to go to the Governance homepage&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/goverment_homepage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;21-democratic-rights&#34;&gt;2.1 Democratic Rights&lt;/h3&gt;
-&lt;p&gt;At this stage, democratic rights are mainly reflected in citizen proposals and referendums. Citizen Proposal is that each citizen can propose any specific proposal, which takes the form of privileged function calls at runtime (including the most powerful call: set_code, which switches out the entire code at runtime to achieve what would otherwise be required&amp;quot; hard fork&amp;quot;). In each fixed period, the motion with the most second votes during that period will be selected and entered into a referendum. Referendums also have a fixed time period for voting to occur, then votes are counted, and if the vote is approved, various transaction calls are made. The referendum is a simple, inclusive, and mortgage-based voting scheme, which mainly affects the weight of the vote according to the different lock-in duration and lock-up amount. All bills passed by the referendum have an implementation delay associated with them, which is the time period between when the referendum is passed and when the changes are implemented.
-Note: In the later stage, we will form a proposal forum similar to polkassembly. Citizens can put forward text proposals in the forum. After reaching the approval of the majority of people, they can initiate on-chain proposals in the form of submitting privileged function calls.&lt;/p&gt;
-&lt;h3 id=&#34;22-democracy-proposal&#34;&gt;2.2 Democracy Proposal&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;step 1&lt;/strong&gt;
-Click to submit the original image hash, as shown in the figure, the original image hash is 0xc3ddb44b117574311101843e1fdb64d0fc5491fcd16b832f76e773cd8b060b12&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/submit_preimage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;
-Submit the proposal, fill in the original image hash just now, and click Submit&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/submit_proposal.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;23-democratic-second&#34;&gt;2.3 Democratic Second&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;step 1&lt;/strong&gt;
-Select the approved proposal and click &amp;ldquo;Second&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/second.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;
-Select the account to participate in the second, click &amp;ldquo;Second&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/second2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;24-parliament&#34;&gt;2.4 Parliament&lt;/h3&gt;
-&lt;p&gt;The parliament is an on-chain collective representing passive stakeholders. It does this by proposing important changes and cancelling uncontroversially dangerous proposals. Any PCX token holder can run for parliament,
-Users can vote for any number of candidates they support, and parliamentary elections also specify the order in which users vote for MPs, by scoring MPs based on the number that ranks ahead. The MP with the highest score is the Chief MP.&lt;/p&gt;
-&lt;h4 id=&#34;241-running-for-parliament&#34;&gt;2.4.1 Running for Parliament&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;step 1&lt;/strong&gt;
-After importing the account, click &amp;ldquo;Parliament&amp;rdquo; in the governance column to enter the parliament interface&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/council.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;
-Click &amp;ldquo;Submit Candidacy&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/submit_candidacy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;
-After confirming that the account participating in the campaign is correct, click &amp;ldquo;Submit&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/submit_candidacy2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;STEP 4&lt;/strong&gt;
-After entering the password, if the election is successful, a green pop-up window will appear on the page.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/submit_candidacy3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;242-voting&#34;&gt;2.4.2 Voting&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;step 1&lt;/strong&gt;
-Click &amp;ldquo;Vote&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/vote.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX Docs – User guide</title><link>https://chainx-org.github.io/documentation/docs/sherpax/users/</link><description>Recent content in User guide on ChainX Docs</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chainx-org.github.io/documentation/docs/sherpax/users/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: asset Management</title><link>https://chainx-org.github.io/documentation/docs/sherpax/users/assets_manage/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/sherpax/users/assets_manage/</guid><description>
+&lt;h2 id="1-asset-management">1 asset Management&lt;/h2>
+&lt;h3 id="11-register-an-account">1.1 Register an account&lt;/h3>
+&lt;p>You can register an account on the new wallet (&lt;a href="https://dapp-v2.chainx.org">https://dapp-v2.chainx.org&lt;/a>)&lt;/p>
+&lt;p>&lt;img src="../../../images/sadd-account.png" alt="">&lt;/p>
+&lt;h3 id="12-wallet-homepage">1.2 Wallet Homepage&lt;/h3>
+&lt;p>&lt;img src="../../../images/shomepage.png" alt="">&lt;/p>
+&lt;h3 id="13-initiate-transfer">1.3 Initiate transfer&lt;/h3>
+&lt;p>Click Transfer, enter the recipient&amp;rsquo;s address, and enter the amount to send&lt;/p>
+&lt;p>&lt;img src="../../../images/stransfer.png" alt="">&lt;/p></description></item><item><title>Docs: On-chain governance</title><link>https://chainx-org.github.io/documentation/docs/sherpax/users/government/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/sherpax/users/government/</guid><description>
+&lt;h2 id="2-on-chain-governance">2 On-chain governance&lt;/h2>
+&lt;p>Click Governance to go to the Governance homepage&lt;/p>
+&lt;p>&lt;img src="../../../images/goverment_homepage.png" alt="">&lt;/p>
+&lt;h3 id="21-democratic-rights">2.1 Democratic Rights&lt;/h3>
+&lt;p>At this stage, democratic rights are mainly reflected in citizen proposals and referendums. Citizen Proposal is that each citizen can propose any specific proposal, which takes the form of privileged function calls at runtime (including the most powerful call: set_code, which switches out the entire code at runtime to achieve what would otherwise be required&amp;rdquo; hard fork&amp;rdquo;). In each fixed period, the motion with the most second votes during that period will be selected and entered into a referendum. Referendums also have a fixed time period for voting to occur, then votes are counted, and if the vote is approved, various transaction calls are made. The referendum is a simple, inclusive, and mortgage-based voting scheme, which mainly affects the weight of the vote according to the different lock-in duration and lock-up amount. All bills passed by the referendum have an implementation delay associated with them, which is the time period between when the referendum is passed and when the changes are implemented.
+Note: In the later stage, we will form a proposal forum similar to polkassembly. Citizens can put forward text proposals in the forum. After reaching the approval of the majority of people, they can initiate on-chain proposals in the form of submitting privileged function calls.&lt;/p>
+&lt;h3 id="22-democracy-proposal">2.2 Democracy Proposal&lt;/h3>
+&lt;p>&lt;strong>step 1&lt;/strong>
+Click to submit the original image hash, as shown in the figure, the original image hash is 0xc3ddb44b117574311101843e1fdb64d0fc5491fcd16b832f76e773cd8b060b12&lt;/p>
+&lt;p>&lt;img src="../../../images/submit_preimage.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>
+Submit the proposal, fill in the original image hash just now, and click Submit&lt;/p>
+&lt;p>&lt;img src="../../../images/submit_proposal.png" alt="">&lt;/p>
+&lt;h3 id="23-democratic-second">2.3 Democratic Second&lt;/h3>
+&lt;p>&lt;strong>step 1&lt;/strong>
+Select the approved proposal and click &amp;ldquo;Second&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/second.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>
+Select the account to participate in the second, click &amp;ldquo;Second&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/second2.png" alt="">&lt;/p>
+&lt;h3 id="24-parliament">2.4 Parliament&lt;/h3>
+&lt;p>The parliament is an on-chain collective representing passive stakeholders. It does this by proposing important changes and cancelling uncontroversially dangerous proposals. Any PCX token holder can run for parliament,
+Users can vote for any number of candidates they support, and parliamentary elections also specify the order in which users vote for MPs, by scoring MPs based on the number that ranks ahead. The MP with the highest score is the Chief MP.&lt;/p>
+&lt;h4 id="241-running-for-parliament">2.4.1 Running for Parliament&lt;/h4>
+&lt;p>&lt;strong>step 1&lt;/strong>
+After importing the account, click &amp;ldquo;Parliament&amp;rdquo; in the governance column to enter the parliament interface&lt;/p>
+&lt;p>&lt;img src="../../../images/council.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>
+Click &amp;ldquo;Submit Candidacy&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/submit_candidacy.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 3&lt;/strong>
+After confirming that the account participating in the campaign is correct, click &amp;ldquo;Submit&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/submit_candidacy2.png" alt="">&lt;/p>
+&lt;p>&lt;strong>STEP 4&lt;/strong>
+After entering the password, if the election is successful, a green pop-up window will appear on the page.&lt;/p>
+&lt;p>&lt;img src="../../../images/submit_candidacy3.png" alt="">&lt;/p>
+&lt;h4 id="242-voting">2.4.2 Voting&lt;/h4>
+&lt;p>&lt;strong>step 1&lt;/strong>
+Click &amp;ldquo;Vote&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/vote.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>
 Fill in the amount to vote, select the voter from the candidate column, and click &amp;ldquo;Vote&amp;rdquo;
-Note: You can vote for a maximum of 16 people at a time, and the voting weight decreases in order&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/vote2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;
-After entering the password, if the vote is successful, the interface will display the following green pop-up window&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/vote3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;25-treasury&#34;&gt;2.5 Treasury&lt;/h3&gt;
-&lt;h4 id=&#34;251-treasury-proposal&#34;&gt;2.5.1 Treasury Proposal&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;step 1&lt;/strong&gt;
-After importing the account, click &amp;ldquo;treasury&amp;rdquo; in the governance module column to enter the financial interface&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;
-Click &amp;ldquo;Submit Proposal&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;
-Fill in the beneficiary and the amount, click &amp;ldquo;Submit Proposal&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;252-tip-proposal&#34;&gt;2.5.2 Tip Proposal&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;step 1&lt;/strong&gt;
-After importing the account, click &amp;ldquo;treasury&amp;rdquo; in the governance module column to enter the financial interface&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;
-Click &amp;ldquo;Tip&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;
-Click on &amp;ldquo;Proposal Tip&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;STEP 4&lt;/strong&gt;
-Fill in the beneficiary&amp;rsquo;s address, reward reason, and click &amp;ldquo;Proposal Tip&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/treasury6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+Note: You can vote for a maximum of 16 people at a time, and the voting weight decreases in order&lt;/p>
+&lt;p>&lt;img src="../../../images/vote2.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 3&lt;/strong>
+After entering the password, if the vote is successful, the interface will display the following green pop-up window&lt;/p>
+&lt;p>&lt;img src="../../../images/vote3.png" alt="">&lt;/p>
+&lt;h3 id="25-treasury">2.5 Treasury&lt;/h3>
+&lt;h4 id="251-treasury-proposal">2.5.1 Treasury Proposal&lt;/h4>
+&lt;p>&lt;strong>step 1&lt;/strong>
+After importing the account, click &amp;ldquo;treasury&amp;rdquo; in the governance module column to enter the financial interface&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>
+Click &amp;ldquo;Submit Proposal&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury2.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 3&lt;/strong>
+Fill in the beneficiary and the amount, click &amp;ldquo;Submit Proposal&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury3.png" alt="">&lt;/p>
+&lt;h4 id="252-tip-proposal">2.5.2 Tip Proposal&lt;/h4>
+&lt;p>&lt;strong>step 1&lt;/strong>
+After importing the account, click &amp;ldquo;treasury&amp;rdquo; in the governance module column to enter the financial interface&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>
+Click &amp;ldquo;Tip&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury4.png" alt="">&lt;/p>
+&lt;p>&lt;strong>Step 3&lt;/strong>
+Click on &amp;ldquo;Proposal Tip&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury5.png" alt="">&lt;/p>
+&lt;p>&lt;strong>STEP 4&lt;/strong>
+Fill in the beneficiary&amp;rsquo;s address, reward reason, and click &amp;ldquo;Proposal Tip&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="../../../images/treasury6.png" alt="">&lt;/p></description></item></channel></rss>

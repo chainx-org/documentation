@@ -1,185 +1,88 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ChainX 文档 – SherpaX</title>
-    <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/</link>
-    <description>Recent content in SherpaX on ChainX 文档</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	  <atom:link href="https://chainx-org.github.io/documentation/zh/docs/sherpax/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: 概览</title>
-      <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/overview/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;概览&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).&lt;/p&gt;
-&lt;p&gt;Try answering these questions for your user in this page:&lt;/p&gt;
-&lt;h2 id=&#34;what-is-it&#34;&gt;What is it?&lt;/h2&gt;
-&lt;p&gt;Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.&lt;/p&gt;
-&lt;h2 id=&#34;why-do-i-want-it&#34;&gt;Why do I want it?&lt;/h2&gt;
-&lt;p&gt;Help your user know if your project will help them. Useful information can include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;What is it good for?&lt;/strong&gt;: What types of problems does your project solve? What are the benefits of using it?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;What is it not good for?&lt;/strong&gt;: For example, point out situations that might intuitively seem suited for your project, but aren&amp;rsquo;t for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;What is it &lt;em&gt;not yet&lt;/em&gt; good for?&lt;/strong&gt;: Highlight any useful features that are coming soon.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;where-should-i-go-next&#34;&gt;Where should I go next?&lt;/h2&gt;
-&lt;p&gt;Give your users next steps from the Overview. For example:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../getting-started/&#34;&gt;Getting Started&lt;/a&gt;: Get started with $project&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../examples/&#34;&gt;Examples&lt;/a&gt;: Check out some example code!&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 用户指南</title>
-      <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/users/</link>
-      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/users/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;用户指南&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 开发者文档</title>
-      <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/</link>
-      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;开发者文档&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: SoSwap</title>
-      <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/soswap/</link>
-      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/soswap/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;SoSwap&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://soswap-finance.gitbook.io/soswap/&#34;&gt;https://soswap-finance.gitbook.io/soswap/&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 常见问题</title>
-      <link>https://chainx-org.github.io/documentation/zh/docs/sherpax/trouble-shooting/</link>
-      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/trouble-shooting/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;1-how-to-unlock-balances&#34;&gt;1. How to unlock balances?&lt;/h2&gt;
-&lt;h3 id=&#34;11-查询账户余额的locks&#34;&gt;1.1 查询账户余额的locks&lt;/h3&gt;
-&lt;p&gt;通过 &lt;a href=&#34;https://dapp.chainx.org/#/chainstate/extrinsics&#34;&gt;&lt;code&gt;Developer&amp;gt;Extrinsic&lt;/code&gt;&lt;/a&gt; 调用 balances.locks&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;(1) council election&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[
-  {
-    id: pcx/phre,
-    amount: 100,000,000,
-    reasons: All
-  }
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX 文档 – SherpaX</title><link>https://chainx-org.github.io/documentation/zh/docs/sherpax/</link><description>Recent content in SherpaX on ChainX 文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://chainx-org.github.io/documentation/zh/docs/sherpax/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 概览</title><link>https://chainx-org.github.io/documentation/zh/docs/sherpax/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/overview/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>概览&lt;/p>
+&lt;/div>
+&lt;p>The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).&lt;/p>
+&lt;p>Try answering these questions for your user in this page:&lt;/p>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.&lt;/p>
+&lt;h2 id="why-do-i-want-it">Why do I want it?&lt;/h2>
+&lt;p>Help your user know if your project will help them. Useful information can include:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>What is it good for?&lt;/strong>: What types of problems does your project solve? What are the benefits of using it?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>What is it not good for?&lt;/strong>: For example, point out situations that might intuitively seem suited for your project, but aren&amp;rsquo;t for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>What is it &lt;em>not yet&lt;/em> good for?&lt;/strong>: Highlight any useful features that are coming soon.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="where-should-i-go-next">Where should I go next?&lt;/h2>
+&lt;p>Give your users next steps from the Overview. For example:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../../../getting-started/">Getting Started&lt;/a>: Get started with $project&lt;/li>
+&lt;li>&lt;a href="../../../examples/">Examples&lt;/a>: Check out some example code!&lt;/li>
+&lt;/ul></description></item><item><title>Docs: 用户指南</title><link>https://chainx-org.github.io/documentation/zh/docs/sherpax/users/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/users/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>用户指南&lt;/p>
+&lt;/div></description></item><item><title>Docs: 开发者文档</title><link>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/developers/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>开发者文档&lt;/p>
+&lt;/div></description></item><item><title>Docs: SoSwap</title><link>https://chainx-org.github.io/documentation/zh/docs/sherpax/soswap/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/soswap/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>SoSwap&lt;/p>
+&lt;/div>
+&lt;p>&lt;a href="https://soswap-finance.gitbook.io/soswap/">https://soswap-finance.gitbook.io/soswap/&lt;/a>&lt;/p></description></item><item><title>Docs: 常见问题</title><link>https://chainx-org.github.io/documentation/zh/docs/sherpax/trouble-shooting/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/zh/docs/sherpax/trouble-shooting/</guid><description>
+&lt;h2 id="1-how-to-unlock-balances">1. How to unlock balances?&lt;/h2>
+&lt;h3 id="11-查询账户余额的locks">1.1 查询账户余额的locks&lt;/h3>
+&lt;p>通过 &lt;a href="https://dapp.chainx.org/#/chainstate/extrinsics">&lt;code>Developer&amp;gt;Extrinsic&lt;/code>&lt;/a> 调用 balances.locks&lt;/p>
+&lt;ul>
+&lt;li>(1) council election&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code>[
+{
+id: pcx/phre,
+amount: 100,000,000,
+reasons: All
+}
 ]
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;(2) xstaking mining&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[
-  {
-    id: staking ,
-    amount: 4.0000 PCX,
-    reasons: All
-  }
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>(2) xstaking mining&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code>[
+{
+id: staking ,
+amount: 4.0000 PCX,
+reasons: All
+}
 ]
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;(3) democracy公投(ChainX)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[
-  {
-    id: democrac,
-    amount: 3.0000 PCX,
-    reasons: Misc
-  }
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>(3) democracy公投(ChainX)&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code>[
+{
+id: democrac,
+amount: 3.0000 PCX,
+reasons: Misc
+}
 ]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;12-各个模块的lock详情和unlock方法&#34;&gt;1.2 各个模块的lock详情和unlock方法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;(1) council election (ChainX)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;查询lock详情：调用 elections.voting&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;unlock： 调用elections.removeVoter(), 取消投票并解锁&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;(2) democracy 公投 (ChainX)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;查询lock详情：调用 democracy.votingOf&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;unlock:  调用democracy.removeVote()取消公投投票，再调用democracy.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;unlock()解锁&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;(3) xstaking mining (ChainX)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;查询lock详情： 调用 xStaking.locks 和 xStaking.nominations&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;unlock： 调用xStaking.unlockUnbondedWithdrawal()解锁&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;备注: 2022.04.07 xstaking 解绑锁定两周&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;h3 id="12-各个模块的lock详情和unlock方法">1.2 各个模块的lock详情和unlock方法&lt;/h3>
+&lt;ul>
+&lt;li>(1) council election (ChainX)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>查询lock详情：调用 elections.voting&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>unlock： 调用elections.removeVoter(), 取消投票并解锁&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>(2) democracy 公投 (ChainX)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>查询lock详情：调用 democracy.votingOf&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>unlock:  调用democracy.removeVote()取消公投投票，再调用democracy.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>unlock()解锁&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>(3) xstaking mining (ChainX)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>查询lock详情： 调用 xStaking.locks 和 xStaking.nominations&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>unlock： 调用xStaking.unlockUnbondedWithdrawal()解锁&lt;/strong>&lt;/p>
+&lt;p>备注: 2022.04.07 xstaking 解绑锁定两周&lt;/p></description></item></channel></rss>

@@ -1,264 +1,218 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ChainX Docs – Asset Transfer Bridge/Gateway</title>
-    <link>https://chainx-org.github.io/documentation/docs/chainx/bridges/</link>
-    <description>Recent content in Asset Transfer Bridge/Gateway on ChainX Docs</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	  <atom:link href="https://chainx-org.github.io/documentation/docs/chainx/bridges/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Docs: Trust</title>
-      <link>https://chainx-org.github.io/documentation/docs/chainx/bridges/trustee/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/docs/chainx/bridges/trustee/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
-&lt;p&gt;The significance of the existence of trust is that for cross-chain, if ChainX can support the verification of the light node of the cross-chain (such as Bitcoin), but the cross-chain cannot support the verification of the light node of ChainX, only one-way cross-chain (one-way cross-chain) can only be carried out. Relay). Therefore, a chain that can cross-chain in both directions does not need trust, and only a chain that can cross-chain in one direction requires trust. **Trust is a compromise solution for the inability to cross-chain in both directions. **&lt;/p&gt;
-&lt;p&gt;This compromise solution requires a high degree of flexibility, and many details cannot be processed on the chain (such as trust qualification confirmation, etc.), so trust can be regarded as requiring a certain amount of trust to some extent. Therefore, ChainX gives trust &lt;strong&gt;great flexibility and rights&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Therefore, for a one-way cross-chain (such as Bitcoin), an address/account needs to be locked (saved) on the cross-chain side of the assets that need to be cross-chain, and the relevant personnel who generate and manipulate this address/account, Called &amp;ldquo;trust&amp;rdquo; in ChainX.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Trust&lt;/strong&gt;: It is the role of ChainX to host the tokens of the corresponding chain, so the trust is the &lt;strong&gt;real currency custodian&lt;/strong&gt; of cross-chain tokens. Therefore, the participants of the trust must undergo strict KYC verification and publish their own node information, and rank high among the verification nodes to ensure sufficient interest binding relationship to prevent evil.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Classification of trusts&lt;/strong&gt;: Trusts are distinguished by chain units. For example, the trust corresponding to Bitcoin only handles BTC. If Ethereum uses trusts in the future, ETH and ERC20 tokens on Ethereum belong to trust custody.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Cross-chain (original chain)&lt;/strong&gt;: The name for cross-chain on ChainX, such as Bitcoin.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Cross-chain (original chain) token&lt;/strong&gt; is the name on ChainX for the credential that came from the cross-chain on ChainX, such as Bitcoin cross-chain to ChainX, the BTC on the original chain is locked in the multi-signature address of the trust , on ChainX, it will be exchanged 1:1 for a token on ChainX.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Candidate trust&lt;/strong&gt;: Register your own trust information on ChainX when you are already a node, that is, a candidate trust.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Register as a candidate trust&lt;/strong&gt;: To ensure the security and openness of cross-chain addresses, when an account (an entity operating a node) wants to become a trust node, it first needs to register itself as a node (candidate node, verification node) , and then you can register the relevant information (hot public key/address, cold public key/address) you want to become a trust of a certain chain (such as Bitcoin) on ChainX, which is called &lt;strong&gt;candidate trust node&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Information of candidate trust registration&lt;/strong&gt;: The core part of registered trust information needs to have &lt;strong&gt;hot public key/address, cold public key/address&lt;/strong&gt;, of which hot public key/address participates in generating hot address on the chain, cold public key/address The key/address participates in the generation of cold addresses on the chain, and the hot addresses are used to accept users&#39; cross-chain deposits and perform cross-chain withdrawals. When the number of hot addresses saved is large, some funds are transferred to cold addresses for safekeeping.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Trust list (group)&lt;/strong&gt;: Select some nodes from candidate trusts to form a trust list. For the &lt;strong&gt;real currency custody address&lt;/strong&gt; the relevant information provided by the current trust list (hot public key/address, cold public key/address)** is generated on the chain**, the address/account is generally &lt;strong&gt;multi-signature (Multi-signature) address/account&lt;/strong&gt;, the operation of this address/account requires most of the trusts in the current trust list to operate in the form of multi-signature.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Trust change (session)&lt;/strong&gt;: There is a change of trust list, a round of trust list is called &amp;ldquo;session&amp;rdquo; trust list, and the change of trust list is called &amp;ldquo;trust change&amp;rdquo;. ChainX gives trusts &lt;strong&gt;great flexibility and rights&lt;/strong&gt;, so trusts** can only be selected by the previous trust list to the next trust list**.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Multi-signature (multi-signature) address/account&lt;/strong&gt;: Note that this multi-signature (multi-signature) address/account refers to the address on the corresponding escrow chain (such as Bitcoin&amp;rsquo;s multi-signature address). After the candidate trust registers its own trust information on the chain, when a new term of trust is designated for the new term, ChainX automatically generates the multi-signature of the current term based on the trust information on the chain of the new term trust list. (Multi-signature) addresses/accounts, in the current session, these trusts are required to participate in the signature (multi-signature) operation on the corresponding chain when &lt;strong&gt;users withdraw&lt;/strong&gt; (such as Bitcoin participating in the signature of the original text to be signed).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Trust list processing user withdrawal&lt;/strong&gt;: The trustee in the current trust list should monitor the application list for user withdrawal. When the user can withdraw, any trustee in the current session can use the user&amp;rsquo;s application list component to create an original application list. The original text of the withdrawal transaction on the chain (the original text to be signed for Bitcoin withdrawal) is sent to ChainX, and other trustees sign the original text of the withdrawal on ChainX (or reject the withdrawal). If the number of signatures reaches the multi-signature requirement, this The transaction will be broadcast to the original chain, and after ChainX is confirmed, the cross-chain tokens on ChainX to the original chain will be destroyed.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Trust multi-signature operation&lt;/strong&gt;: Note that this multi-signature refers to ChainX, and some operations related to trust need to be decided through &lt;strong&gt;multi-signature voting&lt;/strong&gt; on the ChainX chain, such as changing the withdrawal fee for Bitcoin users. One trust list selects the next trust list, etc.&lt;/p&gt;
-&lt;h2 id=&#34;the-first-trust-node&#34;&gt;The first trust node&lt;/h2&gt;
-&lt;p&gt;The first trust node is composed of several well-trained nodes during the test network period. After the network is gradually stabilized, the new nodes will join and become familiar with them and begin to change their terms gradually.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Hot multi-signature address&lt;/strong&gt; is used to receive users&#39; daily deposits and withdrawals&lt;/li&gt;
-&lt;li&gt;If there are too many funds in the hot address, the trust nodes will enter the &lt;strong&gt;cold multi-signature address&lt;/strong&gt; after offline negotiation for &lt;strong&gt;hot-to-cold&lt;/strong&gt; storage&lt;/li&gt;
-&lt;li&gt;If you encounter a large withdrawal, you can also perform a &lt;strong&gt;cold-to-hot&lt;/strong&gt; operation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;trust-node-change&#34;&gt;Trust node change&lt;/h2&gt;
-&lt;h4 id=&#34;the-next-trust-node-review&#34;&gt;The next trust node review&lt;/h4&gt;
-&lt;h4 id=&#34;the-next-trust-node-review-1&#34;&gt;The next trust node review&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;At present, the replacement cycle of the proposed trust node is about 10 days. First, check the nodes that have set up the Bitcoin chain trust among the verification nodes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Then take the N with the highest number of votes. With the development of the system maturity, N gradually increases from 4 to 15&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The last trust node examines whether these N nodes have disclosed their identity information, whether they have basic node and fund custody capabilities, and prevent malicious nodes from appearing, and screen out M nodes.&lt;/p&gt;
-&lt;p&gt;The core condition selected is to ensure the reliability of the next trust. Therefore, the judgment conditions can be filtered through the following, and passed the &lt;strong&gt;trust multi-signature operation&lt;/strong&gt; of the current trust list:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Familiar with the ChainX trust process (important)
-&lt;ul&gt;
-&lt;li&gt;Have certain operation and maintenance capabilities, and need to maintain a full node of the corresponding chain&lt;/li&gt;
-&lt;li&gt;In-depth understanding of the corresponding blockchain operations (for example, Bitcoin Trust needs to be familiar with the concept and process of Bitcoin&amp;rsquo;s multi-signature address operation, and needs to have the development ability to control tools suitable for its own Bitcoin multi-signature)&lt;/li&gt;
-&lt;li&gt;Possess certain technical ability and can develop suitable tools according to ChainX SDK and other requirements&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Nodes are willing to be elected as trusts&lt;/li&gt;
-&lt;li&gt;Nodes are ranked high&lt;/li&gt;
-&lt;li&gt;The number of node mortgages is large and the number of votes is large&lt;/li&gt;
-&lt;li&gt;Nodes can flexibly operate hot and cold wallets, and have cold wallet management technology&lt;/li&gt;
-&lt;li&gt;The identity of the node is known and endorsed by a larger interest relationship (such as company, reputation, etc.)&lt;/li&gt;
-&lt;li&gt;other valid filters&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;preparation-for-the-next-trust-node&#34;&gt;Preparation for the next trust node&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;Announce the identities of the M nodes, their respective hot public keys, and their respective cold public keys to the community&lt;/li&gt;
-&lt;li&gt;Generate the hot and cold multi-signature addresses of the M nodes through the &lt;strong&gt;chain interface simulation calculation&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Enter a small amount of real money into the two multi-signature addresses for testing&lt;/li&gt;
-&lt;li&gt;M nodes assemble to generate a full multi-signature signature of M/M, which is used to indicate that each of them will use multi-signature and the private key is correct&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The detailed description of steps 3 and 4 is as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The hot and cold addresses of the current trust are called: cold-addr1, hot-addr1, and the hot and cold addresses generated by the next simulation are called: cold-addr2, hot-addr2.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The testing process is as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;cold-addr1 -&amp;gt; cold-addr2 (init, test cold addr could deposit)&lt;/li&gt;
-&lt;li&gt;cold-addr2 -&amp;gt; hot-addr2 (test cold addr could withdrawal, and hot addr could deposit)&lt;/li&gt;
-&lt;li&gt;hot-addr2 -&amp;gt; cold-addr2 (test hot addr could withdrawal)&lt;/li&gt;
-&lt;li&gt;cold-addr2 -&amp;gt; cold-addr1 (optional, just return test BTC)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/chainx-org/images/raw/master/trustees_addr_test.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;on-chain-trust-node-change&#34;&gt;On-chain trust node change&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;The previous trust node initiated a ChainX multi-signature transaction, and submitted the ChainX account address of the new trust node. These account addresses should have undergone simulation tests to ensure that the registered information is normally available, and the address or contract to be generated is available. of.&lt;/li&gt;
-&lt;li&gt;After completing the transition in the ChainX system, the deposit target address that the user sees and the address monitored by the light node program will change.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;escrow-funds-transfer&#34;&gt;escrow funds transfer&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;First complete the transition, at this time the multi-signature address on the chain has been replaced&lt;/li&gt;
-&lt;li&gt;The last batch of trust nodes will transfer the funds from the two old multi-signature addresses to the new two multi-signature addresses after offline organization to complete the transfer of funds.&lt;/li&gt;
-&lt;li&gt;The transfer of transfer funds is completed&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;trust-multi-signature-operation&#34;&gt;Trust multi-signature operation&lt;/h2&gt;
-&lt;p&gt;Since trust is a group, operations and trust-related functions on the ChainX chain (note the non-original chain, please distinguish clearly) need to be operated through the multi-signature module on ChainX.&lt;/p&gt;
-&lt;p&gt;Trust is also a multi-signature operation group. On the ChainX chain, for each trust of each chain, a trust multi-signature address corresponding to them can be generated according to the trust list. For trusts, the functions that generally require multi-signature operations are as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;trust transition&lt;/li&gt;
-&lt;li&gt;User withdrawal fee of the control chain&lt;/li&gt;
-&lt;li&gt;Cancel or amend the user&amp;rsquo;s withdrawal request&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;trust-income&#34;&gt;Trust income&lt;/h2&gt;
-&lt;p&gt;Compared with ordinary verifiers, trusts have to bear more responsibilities and obligations, so ChainX currently plans to give trusts the following rewards:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Take BTC as an example: after the trust is renewed, the withdrawal within the current trust will leave a lot of handling fee balances for withdrawals by users. The remaining handling fee balance can be divided up by this trust after the subsequent trust execution is met.&lt;/li&gt;
-&lt;li&gt;The council will take out 20% of the proceeds to reward the trust&lt;/li&gt;
-&lt;li&gt;ChainX puts trust nodes on the top ranking in the wallet, which helps the trust to attract more votes and enhance its reputation&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;trust-related-operations&#34;&gt;Trust related operations&lt;/h2&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Bitcoin Transfer Bridge/Gateway</title>
-      <link>https://chainx-org.github.io/documentation/docs/chainx/bridges/bitcoin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chainx-org.github.io/documentation/docs/chainx/bridges/bitcoin/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;Bitcoin Transfer Bridge/Gateway&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;introduce&#34;&gt;introduce&lt;/h2&gt;
-&lt;p&gt;The Bitcoin transfer bridge/gateway is a module on ChainX that realizes the cross-chain of Bitcoin assets.&lt;/p&gt;
-&lt;p&gt;For the Bitcoin chain, ChainX adopts&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Bitcoin Light Node Verification (SPV) ensures the security of the Bitcoin deposit and withdrawal confirmation process&lt;/li&gt;
-&lt;li&gt;Bitcoin multi-signature locks holding Bitcoin assets and the multi-signature private key holder controls Bitcoin withdrawal&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To sum up, ChainX adopts the model of &amp;ldquo;one-way light node verification, multi-signature control of original chain assets&amp;rdquo; for the Bitcoin chain.&lt;/p&gt;
-&lt;h2 id=&#34;term&#34;&gt;Term&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Bitcoin light node verification: Using the Bitcoin light node verification logic, only the Bitcoin block header can be verified through Merkel proof that the transaction is real.&lt;/p&gt;
-&lt;p&gt;Bitcoin multi-signature: The multi-signature script mode is adopted on the Bitcoin chain to realize the multi-signature technology on Bitcoin.&lt;/p&gt;
-&lt;p&gt;Bitcoin Trust: A role that is registered on the ChainX chain and holds a Bitcoin multi-signature private key, and a trust candidate can become a Bitcoin Trust after a trust change.&lt;/p&gt;
-&lt;p&gt;Bitcoin Trust Candidate: You must first be a ChainX verifier, and then you can become a Bitcoin Trust candidate after registering a set of hot and cold public keys on the ChainX chain.&lt;/p&gt;
-&lt;p&gt;Bitcoin trust renewal: The next trust is designated from the previous trust, and after the trust multi-signature vote on the ChainX chain, the next trust is determined and the trust multi-signature address is generated.&lt;/p&gt;
-&lt;p&gt;Bitcoin multi-signature address: The hot and cold addresses are generated by the hot and cold public keys registered by the trusts according to the Bitcoin multi-signature script when the trust is replaced.&lt;/p&gt;
-&lt;p&gt;Trust multi-signature: The current trust has a multi-signature address on the ChainX chain, and the trust can make some decisions through the multi-signature address, such as trust relief, setting Bitcoin withdrawal fees, etc.&lt;/p&gt;
-&lt;p&gt;Bitcoin Relay: An off-chain program that submits Bitcoin block headers and transactions involving ChainX-related Bitcoins to the ChainX chain.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;bitcoin-light-node-verification&#34;&gt;Bitcoin Light Node Verification&lt;/h2&gt;
-&lt;p&gt;ChainX implements a complete Bitcoin light node verification logic module in the Runtime environment. The logic module starts from a certain Bitcoin block height (determined at genesis), accepts Bitcoin blocks with subsequent heights, and has the switch &amp;ldquo;heaviest&amp;rdquo;. &amp;ldquo;Proof of Work Chain&amp;rdquo; function. Therefore, if the latest block generated on the Bitcoin chain is normally submitted to ChainX by Bitcoin Relay, the Bitcoin transfer bridge will have a copy of the Bitcoin block header information and verifiable metadata of Bitcoin.&lt;/p&gt;
-&lt;p&gt;The light node verification logic in the Bitcoin Bridge will verify the Bitcoin block header:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Parent hash existence&lt;/li&gt;
-&lt;li&gt;Proof of Work&lt;/li&gt;
-&lt;li&gt;time limit&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Wait for the verification logic that SPV should have, and also have the same confirmation logic under the heaviest workload proof as the Bitcoin chain. Assuming that the number of confirmations is m, after accepting the nth block header, the n-m+1th block will be set. Blocks are marked for confirmation, see:
-&lt;img src=&#34;https://user-images.githubusercontent.com/5023721/56464998-bd10ae80-6427-11e9-877a-e01727c24a81.png&#34; alt=&#34;bitcoin confirm&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In the Bitcoin transfer bridge, only the Bitcoin block header data submitted externally is accepted, and the verification of whether the data is legal and the business logic of the light node are independently operated and decided in the Runtime of ChainX, and are not affected by external influences.&lt;/p&gt;
-&lt;p&gt;Therefore, the verification and confirmation block logic of the Bitcoin light node in ChainX is&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/ChainX_Bitcoin_bridge.jpg&#34; alt=&#34;ChainX_Bitcoin_bridge&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In ChainX 1.0, Bitcoin transactions related to ChainX can be submitted to the transfer first, and then wait until the Bitcoin block header is confirmed to execute the transaction processing process, while ChainX 2.0 simplifies this process and only allows submissions in the ChainX chain Bitcoin transactions before the confirmed block header above, and Bitcoin transactions under the unconfirmed block header are not allowed to be submitted.&lt;/p&gt;
-&lt;h2 id=&#34;multi-signature-management-and-trust&#34;&gt;Multi-signature management and trust&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;In the ChainX chain, the role that holds the multi-signature private key is called &amp;ldquo;trustee&amp;rdquo;&lt;/strong&gt;. The trust is mainly responsible for managing asset security and processing Bitcoin withdrawal applications.&lt;/p&gt;
-&lt;p&gt;The main process that the trust needs to process on the ChainX chain is to process withdrawals. The execution process is as follows:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The trust periodically forms a bitcoin withdrawal transaction based on the withdrawal application on the ChainX chain and sends it to the bitcoin transfer bridge of the ChainX chain;&lt;/li&gt;
-&lt;li&gt;The Bitcoin transfer bridge locks the corresponding withdrawal application according to the withdrawal request of the trust;&lt;/li&gt;
-&lt;li&gt;The trust performs Bitcoin multi-signature signatures according to the original text of the Bitcoin transaction on the ChainX chain;&lt;/li&gt;
-&lt;li&gt;When the last multi-signature signature is completed, the Bitcoin withdrawal transaction will be submitted to the Bitcoin network by Relay;&lt;/li&gt;
-&lt;li&gt;After the Bitcoin network is packaged, Relay finds the Bitcoin withdrawal transaction submitted by the trust, and sends the withdrawal transaction to the Bitcoin transfer bridge of the ChainX chain;&lt;/li&gt;
-&lt;li&gt;The Bitcoin transfer bridge verifies the validity of the withdrawal transaction through the light node scheme, and destroys the corresponding withdrawal application and X-BTC tokens on the ChainX chain.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;On the other hand, the trust needs to periodically move the bitcoins in the hot and cold addresses according to the balance of the hot addresses that have been recharged to ChainX to ensure the security of the bitcoins locked in the multi-signature addresses. Bitcoin transactions that move hot and cold addresses can be submitted by Relay to the Bitcoin Bridge, but there will be no special handling.
-For more information on multi-signature and trusts, see &lt;a href=&#34;../Trustee&#34;&gt;trust&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;bitcoin-transfer-bridge-business-logic&#34;&gt;Bitcoin transfer bridge business logic&lt;/h2&gt;
-&lt;p&gt;It can be seen from the above introduction that the Bitcoin transfer bridge adopts the mode of one-way relay plus trust multi-signature to maintain the Bitcoin cross-chain process of the Bitcoin transfer bridge. Therefore, the overall business logic of the Bitcoin transfer bridge is shown in the following figure:&lt;/p&gt;
-&lt;p&gt;As can be seen from the above figure:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Preconditions:&lt;/p&gt;
-&lt;p&gt;The ChainX chain first needs to have a trust to generate the corresponding hot and cold trust multi-signature address.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Bitcoin block header:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The Bitcoin block header is submitted by relay (or submitted by Substrate offchain worker)&lt;/li&gt;
-&lt;li&gt;The Bitcoin transfer bridge verifies the Bitcoin block header and forms the heaviest workload chain for the Bitcoin block.&lt;/li&gt;
-&lt;li&gt;The transfer bridge will confirm that a previous block is a confirmation block according to the latest Bitcoin block header.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Recharge process:
-&lt;img src=&#34;../../../images/ChainX_BTC_Deposit.jpg&#34; alt=&#34;ChainX_BTC_Deposit&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;There are first blocks on the chain;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX Docs – Asset Transfer Bridge/Gateway</title><link>https://chainx-org.github.io/documentation/docs/chainx/bridges/</link><description>Recent content in Asset Transfer Bridge/Gateway on ChainX Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://chainx-org.github.io/documentation/docs/chainx/bridges/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Trust</title><link>https://chainx-org.github.io/documentation/docs/chainx/bridges/trustee/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/chainx/bridges/trustee/</guid><description>
+&lt;h2 id="介绍">介绍&lt;/h2>
+&lt;p>The significance of the existence of trust is that for cross-chain, if ChainX can support the verification of the light node of the cross-chain (such as Bitcoin), but the cross-chain cannot support the verification of the light node of ChainX, only one-way cross-chain (one-way cross-chain) can only be carried out. Relay). Therefore, a chain that can cross-chain in both directions does not need trust, and only a chain that can cross-chain in one direction requires trust. **Trust is a compromise solution for the inability to cross-chain in both directions. **&lt;/p>
+&lt;p>This compromise solution requires a high degree of flexibility, and many details cannot be processed on the chain (such as trust qualification confirmation, etc.), so trust can be regarded as requiring a certain amount of trust to some extent. Therefore, ChainX gives trust &lt;strong>great flexibility and rights&lt;/strong>&lt;/p>
+&lt;p>Therefore, for a one-way cross-chain (such as Bitcoin), an address/account needs to be locked (saved) on the cross-chain side of the assets that need to be cross-chain, and the relevant personnel who generate and manipulate this address/account, Called &amp;ldquo;trust&amp;rdquo; in ChainX.&lt;/p>
+&lt;p>&lt;strong>Trust&lt;/strong>: It is the role of ChainX to host the tokens of the corresponding chain, so the trust is the &lt;strong>real currency custodian&lt;/strong> of cross-chain tokens. Therefore, the participants of the trust must undergo strict KYC verification and publish their own node information, and rank high among the verification nodes to ensure sufficient interest binding relationship to prevent evil.&lt;/p>
+&lt;p>&lt;strong>Classification of trusts&lt;/strong>: Trusts are distinguished by chain units. For example, the trust corresponding to Bitcoin only handles BTC. If Ethereum uses trusts in the future, ETH and ERC20 tokens on Ethereum belong to trust custody.&lt;/p>
+&lt;p>&lt;strong>Cross-chain (original chain)&lt;/strong>: The name for cross-chain on ChainX, such as Bitcoin.&lt;/p>
+&lt;p>&lt;strong>Cross-chain (original chain) token&lt;/strong> is the name on ChainX for the credential that came from the cross-chain on ChainX, such as Bitcoin cross-chain to ChainX, the BTC on the original chain is locked in the multi-signature address of the trust , on ChainX, it will be exchanged 1:1 for a token on ChainX.&lt;/p>
+&lt;p>&lt;strong>Candidate trust&lt;/strong>: Register your own trust information on ChainX when you are already a node, that is, a candidate trust.&lt;/p>
+&lt;p>&lt;strong>Register as a candidate trust&lt;/strong>: To ensure the security and openness of cross-chain addresses, when an account (an entity operating a node) wants to become a trust node, it first needs to register itself as a node (candidate node, verification node) , and then you can register the relevant information (hot public key/address, cold public key/address) you want to become a trust of a certain chain (such as Bitcoin) on ChainX, which is called &lt;strong>candidate trust node&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>Information of candidate trust registration&lt;/strong>: The core part of registered trust information needs to have &lt;strong>hot public key/address, cold public key/address&lt;/strong>, of which hot public key/address participates in generating hot address on the chain, cold public key/address The key/address participates in the generation of cold addresses on the chain, and the hot addresses are used to accept users&amp;rsquo; cross-chain deposits and perform cross-chain withdrawals. When the number of hot addresses saved is large, some funds are transferred to cold addresses for safekeeping.&lt;/p>
+&lt;p>&lt;strong>Trust list (group)&lt;/strong>: Select some nodes from candidate trusts to form a trust list. For the &lt;strong>real currency custody address&lt;/strong> the relevant information provided by the current trust list (hot public key/address, cold public key/address)** is generated on the chain**, the address/account is generally **multi-signature (Multi-signature) address/account**, the operation of this address/account requires most of the trusts in the current trust list to operate in the form of multi-signature.&lt;/p>
+&lt;p>&lt;strong>Trust change (session)&lt;/strong>: There is a change of trust list, a round of trust list is called &amp;ldquo;session&amp;rdquo; trust list, and the change of trust list is called &amp;ldquo;trust change&amp;rdquo;. ChainX gives trusts &lt;strong>great flexibility and rights&lt;/strong>, so trusts** can only be selected by the previous trust list to the next trust list**.&lt;/p>
+&lt;p>&lt;strong>Multi-signature (multi-signature) address/account&lt;/strong>: Note that this multi-signature (multi-signature) address/account refers to the address on the corresponding escrow chain (such as Bitcoin&amp;rsquo;s multi-signature address). After the candidate trust registers its own trust information on the chain, when a new term of trust is designated for the new term, ChainX automatically generates the multi-signature of the current term based on the trust information on the chain of the new term trust list. (Multi-signature) addresses/accounts, in the current session, these trusts are required to participate in the signature (multi-signature) operation on the corresponding chain when &lt;strong>users withdraw&lt;/strong> (such as Bitcoin participating in the signature of the original text to be signed).&lt;/p>
+&lt;p>&lt;strong>Trust list processing user withdrawal&lt;/strong>: The trustee in the current trust list should monitor the application list for user withdrawal. When the user can withdraw, any trustee in the current session can use the user&amp;rsquo;s application list component to create an original application list. The original text of the withdrawal transaction on the chain (the original text to be signed for Bitcoin withdrawal) is sent to ChainX, and other trustees sign the original text of the withdrawal on ChainX (or reject the withdrawal). If the number of signatures reaches the multi-signature requirement, this The transaction will be broadcast to the original chain, and after ChainX is confirmed, the cross-chain tokens on ChainX to the original chain will be destroyed.&lt;/p>
+&lt;p>&lt;strong>Trust multi-signature operation&lt;/strong>: Note that this multi-signature refers to ChainX, and some operations related to trust need to be decided through &lt;strong>multi-signature voting&lt;/strong> on the ChainX chain, such as changing the withdrawal fee for Bitcoin users. One trust list selects the next trust list, etc.&lt;/p>
+&lt;h2 id="the-first-trust-node">The first trust node&lt;/h2>
+&lt;p>The first trust node is composed of several well-trained nodes during the test network period. After the network is gradually stabilized, the new nodes will join and become familiar with them and begin to change their terms gradually.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Hot multi-signature address&lt;/strong> is used to receive users&amp;rsquo; daily deposits and withdrawals&lt;/li>
+&lt;li>If there are too many funds in the hot address, the trust nodes will enter the &lt;strong>cold multi-signature address&lt;/strong> after offline negotiation for &lt;strong>hot-to-cold&lt;/strong> storage&lt;/li>
+&lt;li>If you encounter a large withdrawal, you can also perform a &lt;strong>cold-to-hot&lt;/strong> operation&lt;/li>
+&lt;/ul>
+&lt;h2 id="trust-node-change">Trust node change&lt;/h2>
+&lt;h4 id="the-next-trust-node-review">The next trust node review&lt;/h4>
+&lt;h4 id="the-next-trust-node-review-1">The next trust node review&lt;/h4>
+&lt;ol>
+&lt;li>
+&lt;p>At present, the replacement cycle of the proposed trust node is about 10 days. First, check the nodes that have set up the Bitcoin chain trust among the verification nodes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Then take the N with the highest number of votes. With the development of the system maturity, N gradually increases from 4 to 15&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The last trust node examines whether these N nodes have disclosed their identity information, whether they have basic node and fund custody capabilities, and prevent malicious nodes from appearing, and screen out M nodes.&lt;/p>
+&lt;p>The core condition selected is to ensure the reliability of the next trust. Therefore, the judgment conditions can be filtered through the following, and passed the &lt;strong>trust multi-signature operation&lt;/strong> of the current trust list:&lt;/p>
+&lt;ul>
+&lt;li>Familiar with the ChainX trust process (important)
+&lt;ul>
+&lt;li>Have certain operation and maintenance capabilities, and need to maintain a full node of the corresponding chain&lt;/li>
+&lt;li>In-depth understanding of the corresponding blockchain operations (for example, Bitcoin Trust needs to be familiar with the concept and process of Bitcoin&amp;rsquo;s multi-signature address operation, and needs to have the development ability to control tools suitable for its own Bitcoin multi-signature)&lt;/li>
+&lt;li>Possess certain technical ability and can develop suitable tools according to ChainX SDK and other requirements&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Nodes are willing to be elected as trusts&lt;/li>
+&lt;li>Nodes are ranked high&lt;/li>
+&lt;li>The number of node mortgages is large and the number of votes is large&lt;/li>
+&lt;li>Nodes can flexibly operate hot and cold wallets, and have cold wallet management technology&lt;/li>
+&lt;li>The identity of the node is known and endorsed by a larger interest relationship (such as company, reputation, etc.)&lt;/li>
+&lt;li>other valid filters&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="preparation-for-the-next-trust-node">Preparation for the next trust node&lt;/h4>
+&lt;ol>
+&lt;li>Announce the identities of the M nodes, their respective hot public keys, and their respective cold public keys to the community&lt;/li>
+&lt;li>Generate the hot and cold multi-signature addresses of the M nodes through the &lt;strong>chain interface simulation calculation&lt;/strong>&lt;/li>
+&lt;li>Enter a small amount of real money into the two multi-signature addresses for testing&lt;/li>
+&lt;li>M nodes assemble to generate a full multi-signature signature of M/M, which is used to indicate that each of them will use multi-signature and the private key is correct&lt;/li>
+&lt;/ol>
+&lt;p>The detailed description of steps 3 and 4 is as follows:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The hot and cold addresses of the current trust are called: cold-addr1, hot-addr1, and the hot and cold addresses generated by the next simulation are called: cold-addr2, hot-addr2.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The testing process is as follows:&lt;/p>
+&lt;ul>
+&lt;li>cold-addr1 -&amp;gt; cold-addr2 (init, test cold addr could deposit)&lt;/li>
+&lt;li>cold-addr2 -&amp;gt; hot-addr2 (test cold addr could withdrawal, and hot addr could deposit)&lt;/li>
+&lt;li>hot-addr2 -&amp;gt; cold-addr2 (test hot addr could withdrawal)&lt;/li>
+&lt;li>cold-addr2 -&amp;gt; cold-addr1 (optional, just return test BTC)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://github.com/chainx-org/images/raw/master/trustees_addr_test.png" alt="img">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="on-chain-trust-node-change">On-chain trust node change&lt;/h4>
+&lt;ol>
+&lt;li>The previous trust node initiated a ChainX multi-signature transaction, and submitted the ChainX account address of the new trust node. These account addresses should have undergone simulation tests to ensure that the registered information is normally available, and the address or contract to be generated is available. of.&lt;/li>
+&lt;li>After completing the transition in the ChainX system, the deposit target address that the user sees and the address monitored by the light node program will change.&lt;/li>
+&lt;/ol>
+&lt;h4 id="escrow-funds-transfer">escrow funds transfer&lt;/h4>
+&lt;ol>
+&lt;li>First complete the transition, at this time the multi-signature address on the chain has been replaced&lt;/li>
+&lt;li>The last batch of trust nodes will transfer the funds from the two old multi-signature addresses to the new two multi-signature addresses after offline organization to complete the transfer of funds.&lt;/li>
+&lt;li>The transfer of transfer funds is completed&lt;/li>
+&lt;/ol>
+&lt;h2 id="trust-multi-signature-operation">Trust multi-signature operation&lt;/h2>
+&lt;p>Since trust is a group, operations and trust-related functions on the ChainX chain (note the non-original chain, please distinguish clearly) need to be operated through the multi-signature module on ChainX.&lt;/p>
+&lt;p>Trust is also a multi-signature operation group. On the ChainX chain, for each trust of each chain, a trust multi-signature address corresponding to them can be generated according to the trust list. For trusts, the functions that generally require multi-signature operations are as follows:&lt;/p>
+&lt;ul>
+&lt;li>trust transition&lt;/li>
+&lt;li>User withdrawal fee of the control chain&lt;/li>
+&lt;li>Cancel or amend the user&amp;rsquo;s withdrawal request&lt;/li>
+&lt;/ul>
+&lt;h2 id="trust-income">Trust income&lt;/h2>
+&lt;p>Compared with ordinary verifiers, trusts have to bear more responsibilities and obligations, so ChainX currently plans to give trusts the following rewards:&lt;/p>
+&lt;ol>
+&lt;li>Take BTC as an example: after the trust is renewed, the withdrawal within the current trust will leave a lot of handling fee balances for withdrawals by users. The remaining handling fee balance can be divided up by this trust after the subsequent trust execution is met.&lt;/li>
+&lt;li>The council will take out 20% of the proceeds to reward the trust&lt;/li>
+&lt;li>ChainX puts trust nodes on the top ranking in the wallet, which helps the trust to attract more votes and enhance its reputation&lt;/li>
+&lt;/ol>
+&lt;h2 id="trust-related-operations">Trust related operations&lt;/h2>
+&lt;p>TODO&lt;/p></description></item><item><title>Docs: Bitcoin Transfer Bridge/Gateway</title><link>https://chainx-org.github.io/documentation/docs/chainx/bridges/bitcoin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chainx-org.github.io/documentation/docs/chainx/bridges/bitcoin/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Bitcoin Transfer Bridge/Gateway&lt;/p>
+&lt;/div>
+&lt;h2 id="introduce">introduce&lt;/h2>
+&lt;p>The Bitcoin transfer bridge/gateway is a module on ChainX that realizes the cross-chain of Bitcoin assets.&lt;/p>
+&lt;p>For the Bitcoin chain, ChainX adopts&lt;/p>
+&lt;ul>
+&lt;li>Bitcoin Light Node Verification (SPV) ensures the security of the Bitcoin deposit and withdrawal confirmation process&lt;/li>
+&lt;li>Bitcoin multi-signature locks holding Bitcoin assets and the multi-signature private key holder controls Bitcoin withdrawal&lt;/li>
+&lt;/ul>
+&lt;p>To sum up, ChainX adopts the model of &amp;ldquo;one-way light node verification, multi-signature control of original chain assets&amp;rdquo; for the Bitcoin chain.&lt;/p>
+&lt;h2 id="term">Term&lt;/h2>
+&lt;blockquote>
+&lt;p>Bitcoin light node verification: Using the Bitcoin light node verification logic, only the Bitcoin block header can be verified through Merkel proof that the transaction is real.&lt;/p>
+&lt;p>Bitcoin multi-signature: The multi-signature script mode is adopted on the Bitcoin chain to realize the multi-signature technology on Bitcoin.&lt;/p>
+&lt;p>Bitcoin Trust: A role that is registered on the ChainX chain and holds a Bitcoin multi-signature private key, and a trust candidate can become a Bitcoin Trust after a trust change.&lt;/p>
+&lt;p>Bitcoin Trust Candidate: You must first be a ChainX verifier, and then you can become a Bitcoin Trust candidate after registering a set of hot and cold public keys on the ChainX chain.&lt;/p>
+&lt;p>Bitcoin trust renewal: The next trust is designated from the previous trust, and after the trust multi-signature vote on the ChainX chain, the next trust is determined and the trust multi-signature address is generated.&lt;/p>
+&lt;p>Bitcoin multi-signature address: The hot and cold addresses are generated by the hot and cold public keys registered by the trusts according to the Bitcoin multi-signature script when the trust is replaced.&lt;/p>
+&lt;p>Trust multi-signature: The current trust has a multi-signature address on the ChainX chain, and the trust can make some decisions through the multi-signature address, such as trust relief, setting Bitcoin withdrawal fees, etc.&lt;/p>
+&lt;p>Bitcoin Relay: An off-chain program that submits Bitcoin block headers and transactions involving ChainX-related Bitcoins to the ChainX chain.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="bitcoin-light-node-verification">Bitcoin Light Node Verification&lt;/h2>
+&lt;p>ChainX implements a complete Bitcoin light node verification logic module in the Runtime environment. The logic module starts from a certain Bitcoin block height (determined at genesis), accepts Bitcoin blocks with subsequent heights, and has the switch &amp;ldquo;heaviest&amp;rdquo;. &amp;ldquo;Proof of Work Chain&amp;rdquo; function. Therefore, if the latest block generated on the Bitcoin chain is normally submitted to ChainX by Bitcoin Relay, the Bitcoin transfer bridge will have a copy of the Bitcoin block header information and verifiable metadata of Bitcoin.&lt;/p>
+&lt;p>The light node verification logic in the Bitcoin Bridge will verify the Bitcoin block header:&lt;/p>
+&lt;ul>
+&lt;li>Parent hash existence&lt;/li>
+&lt;li>Proof of Work&lt;/li>
+&lt;li>time limit&lt;/li>
+&lt;/ul>
+&lt;p>Wait for the verification logic that SPV should have, and also have the same confirmation logic under the heaviest workload proof as the Bitcoin chain. Assuming that the number of confirmations is m, after accepting the nth block header, the n-m+1th block will be set. Blocks are marked for confirmation, see:
+&lt;img src="https://user-images.githubusercontent.com/5023721/56464998-bd10ae80-6427-11e9-877a-e01727c24a81.png" alt="bitcoin confirm">&lt;/p>
+&lt;p>In the Bitcoin transfer bridge, only the Bitcoin block header data submitted externally is accepted, and the verification of whether the data is legal and the business logic of the light node are independently operated and decided in the Runtime of ChainX, and are not affected by external influences.&lt;/p>
+&lt;p>Therefore, the verification and confirmation block logic of the Bitcoin light node in ChainX is&lt;/p>
+&lt;p>&lt;img src="../../../images/ChainX_Bitcoin_bridge.jpg" alt="ChainX_Bitcoin_bridge">&lt;/p>
+&lt;p>In ChainX 1.0, Bitcoin transactions related to ChainX can be submitted to the transfer first, and then wait until the Bitcoin block header is confirmed to execute the transaction processing process, while ChainX 2.0 simplifies this process and only allows submissions in the ChainX chain Bitcoin transactions before the confirmed block header above, and Bitcoin transactions under the unconfirmed block header are not allowed to be submitted.&lt;/p>
+&lt;h2 id="multi-signature-management-and-trust">Multi-signature management and trust&lt;/h2>
+&lt;p>&lt;strong>In the ChainX chain, the role that holds the multi-signature private key is called &amp;ldquo;trustee&amp;rdquo;&lt;/strong>. The trust is mainly responsible for managing asset security and processing Bitcoin withdrawal applications.&lt;/p>
+&lt;p>The main process that the trust needs to process on the ChainX chain is to process withdrawals. The execution process is as follows:&lt;/p>
+&lt;ol>
+&lt;li>The trust periodically forms a bitcoin withdrawal transaction based on the withdrawal application on the ChainX chain and sends it to the bitcoin transfer bridge of the ChainX chain;&lt;/li>
+&lt;li>The Bitcoin transfer bridge locks the corresponding withdrawal application according to the withdrawal request of the trust;&lt;/li>
+&lt;li>The trust performs Bitcoin multi-signature signatures according to the original text of the Bitcoin transaction on the ChainX chain;&lt;/li>
+&lt;li>When the last multi-signature signature is completed, the Bitcoin withdrawal transaction will be submitted to the Bitcoin network by Relay;&lt;/li>
+&lt;li>After the Bitcoin network is packaged, Relay finds the Bitcoin withdrawal transaction submitted by the trust, and sends the withdrawal transaction to the Bitcoin transfer bridge of the ChainX chain;&lt;/li>
+&lt;li>The Bitcoin transfer bridge verifies the validity of the withdrawal transaction through the light node scheme, and destroys the corresponding withdrawal application and X-BTC tokens on the ChainX chain.&lt;/li>
+&lt;/ol>
+&lt;p>On the other hand, the trust needs to periodically move the bitcoins in the hot and cold addresses according to the balance of the hot addresses that have been recharged to ChainX to ensure the security of the bitcoins locked in the multi-signature addresses. Bitcoin transactions that move hot and cold addresses can be submitted by Relay to the Bitcoin Bridge, but there will be no special handling.
+For more information on multi-signature and trusts, see &lt;a href="../Trustee">trust&lt;/a>&lt;/p>
+&lt;h2 id="bitcoin-transfer-bridge-business-logic">Bitcoin transfer bridge business logic&lt;/h2>
+&lt;p>It can be seen from the above introduction that the Bitcoin transfer bridge adopts the mode of one-way relay plus trust multi-signature to maintain the Bitcoin cross-chain process of the Bitcoin transfer bridge. Therefore, the overall business logic of the Bitcoin transfer bridge is shown in the following figure:&lt;/p>
+&lt;p>As can be seen from the above figure:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Preconditions:&lt;/p>
+&lt;p>The ChainX chain first needs to have a trust to generate the corresponding hot and cold trust multi-signature address.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Bitcoin block header:&lt;/p>
+&lt;ol>
+&lt;li>The Bitcoin block header is submitted by relay (or submitted by Substrate offchain worker)&lt;/li>
+&lt;li>The Bitcoin transfer bridge verifies the Bitcoin block header and forms the heaviest workload chain for the Bitcoin block.&lt;/li>
+&lt;li>The transfer bridge will confirm that a previous block is a confirmation block according to the latest Bitcoin block header.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Recharge process:
+&lt;img src="../../../images/ChainX_BTC_Deposit.jpg" alt="ChainX_BTC_Deposit">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>There are first blocks on the chain;
 2. The user transfers money to the trust&amp;rsquo;s hot address, and carries the user&amp;rsquo;s ChainX address and other information in the OP_RETURN in the **transaction. Only by carrying the information can the bitcoin transfer bridge identify which recharge transfer transaction is associated with. ChainX user related;
 3. Relay finds the transaction and submits the transaction to the transfer bridge; (In 1.0, the transaction can be submitted when it is found, and it will not be executed until it is confirmed. In 2.0, only the confirmed transaction can be submitted)
 4. When the transaction is confirmed, execute the transaction. When the transaction is a recharge transaction, the ChainX address is parsed from OP_RETURN, and the corresponding X-BTC amount is issued to the ChainX account;
-5. At this point, the Bitcoin recharge process is completed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Withdrawal process:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../images/ChainX_BTC_Withdraw.jpg&#34; alt=&#34;ChainX_BTC_Withdraw&#34;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The user applies to withdraw X-BTC;&lt;/li&gt;
-&lt;li&gt;The record module in the ChainX transfer bridge/gateway module will lock the corresponding X-BTC and record the user application information, which is associated with a unique ID;&lt;/li&gt;
-&lt;li&gt;The trust periodically obtains the withdrawal in the current application, and according to the withdrawal information component, the original text of the bitcoin withdrawal transaction;&lt;/li&gt;
-&lt;li&gt;After the original text of the withdrawal transaction is sent to the ChainX bitcoin transfer bridge, the corresponding withdrawal record will be locked, and then other trusts will perform bitcoin multi-signature signatures based on the original bitcoin text;&lt;/li&gt;
-&lt;li&gt;After the signature is completed, the Bitcoin transaction will be submitted to the Bitcoin network;&lt;/li&gt;
-&lt;li&gt;After packaging, relay will submit the withdrawal transaction to the transfer bridge, and after confirmation, it will release the corresponding withdrawal record and destroy the locked X-BTC;&lt;/li&gt;
-&lt;li&gt;At this point, the Bitcoin withdrawal process is completed.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;other&#34;&gt;other&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;The user&amp;rsquo;s Bitcoin recharge transaction does not carry OP_RETURN, or the valid user ChainX information cannot be parsed in OP_RETURN.&lt;/p&gt;
-&lt;p&gt;For this kind of problem, ChainX&amp;rsquo;s Bitcoin transfer bridge develops a protocol:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The Bitcoin Transfer Bridge believes that a Bitcoin recharge transaction for ChainX will be related to the address contained in the first input of this Bitcoin transaction, and the holder of this address must have this recharge control of the transaction.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Therefore, if the valid ChainX user information cannot be obtained in the transaction, a relationship between the address of the first input of the transaction and the recharge transaction will be recorded in the Bitcoin transfer bridge of ChainX, and called this This kind of recharge transaction is &amp;ldquo;unclaimed recharge transaction&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;When another recharge transaction using the same address as the first input address occurs in the future, and the recharge transaction carries valid OP_RETURN information to obtain the corresponding ChainX account address, the unsecured address related to this address will be released. Claim the recharge transaction to this ChainX account address.&lt;/p&gt;
-&lt;p&gt;E.g:&lt;/p&gt;
-&lt;p&gt;Suppose there is a transaction tx1 as:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;input1(address1) |---------|
+5. At this point, the Bitcoin recharge process is completed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Withdrawal process:&lt;/p>
+&lt;p>&lt;img src="../../../images/ChainX_BTC_Withdraw.jpg" alt="ChainX_BTC_Withdraw">&lt;/p>
+&lt;ol>
+&lt;li>The user applies to withdraw X-BTC;&lt;/li>
+&lt;li>The record module in the ChainX transfer bridge/gateway module will lock the corresponding X-BTC and record the user application information, which is associated with a unique ID;&lt;/li>
+&lt;li>The trust periodically obtains the withdrawal in the current application, and according to the withdrawal information component, the original text of the bitcoin withdrawal transaction;&lt;/li>
+&lt;li>After the original text of the withdrawal transaction is sent to the ChainX bitcoin transfer bridge, the corresponding withdrawal record will be locked, and then other trusts will perform bitcoin multi-signature signatures based on the original bitcoin text;&lt;/li>
+&lt;li>After the signature is completed, the Bitcoin transaction will be submitted to the Bitcoin network;&lt;/li>
+&lt;li>After packaging, relay will submit the withdrawal transaction to the transfer bridge, and after confirmation, it will release the corresponding withdrawal record and destroy the locked X-BTC;&lt;/li>
+&lt;li>At this point, the Bitcoin withdrawal process is completed.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="other">other&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>The user&amp;rsquo;s Bitcoin recharge transaction does not carry OP_RETURN, or the valid user ChainX information cannot be parsed in OP_RETURN.&lt;/p>
+&lt;p>For this kind of problem, ChainX&amp;rsquo;s Bitcoin transfer bridge develops a protocol:&lt;/p>
+&lt;blockquote>
+&lt;p>The Bitcoin Transfer Bridge believes that a Bitcoin recharge transaction for ChainX will be related to the address contained in the first input of this Bitcoin transaction, and the holder of this address must have this recharge control of the transaction.&lt;/p>
+&lt;/blockquote>
+&lt;p>Therefore, if the valid ChainX user information cannot be obtained in the transaction, a relationship between the address of the first input of the transaction and the recharge transaction will be recorded in the Bitcoin transfer bridge of ChainX, and called this This kind of recharge transaction is &amp;ldquo;unclaimed recharge transaction&amp;rdquo;.&lt;/p>
+&lt;p>When another recharge transaction using the same address as the first input address occurs in the future, and the recharge transaction carries valid OP_RETURN information to obtain the corresponding ChainX account address, the unsecured address related to this address will be released. Claim the recharge transaction to this ChainX account address.&lt;/p>
+&lt;p>E.g:&lt;/p>
+&lt;p>Suppose there is a transaction tx1 as:&lt;/p>
+&lt;pre>&lt;code>input1(address1) |---------|
 input2(address2) |---------| output1 (Trust address) value 100000
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then the transaction will be recorded on the chain as:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;BtcAddress&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;BtcDepositCache(tx_hash,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#00d;font-weight:bold&#34;&gt;100000&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the bitcoin transfer bridge receives another recharge transaction in the future:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;input1(address1) |--------|
-				 |--------| output1(Trust address) value 99999
-				 |--------| output(OP_RETURN) =&amp;gt; ChainX address: 5Xxxxxxxxx
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;At this time, &lt;code&gt;100000 + 99999 = 199999&lt;/code&gt; of X-BTC will be issued to the ChainX address 5Xxxxxxxxx, and the unclaimed deposit transactions related to this address will be removed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;p>Then the transaction will be recorded on the chain as:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-rust" data-lang="rust">BtcAddress&lt;span style="color:#bbb"> &lt;/span>=&amp;gt;&lt;span style="color:#bbb"> &lt;/span>BtcDepositCache(tx_hash,&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#00d;font-weight:bold">100000&lt;/span>)&lt;span style="color:#bbb">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the bitcoin transfer bridge receives another recharge transaction in the future:&lt;/p>
+&lt;pre>&lt;code>input1(address1) |--------|
+|--------| output1(Trust address) value 99999
+|--------| output(OP_RETURN) =&amp;gt; ChainX address: 5Xxxxxxxxx
+&lt;/code>&lt;/pre>&lt;p>At this time, &lt;code>100000 + 99999 = 199999&lt;/code> of X-BTC will be issued to the ChainX address 5Xxxxxxxxx, and the unclaimed deposit transactions related to this address will be removed.&lt;/p>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

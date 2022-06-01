@@ -1,18 +1,1 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ChainX Docs – Trouble shooting</title>
-    <link>https://chainx-org.github.io/documentation/docs/sherpax/trouble-shooting/</link>
-    <description>Recent content in Trouble shooting on ChainX Docs</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="https://chainx-org.github.io/documentation/docs/sherpax/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChainX Docs – Trouble shooting</title><link>https://chainx-org.github.io/documentation/docs/sherpax/trouble-shooting/</link><description>Recent content in Trouble shooting on ChainX Docs</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chainx-org.github.io/documentation/docs/sherpax/trouble-shooting/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
