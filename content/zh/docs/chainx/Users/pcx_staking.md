@@ -1,7 +1,7 @@
 ---
 title: "PCX挖矿"
 linkTitle: "PCX挖矿"
-weight: 4
+weight: 3
 date: 2022-04-19
 description: Staking PCX, Reward PCX
 ---

@@ -1,7 +1,7 @@
 ---
 title: "BTC挖矿"
 linkTitle: "BTC挖矿"
-weight: 3
+weight: 4
 date: 2022-04-19
 description: Deposit BTC, Reward PCX
 ---
